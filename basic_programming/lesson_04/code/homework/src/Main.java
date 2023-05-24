@@ -2,8 +2,9 @@ import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        System.out.println("Вычсисление площади и периметра прямоугольника");
-//      # Задача 1
+        System.out.println("Вычисление площади и периметра прямоугольника(Rectangle area and perimeter)");
+
+//      Задача 1
 //      Запросить у пользователя два целых числа - длину и ширину прямоугольника.
 //      Вычислить периметр и площадь прямоугольника.
 

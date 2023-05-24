@@ -8,7 +8,7 @@ public class Main2 {
 //        В программе должно быть не меньше трёх вопросов.
 //        Как минимум один ответ нужно считать и использовать, как число.
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); // включение Scanner
 
         System.out.println("Привет!");// приглашение пользователю
         System.out.println("Как тебя зовут?");// приглашение пользователю
