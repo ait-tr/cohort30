@@ -3,8 +3,10 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/convertor/src/Main.java",
-    "code/example-1/src/Main.java"
+    "code/arithmetics/src/Main.java",
+    "code/homework/src/Main.java",
+    "code/homework/src/Main1.java",
+    "code/homework/src/Main2.java"
   ],
   "video": ""
 }
