@@ -21,7 +21,7 @@ public class Main {
 
         int n = 2;
         int k = 10;
-        int pow2 = (int) Math.pow(n, k);
+        int pow2 = (int) Math.pow(n, k); // возведение в степень
         System.out.println(pow2);// целое число
         double pow2d = Math.pow(n, k);
         System.out.println(pow2d); // дробное число
