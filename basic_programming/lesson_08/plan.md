@@ -22,7 +22,7 @@ left - loose your horse, right - loose your honor, forward - loose your head.
 
 Задача 2.
 Написать приложение-калькулятор для 4-х математических действий: +, -, *, /
-Использовать switch ... case на основе int, char
+Использовать switch ... case на основе int, String
 
 Задача 3.
 Программа получает на вход IP-адрес в одну строку:
