@@ -3,11 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_06/src/Main.java",
-    "code/if-else-practice/src/Main.java",
-    "code/if-else-practice/src/Main1.java",
-    "code/if-else-practice/src/Main2.java",
-    "code/if-else-practice/src/Main3.java"
+    "code/hw_07/src/Main.java",
+    "code/hw_07/src/Main1.java",
+    "code/hw_07/src/Main2.java",
+    "code/if-else-switch-practice/src/Main.java",
+    "code/if-else-switch-practice/src/Main1.java",
+    "code/if-else-switch-practice/src/Main2.java"
   ],
   "video": ""
 }
