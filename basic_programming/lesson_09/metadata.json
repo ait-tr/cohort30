@@ -3,9 +3,10 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw-07/src/Main.java",
-    "code/hw-07/src/Main1.java",
-    "code/hw-07/src/Main2.java",
+    "code/hw-08/src/absNumber.java",
+    "code/hw-08/src/GarbgeBot.java",
+    "code/hw-08/src/NameAndSurname.java",
+    "code/hw-08/src/Season.java",
     "code/if-else-switch-practice/src/Main.java",
     "code/if-else-switch-practice/src/Main1.java",
     "code/if-else-switch-practice/src/Main2.java"
