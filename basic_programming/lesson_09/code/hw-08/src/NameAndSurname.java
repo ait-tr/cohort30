@@ -13,27 +13,28 @@ public class NameAndSurname {
         String st = scanner.nextLine();
 
         // int l = name.length();
-        st = st.trim();
-        int indexOfSpace = st.indexOf(" ");
+        st = st.trim(); // убираем пробелы
+        int indexOfSpace = st.indexOf(" "); // находим индекс "пробела"
 
-        String name = st.substring(0, indexOfSpace);
-        String surname = st.substring(indexOfSpace + 1, st.length());
+        String name = st.substring(0, indexOfSpace); // выкусываем подстроку с первого символа до пробела
+        String surname = st.substring(indexOfSpace + 1, st.length()); // от пробела до конца строки
 
-        System.out.println(name);
-        System.out.println(surname);
+        System.out.println(name);  // печать
+        System.out.println(surname); // печать
 
-        name = stringCorrected(name);
-        surname = stringCorrected((surname));
+        name = stringCorrected(name); // вызов метода
+        surname = stringCorrected(surname); // вызов метода
 
         System.out.println(name);
         System.out.println(surname);
 
     }
     // ___________Methods______________
+    // метод делает заглавной 1-ю букву
     public static String stringCorrected (String string) {
-        char firstLetter = string.toUpperCase().charAt(0);
-        String stringRest = string.substring(1,string.length());
-        return firstLetter + stringRest;
+        char firstLetter = string.toUpperCase().charAt(0); // первая буква строки делается заглавной
+        String stringRest = string.substring(1,string.length()); // выкусывается строка без 1-й буквы
+        return firstLetter + stringRest; // формируем результат
     }
     //___________end of Methods________
 }
