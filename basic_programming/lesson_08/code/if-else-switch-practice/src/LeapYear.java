@@ -7,7 +7,7 @@ public class LeapYear {
 //        Для того, чтобы быть високосным год должен: делится без остатка на 4 и либо не должен
 //        делится без остатка на 100, либо если он делится на 100, то он должен делится также на 400.
 
-        Scanner in=new Scanner (System.in);//turn on Scanner
+        Scanner in = new Scanner(System.in);//turn on Scanner
 
         System.out.println("Determining if a year is a leap year .");
         System.out.println("Enter year:")   //message to user
@@ -15,15 +15,17 @@ public class LeapYear {
         if (year % 4 == 0 & year % 100 != 0) {
             System.out.println("Is a high year");
         }
-        Else if (year % 100 == 0 $ year %400 == 0 ){
-        //Solution korrekt  parentaler
-            System.out.println("The year is high");
-        } else{
-            System.out.println("The year is not high");
-        }
     }
 }
-
-
-    }
-            }
+// //       Else if (year % 100 == 0 $ year %400 == 0 ){
+//        //Solution korrekt  parentaler
+//            System.out.println("The year is high");
+//        } else{
+//            System.out.println("The year is not high");
+//        }
+//    }
+//}
+//
+//
+//    }
+//
