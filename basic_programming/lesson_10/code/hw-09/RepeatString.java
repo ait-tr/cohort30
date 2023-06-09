@@ -11,10 +11,10 @@ public class RepeatString {
         String st = in.nextLine();
         System.out.println("Введите желаемое количество повторений: ");
         int n = in.nextInt();
-        int o = 0;
-        while (n > o) {
+        // int o = 0;
+        while (n > 0) {
             System.out.println(st);
-            o++;
+            n--; // уменьшаем на 1 число повторений
         }
     }
 }
