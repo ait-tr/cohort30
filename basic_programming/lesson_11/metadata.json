@@ -3,10 +3,7 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw-09/RepeatString.java",
-    "code/hw-09/Runner.java",
-    "code/hw-09/SumOfDigits.java",
-    "code/practice/SumN.java"
+    "code/practice/Digits.java"
 
   ],
   "video": ""
