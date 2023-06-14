@@ -3,7 +3,11 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/practice/Digits.java"
+    "code/array-practice/ArrayPractice.java",
+    "code/array-practice/FindElementInArray.java",
+    "code/hw-10/Debt.java",
+    "code/hw-10/Factorial.java",
+    "code/hw-10/Sum.java"
 
   ],
   "video": ""
