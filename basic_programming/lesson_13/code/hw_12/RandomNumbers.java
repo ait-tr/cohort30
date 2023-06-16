@@ -1,4 +1,4 @@
-package hw_11;
+package hw_12;
 
 public class RandomNumbers {
     public static void main(String[] args) {
