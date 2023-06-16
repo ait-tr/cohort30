@@ -3,9 +3,11 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_11/AverageTemperature.java",
-    "code/hw_11/MaxElement.java",
-    "code/hw_11/RandomNumbers.java"
+    "code/hw_12/AverageTemperature.java",
+    "code/hw_12/MaxElement.java",
+    "code/hw_12/RandomNumbers.java",
+    "code/practice/NumberReverse.java",
+    "code/practice/RandomNum.java"
 
   ],
   "video": ""
