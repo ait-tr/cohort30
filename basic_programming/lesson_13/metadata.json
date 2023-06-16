@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/array-practice/ArrayPractice.java",
+    "code/array-practice/FindElementInArray.java",
+    "code/hw-10/Debt.java",
+    "code/hw-10/Factorial.java",
+    "code/hw-10/Sum.java"
+
+  ],
+  "video": ""
+}
