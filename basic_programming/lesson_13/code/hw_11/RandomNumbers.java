@@ -1,3 +1,5 @@
+package hw_11;
+
 public class RandomNumbers {
     public static void main(String[] args) {
 //        Создайте массив из 20 случайных целых чисел в интервале от 10 до 20.
