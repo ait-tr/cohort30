@@ -1,7 +1,7 @@
 package hw_13;
 import java.util.Random;
 
-public class sumOfOddElements {
+public class SumOfOddElements {
     //Задача 1. Написать метод, принимающий массив целых чисел,
     //   и возвращающий сумму всех его нечетных элементов
     //  (не индексы!, а сами элементы).
