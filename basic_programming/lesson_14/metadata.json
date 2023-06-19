@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_12/AverageTemperature.java",
+    "code/hw_12/MaxElement.java",
+    "code/hw_12/RandomNumbers.java",
+    "code/practice/NumberReverse.java",
+    "code/practice/RandomNum.java"
+
+  ],
+  "video": ""
+}
