@@ -1,0 +1,13 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_13/StringReverse.java",
+    "code/hw_13/SumOfEvenIndexEl.java",
+    "code/hw_13/SumOfOddElements.java",
+    "code/practice/BreakContinueExample.java",
+    "code/auto_application/models/Auto.java"
+  ],
+  "video": ""
+}
