@@ -6,9 +6,9 @@
     "code/hw_14/LuckyDumpling.java",
     "code/hw_14/MultiplyTable.java",
     "code/practice/book/controller/BookAppl.java",
-    "code/practice/book/models/Book.java",
+    "code/practice/book/model/Book.java",
     "code/practice/rectangle/controller/RectangleAppl.java",
-    "code/practice/rectangle/models/Rectangle.java"
+    "code/practice/rectangle/model/Rectangle.java"
   ],
   "video": ""
 }
