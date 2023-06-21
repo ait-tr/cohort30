@@ -3,11 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_13/StringReverse.java",
-    "code/hw_13/SumOfEvenIndexEl.java",
-    "code/hw_13/SumOfOddElements.java",
-    "code/practice/BreakContinueExample.java",
-    "code/auto_application/models/Auto.java"
+    "code/hw_14/LuckyDumpling.java",
+    "code/hw_14/MultiplyTable.java",
+    "code/practice/book/controller/BookAppl.java",
+    "code/practice/book/models/Book.java",
+    "code/practice/rectangle/controller/RectangleAppl.java",
+    "code/practice/rectangle/models/Rectangle.java"
   ],
   "video": ""
 }
