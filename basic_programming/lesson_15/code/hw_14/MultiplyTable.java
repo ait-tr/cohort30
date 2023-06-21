@@ -12,6 +12,8 @@ public class MultiplyTable {
             System.out.println(); // Переходим на новую строку после каждого ряда
         }
 
+        //______________
+
         System.out.println("Таблица умножения");
         System.out.println("=================");
         int a = 2, b = 2;
