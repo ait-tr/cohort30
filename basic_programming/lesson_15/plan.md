@@ -1,5 +1,7 @@
 # Lesson plan № 15, 21.06.2023:
-## OOP: polymorphism - constructors and methods overloading
+## OOP
+  - objects and classes, 
+  - fields, constructors and methods
 
 1. Homework tasks discussion:
 - continue and break examples
@@ -32,9 +34,12 @@ Create a Book class that describes a book with fields:
 ______________________
 
 # План урока № 14, 19.06.2023:
-## Пакеты и ООП - инкапсуляция, полиморфизм, наследование
+## ООП 
+- объекты и классы
+- поля класса, конструкторы и методы
 
 1. Обсуждение домашних заданий:
+
 - continue и break - примеры использования
 - 30 пельменей
 - поиск "счастливого" пельменя
