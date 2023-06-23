@@ -1,16 +1,15 @@
 # OOP - Object Oriented Programming
 
 ## Objects and classes
-
 Classes combine objects with the same structure, characteristics (fields).
 Classes define new data types.
 Objects are instances of a given class. Just like we can create
 variables of a primitive type, we can create objects of this class.
 
-Classes contain **fields** and **methods**.
+Classes contain fields and methods.
 The fields contain data characterizing the object.
 Methods are the functionality of an object. Based on class fields and accepted arguments,
-methods make it possible to determine the actions of a particular object.
+Methods make it possible to determine the actions of a particular object.
 
 ## Three principles of object-oriented programming:
 - encapsulation,
@@ -23,25 +22,17 @@ program code that describes:
 - the state of the object (field),
 - functionality responsible for its behavior (methods).
 
-## Create a Class (capsule)
-- Step 1: create fields:
-  - we define the list of types, names of variables and make decisions about the values of modifiers
-    *public
-    * static
-  - when writing code, we go in the opposite direction, first we write:
-    - modifier
-    - then the variable type
-    - then the variable name
+**Polymorphism**
+Polymorphism in programming languages and type theory - the ability of a function/method to handle
+data of different types.
 
-- Step 2: define methods
+There are two types of polymorphism: parametric polymorphism and ad-hoc polymorphism.
+Java implements ad-hoc polymorphism in the form of the ability to overload class methods.
 
-  - standard methods:
-    - constructor,
-    - getters and
-    - setters
+We can **overload methods** by creating multiple methods and constructors in a class
+**with the same name**, but different types and/or number of arguments.
 
-  - additional methods
-
+________________________
 
 # OOП - объектно-ориентированное программирование
 
@@ -67,21 +58,12 @@ program code that describes:
 - состояние объекта (поля), 
 - функциональность отвечающую за его поведение (методы).
 
-## Создание Класса (капсулы)
-- Шаг 1: создание полей:
-  - определяем перечень типов, названий переменных и принимаем решения о значениях модификаторов 
-        * public
-        * static
-  - при написании кода идем в обратном направлении, сначала пишем:
-    - модификатор
-    - потом тип переменной
-    - потом имя переменной
+**Полиморфизм**
+Полиморфизм в языках программирования и теории типов — способность функции/метода обрабатывать 
+данные разных типов.
 
-- Шаг 2: определение методов
+Существует две разновидности полиморфизма: это параметрический полиморфизм и ad-hoc-полиморфизм.
+В Java ad-hoc-полиморфизм реализован в виде возможности перегружать (overload) методы класса.
 
-  - стандартные методы:
-    - конструктор, 
-    - геттеры и 
-    - сеттеры
-  
-  - дополнительные методы
+Мы можем **перегружать методы** (overload), создавая в классе несколько методов и конструкторов 
+**с одинаковым названием**, но отличающихся типами и/или количеством аргументов.
