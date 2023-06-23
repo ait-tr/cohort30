@@ -4,7 +4,11 @@
   "homework": "homework.md",
   "code": [
     "code/hw_15/cube/controller/CubeAppl.java",
-    "code/hw_15/cube/model/Cube.java"
+    "code/hw_15/cube/model/Cube.java",
+    "code/practice/bank/controller/BankAppl.java",
+    "code/practice/bank/model/BankAccount.java",
+    "code/practice/book/Book.java",
+    "code/practice/bank/BookAppl.java"
 
   ],
   "video": ""
