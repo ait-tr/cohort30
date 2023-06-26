@@ -6,12 +6,13 @@
     "code/hw_16/book/Book.java",
     "code/hw_16/book/BookAppl.java",
     "code/hw_16/Array.java",
-    "code/inheritance_pactice/computer/CompAppl.java",
-    "code/inheritance_pactice/computer/Computer.java",
-    "code/inheritance_pactice/computer/Laptop.java",
-    "code/inheritance_pactice/beverage/Beverage.java",
-    "code/inheritance_pactice/beverage/Beer.java",
-    "code/inheritance_pactice/beverage/BeverageAppl.java"
+    ,
+    "code/inheritance_practice/computer/CompAppl.java",
+    "code/inheritance_practice/computer/Computer.java",
+    "code/inheritance_practice/computer/Laptop.java",
+    "code/inheritance_practice/beverage/Beverage.java",
+    "code/inheritance_practice/beverage/Beer.java",
+    "code/inheritance_practice/beverage/BeverageAppl.java"
 
   ],
   "video": ""
