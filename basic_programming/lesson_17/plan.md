@@ -4,23 +4,35 @@
   - objects and classes, 
   - fields, constructors and methods
 
-1. Homework tasks discussion:
-- Cube
-- Eployee and Firm
-- QuadraticEquation 
+1. Discussion of homework:
+- Book class, different constructors
+- find the average value over all array elements with even indices
 
-2. OOP - polymorphism
-   see Theory 
+2. OOP
+- objects and classes
+- fields, constructors and methods
 
-3. Practice 
+3 main principles of OOP:
+- encapsulation
+- polymorphism
+- **- inheritance** - topic for today
 
-**Task 1**
-Refinement Book
-The year of the book cannot be earlier than 1450 and later than 2023.
+4. Practice
+
+**Exercise 1**
+Create a Computer class, then create a Laptop class that we inherit from.
+We expand the fields for Laptop - weight, operating time.
+Override the display and toString methods.
 
 **Task 2**
-Writing a banking application
-BankAccount and BankAppl
+Create a class Drink (Beverage) with the field title (name), packing (packing) and quantity (quantity).
+Implement a buy method that takes as input what, in what package, and how much to buy.
+Implement the display method, which shows what appeared after the purchase in the warehouse.
+Create a Beer class and extend it from Beverage.
+Extend the Beer class with a beer type field.
+Redefine the display method to take into account the type of beer (light, dark).
+In the BeverageAppl class, in the main method, create some drinks (Cola, wine, beer), buy them, and show that
+available in stock.
 
 ______________________
 
