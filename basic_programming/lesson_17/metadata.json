@@ -3,12 +3,9 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_15/cube/controller/CubeAppl.java",
-    "code/hw_15/cube/model/Cube.java",
-    "code/practice/bank/controller/BankAppl.java",
-    "code/practice/bank/model/BankAccount.java",
-    "code/practice/book/Book.java",
-    "code/practice/book/BookAppl.java"
+    "code/hw_16/book/Book.java",
+    "code/hw_16/book/BookAppl.java",
+    "code/hw_16/Array.java"
 
   ],
   "video": ""
