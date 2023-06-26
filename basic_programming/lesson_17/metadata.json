@@ -5,7 +5,13 @@
   "code": [
     "code/hw_16/book/Book.java",
     "code/hw_16/book/BookAppl.java",
-    "code/hw_16/Array.java"
+    "code/hw_16/Array.java",
+    "code/computer/CompAppl.java",
+    "code/computer/Computer.java",
+    "code/computer/Laptop.java",
+    "code/beverage/Beverage.java",
+    "code/beverage/Beer.java",
+    "code/beverage/BeverageAppl.java"
 
   ],
   "video": ""
