@@ -1,5 +1,8 @@
 package hw_17.book;
 
+import hw_17.book.model.Book;
+import hw_17.book.model.Dictionary;
+
 public class BookAppl {
     public static void main(String[] args) {
         Book book1 = new Book(1234567890L,"Es", "Stephen King", 2016);

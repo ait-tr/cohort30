@@ -1,4 +1,4 @@
-package hw_17.book;
+package hw_17.book.model;
 
 public class Book {
     private long isbn;

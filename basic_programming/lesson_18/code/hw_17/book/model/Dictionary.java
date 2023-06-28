@@ -1,4 +1,6 @@
-package hw_17.book;
+package hw_17.book.model;
+
+import hw_17.book.model.Book;
 
 public class Dictionary extends Book {
     public String language;
