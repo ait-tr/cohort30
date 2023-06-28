@@ -3,15 +3,14 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_16/book/Book.java",
-    "code/hw_16/book/BookAppl.java",
-    "code/hw_16/Array.java",
-    "code/inheritance_practice/computer/CompAppl.java",
-    "code/inheritance_practice/computer/Computer.java",
-    "code/inheritance_practice/computer/Laptop.java",
-    "code/inheritance_practice/beverage/Beverage.java",
-    "code/inheritance_practice/beverage/Beer.java",
-    "code/inheritance_practice/beverage/BeverageAppl.java"
+    "code/hw_17/book/Book.java",
+    "code/hw_17/book/BookAppl.java",
+    "code/hw_17/Dictionary.java",
+    "code/hw_17/pet/model/Cat.java",
+    "code/hw_17/pet/model/Cat.java",
+    "code/hw_17/pet/model/Dog.java",
+    "code/hw_17/pet/model/Ret.java",
+    "code/hw_17/pet/HouseAppl.java"
 
   ],
   "video": ""
