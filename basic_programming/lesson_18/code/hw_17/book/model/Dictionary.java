@@ -14,12 +14,6 @@ public class Dictionary extends Book {
         this.bilingual = bilingual;
         this.dic_type = dic_type;
     }
-           
-    //constructor ohne language und type
-    public Dictionary(long isbn, String title, String author, int year, String bilingual) {
-        super(isbn, title, author, year);
-        this.bilingual = bilingual;
-    }
 
     // constructor ohne type
     public Dictionary(long isbn, String title, String author, int year, String language, String bilingual) {
@@ -28,11 +22,23 @@ public class Dictionary extends Book {
         this.bilingual = bilingual;
     }
 
-    // constructor ohne bilingual
+    //constructor ohne language und type
+    public Dictionary(long isbn, String title, String author, int year, String bilingual) {
+        super(isbn, title, author, year);
+        this.bilingual = bilingual;
+    }
 
+
+    // constructor ohne bilingual
+    public Dictionary(String language, String dic_type) {
+        this.language = language;
+        this.dic_type = dic_type;
+    }
 
     //constructor ohne bilingual und language
-
+    public Dictionary(String dic_type) {
+        this.dic_type = dic_type;
+    }
 
     //Methode display
     public void displayBook(){

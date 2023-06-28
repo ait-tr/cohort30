@@ -74,16 +74,17 @@ public class Book {
     public void displayBook(){
         String output = "";// erstellen der Ausgabe
  
-        if (isbn != 0){
+        if ( isbn != 0 ){
             output += String.format("isbn: %d, ", isbn);//nachschauen; ob es isbn vorhanden ist und in output schreiben
         }
-        if(author != null ) {// isEmpty schaut ob String ==leer ist
+        if( author != null ) {// isEmpty schaut ob String ==leer ist
             output += String.format("author: %s, ", author);//nachschauen; ob es Author vorhanden ist und in output schreiben
         }
-        if(   year !=0) {
+        if( year != 0 ) {
             output += String.format("year: %d, ",    year);//nachschauen; ob es    year vorhanden ist und in output schreiben
         }
-        System.out.println(output+"Title: "+title);
+        System.out.println(output + "Title: " + title);
+
         //System.out.println(" ISBN: "+isbn+", Author: "+author+", Title: "+title+", Year: "+   year);
     }
 
