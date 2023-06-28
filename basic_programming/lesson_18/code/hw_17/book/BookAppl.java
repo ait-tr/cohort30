@@ -25,8 +25,8 @@ public class BookAppl {
         Dictionary dic2 = new Dictionary(456L, "Title 2", "Author2", 1901, "Rus-Fra");
         dic2.displayBook();
 
-        //  Dictionary dic2 = new Dictionary(12345555465347L,"Dictionary","Langenscheidt",2019,"Deutsch");
-        //  dic2.displayBook();
+        Dictionary dic3 = new Dictionary(12345555465347L,"Dictionary","Langenscheidt",2019,"Deutsch");
+        dic3.displayBook();
 
     }
 

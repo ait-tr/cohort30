@@ -30,15 +30,12 @@ public class Dictionary extends Book {
 
 
     // constructor ohne bilingual
-    public Dictionary(String language, String dic_type) {
-        this.language = language;
-        this.dic_type = dic_type;
-    }
+    // ????????
+
 
     //constructor ohne bilingual und language
-    public Dictionary(String dic_type) {
-        this.dic_type = dic_type;
-    }
+    // ????????
+
 
     //Methode display
     public void displayBook(){

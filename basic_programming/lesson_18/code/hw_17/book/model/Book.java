@@ -14,22 +14,22 @@ public class Book {
         this.year = year;
     }
     //Constructor ohne Autor
- 
+
     public Book(long isbn, String title, int    year) {
         this.isbn = isbn;
         this.title = title;
         this.year = year;
     }
     // Constructor ohne isbn
- 
+
     public Book(String title, String author, int    year) {
         this.title = title;
         this.author = author;
         this.year = year;
     }
- 
+
         //Constructor ohne isbn , ohne Jahr
-         
+
     public Book(String title, String author) {
         this.title = title;
         this.author = author;

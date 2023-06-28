@@ -50,13 +50,14 @@ Computer other = (Computer)obj; is a downcasting of obj of type Object to an obj
 Как работает метод equals? 
 На примере класса Computer:
 
-       `public boolean equals(Object obj) {
-        if (!(obj instanceof Computer)) {
-            return false;
-            } // 
-        Computer other = (Computer) obj; // 
-        return brand.equals(other.brand) && cpu.equals(other.cpu) && ram == other.ram && ssd == other.ssd;
-        }`
+        `public boolean equals(Object obj) {   // сигнатура метода - модификаторы, тип возвр. значения, аргументы
+         if (!(obj instanceof Computer)) {    //  проверка, что объект взят из класса Computer
+             return false;   // возвращаем фальш
+             }    //
+         Computer other = (Computer)obj;    // downcastind 
+         return brand.equals(other.brand) && cpu.equals(other.cpu) && ram == other.ram && ssd == other.ssd;
+            //
+         }`
 
  instanceof - возвращает boolean, проверяет, принадлежит ли объект указанному классу.
  Computer other = (Computer) obj; - это downcasting объекта obj типа Object до объекта типа Computer. 

@@ -53,7 +53,4 @@ public class Cat extends Pet {
         super.display();
         System.out.print(" The Name of " + type + " is: " + name + " the breed is: " + breed + ", " + " the age is " + age + " years old.");
     }
-    
-    
-    
 }
