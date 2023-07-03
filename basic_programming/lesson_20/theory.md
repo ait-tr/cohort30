@@ -32,6 +32,10 @@ default modifier. Such fields or methods are visible to all classes in the curre
 A field marked as **final** cannot be changed after the object has been created. Therefore it should
 be initialized in the constructor when the object is created.
 
+## Data control through class methods (constructor, setter and methods implemented in the class)
+
+We can implement data control and various logic through class methods.
+
 __________________________________
 
 # Модификаторы
@@ -67,3 +71,7 @@ public, default, protected, private
 **Особый случай:**
 Поле помеченное как **final**, невозможно изменить после создания объекта. Поэтому оно должно
 быть инициализировано в конструкторе, при создании объекта.
+
+## Контроль данных за счет методов класса (конструктор, сеттер и методы, реализованные в классе)
+
+Мы можем реализовать контроль данных и различную логику за счет методов класса.
