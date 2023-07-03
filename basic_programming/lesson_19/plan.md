@@ -1,4 +1,4 @@
-# Lesson plan № 18, 28.06.2023:
+# Lesson plan № 19, 28.06.2023:
 
 1. Discussion of homework:
    Products, Food, MeatFood, MilkFood
@@ -25,7 +25,7 @@ Class options:
 
 ______________________
 
-# План урока № 18 от 28.06.2023:
+# План урока № 19 от 28.06.2023:
 
 1. Обсуждение домашнего задания:
 Product, Food, MeatFood, MilkFood

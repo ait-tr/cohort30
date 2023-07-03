@@ -1,0 +1,15 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_18/Food.java",
+    "code/hw_18/MeatFood.java",
+    "code/hw_18/MilkFood.java",
+    "code/hw_18/Product.java",
+    "code/hw_18/ProductApp.java",
+    "code/practice/IsPrime.java"
+
+  ],
+  "video": ""
+}

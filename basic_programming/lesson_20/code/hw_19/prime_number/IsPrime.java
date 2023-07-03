@@ -1,9 +1,10 @@
-package practice;
+package hw_19.prime_number;
+
 import java.util.Scanner;
 
 public class IsPrime {
     public static void main(String[] args) {
-//        Написать метод, определяющий, является ли число простым (primary). Проcтое число - это число,
+        //        Написать метод, определяющий, является ли число простым (primary). Проcтое число - это число,
 //        которое делится только на себя и 1. Примеры: 2, 7, 11, 19, 47.
 //        Что не входе? - целое, положительное число int n.
         // Что на выходе? - boolean, ответ на поставленный вопрос
@@ -14,20 +15,24 @@ public class IsPrime {
         while (true) {
             System.out.println("Input integer positive number: ");
             int n = scanner.nextInt();
-            boolean isPrime = true;
             System.out.println("n =  " + n);
-
-            for (int i = 2; i < n - 1; i++) {
-                if (n % i == 0) { // если хотя бы раз разделилось, то
-                    isPrime = false;// объявим, что число НЕпростое и можно выйти из цикла
-                }
-            }
-
-            if (isPrime) {
+            if (isPrimeNumber(n)) {
                 System.out.println("Number " + n + " is prime.");
             } else {
                 System.out.println("Number " + n + " is NOT prime.");
             }
+
         }
+    }
+
+    // ______________Methods_______________
+    public static boolean isPrimeNumber(int n) {
+        boolean isPrime = true;
+        for (int i = 2; i < n - 1; i++) {
+            if (n % i == 0) { // если хотя бы раз разделилось, то
+                isPrime = false;// объявим, что число НЕпростое и можно выйти из цикла
+            }
+        }
+        return isPrime;
     }
 }
