@@ -1,4 +1,4 @@
-package hw_19.prime_number;
+package hw_19.numbers;
 
 import java.util.Scanner;
 

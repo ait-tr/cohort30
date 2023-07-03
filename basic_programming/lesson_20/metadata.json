@@ -3,12 +3,10 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_18/Food.java",
-    "code/hw_18/MeatFood.java",
-    "code/hw_18/MilkFood.java",
-    "code/hw_18/Product.java",
-    "code/hw_18/ProductApp.java",
-    "code/practice/IsPrime.java"
+    "code/hw_19/numbers/ArrayOfDiv.java",
+    "code/hw_19/numbers/IsPrime.java",
+    "code/practice/computer/model/Computer.java",
+    "code/practice/computer/ComputerAppl.java"
 
   ],
   "video": ""
