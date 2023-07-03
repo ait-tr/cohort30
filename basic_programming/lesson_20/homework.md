@@ -8,7 +8,7 @@ Implement the Voter class. Ensure the impossibility of registering as a voter
 person who is under 18 years of age.
 
 **Task 3.**
-Implement a computer warehouse by analogy with a book and a library.
+Implement a computer warehouse by analogy with a book and a library
 (a task for the whole week).
 
 **Task 4.**
@@ -35,7 +35,7 @@ ___________________________
 лица, которому еще не исполнилось 18 лет.
 
 Задача 3.
-Реализовать компьютерный склад по аналогии с книгой и библиотекой.
+Реализовать компьютерный склад по аналогии с книгой и библиотекой
 (задание на всю неделю).
 
 Задача 4.
