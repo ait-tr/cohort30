@@ -6,7 +6,10 @@
     "code/hw_19/numbers/ArrayOfDiv.java",
     "code/hw_19/numbers/IsPrime.java",
     "code/practice/computer/model/Computer.java",
-    "code/practice/computer/ComputerAppl.java"
+    "code/practice/computer/ComputerAppl.java",
+    "code/practice/library/modeles/Book.java",
+    "code/practice/library/modeles/Librarry.java",
+    "code/practice/library/LibraryAppl.java"
 
   ],
   "video": ""

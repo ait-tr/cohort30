@@ -10,11 +10,11 @@ public class ArrayOfDiv {
         Scanner scanner = new Scanner(System.in); // включили Scanner
         System.out.println("Input integer positive number: "); // приглашение пользователю
         int n = scanner.nextInt(); // считали число
-        int[] array = new int[n]; // определили массив
+        int[] array = new int[n]; // определили массив очень широко
         int j = 0; // индекс для массива с делителями числа n
         // заполняем массив делителями числа n
         System.out.println("n =  " + n);
-        for (int i = 2; i < n - 1; i++) {
+        for (int i = 1; i <= n ; i++) {
             if (n % i == 0) { // если n разделилось на i, то
                 array[j] = i; // pf записываем делитель в массив
                 j++; // индекс элементов массива увеличиваем на 1
