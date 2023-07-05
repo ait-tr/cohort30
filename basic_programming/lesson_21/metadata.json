@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_19/numbers/ArrayOfDiv.java",
+    "code/hw_19/numbers/IsPrime.java",
+    "code/practice/computer/model/Computer.java",
+    "code/practice/computer/ComputerAppl.java",
+    "code/practice/library/models/Book.java",
+    "code/practice/library/models/Library.java",
+    "code/practice/library/LibraryAppl.java"
+
+  ],
+  "video": ""
+}
