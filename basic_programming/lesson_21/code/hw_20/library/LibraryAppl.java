@@ -40,7 +40,7 @@ public class LibraryAppl {
         for (int i = 0; i < booksF.length; i++) {
             System.out.println(booksF[i]);
         }
-        // удаление
+        // удаление книги из библиотеки
         System.out.println("Removed book:");
         System.out.println(library.removeBook(2000000000000L, books));
 
