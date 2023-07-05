@@ -9,7 +9,7 @@ public class LibraryAppl {
         Library library = new Library(1000);
         library.addBook(new Book("War and Peace", "Lev Tolstoi", 1990,2000000000000L));
         library.addBook(new Book("Anna Karenina", "Lev Tolstoi", 1995,2000000000001L));
-        library.addBook(new Book("1984", "Oruell", 1985,2000000000002L));
+        library.addBook(new Book("1984", "George Orwell", 1985,2000000000002L));
 
         System.out.println(library.getSize());
 
@@ -28,7 +28,7 @@ public class LibraryAppl {
         books[0] = new Book("War and Peace", "Lev Tolstoi", 1990,2000000000000L);
         books[1] = new Book("Anna Karenina", "Lev Tolstoi", 1995,2000000000001L);
         books[2] = new Book("451", "Ray Bredberry", 1965,2000000000002L);
-        books[3] = new Book("1984", "Oruell", 1985,2000000000003L);
+        books[3] = new Book("1984", "George Orwell", 1985,2000000000003L);
         
         // Поиск книг автора Lev Tolstoi
         Book[] booksF; // создаем массив типа Book
