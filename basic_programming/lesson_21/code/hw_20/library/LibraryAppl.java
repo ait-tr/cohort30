@@ -46,7 +46,7 @@ public class LibraryAppl {
 
         System.out.println("Library size: "  + library.getSize());
         // печать массива книг
-        for (int i = 0; i < books.length; i++) {
+        for (int i = 0; i < library.getSize(); i++) {
             System.out.println(books[i]);
         }
 

@@ -51,15 +51,13 @@ public class Library {
             }
         }
         System.out.println("Number of books: " + count);
-
         //заполним массив с результатами поиска
         Book[] booksf = new Book[count]; // определил массив размером по кол-ву найденных
-        for (int i = 0; i < count; i++) {
-            for (int j = 0; j < books.length; j++) { // пробегаем по массиву
-                if (author.equals(books[j].getAuthor())) { // проверяем совпадение строк в поле author
-                    booksf[i] = books[j]; // заполняем массив booksf
-                    i++;
-                }
+        count = 0;
+        for (int i = 0; i < books.length; i++) {
+            if (author.equals(books[i].getAuthor())) { // проверяем совпадение строк в поле author
+                booksf[count] = books[i]; // заполняем массив booksf
+                count++;
             }
         }
         return booksf;
