@@ -56,4 +56,7 @@ public class Library {
         return size;
     }
 
+    // метод удаления книги из библиотеки
+
+
 }
