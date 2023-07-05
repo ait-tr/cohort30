@@ -3,6 +3,11 @@ package hw_19.numbers;
 import java.util.Scanner;
 
 public class IsPrime {
+
+    // отсутствуют поля, описывающие объекты
+    // в нем есть только методы
+    // есть метод main, который исполняется
+
     public static void main(String[] args) {
         //        Написать метод, определяющий, является ли число простым (primary). Проcтое число - это число,
 //        которое делится только на себя и 1. Примеры: 2, 7, 11, 19, 47.
@@ -21,7 +26,12 @@ public class IsPrime {
             } else {
                 System.out.println("Number " + n + " is NOT prime.");
             }
-
+            System.out.println("Continue? y/n ");
+            String choice = scanner.next();
+            if (!choice.equals("y")) {
+                System.out.println("Thanks, bye!");
+                break;
+            }
         }
     }
 

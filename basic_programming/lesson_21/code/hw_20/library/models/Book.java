@@ -7,7 +7,7 @@ public class Book {
     private String author;
     int yearOfPublishing;
     public static final int ISBN_LENGTH = 13; // никто не может поменять это значение
-    private final long isbn; // почему final?
+    private final long isbn; // почему final? - чтобы никто его не мог поменять после создания книги
 
     //полный конструктор
     public Book(String title, String author, int yearOfPublishing, long isbn) {

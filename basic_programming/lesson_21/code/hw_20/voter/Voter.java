@@ -45,6 +45,5 @@ public class Voter {
         } else {
             System.out.println("Age of voter should be more than 18 years old.");
         }
-
     }
 }

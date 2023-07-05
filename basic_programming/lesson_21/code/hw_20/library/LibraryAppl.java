@@ -11,8 +11,6 @@ public class LibraryAppl {
         library.addBook(new Book("Anna Karenina", "Lev Tolstoi", 1995,2000000000001L));
         library.addBook(new Book("1984", "George Orwell", 1985,2000000000002L));
 
-        System.out.println(library.getSize());
-
         Book bookFinded =  library.findBook(2000000000001L);
         System.out.println(bookFinded);
 
@@ -29,11 +27,28 @@ public class LibraryAppl {
         books[1] = new Book("Anna Karenina", "Lev Tolstoi", 1995,2000000000001L);
         books[2] = new Book("451", "Ray Bredberry", 1965,2000000000002L);
         books[3] = new Book("1984", "George Orwell", 1985,2000000000003L);
-        
-        // Поиск книг автора Lev Tolstoi
-        Book[] booksF; // создаем массив типа Book
-        System.out.println("Find books of Lev Tolstoi");
 
+        // добавили книги в библиотеку
+
+        for (int i = 0; i < books.length; i++) {
+            library.addBook(books[i]);
+        }
+        System.out.println(library.getSize());
+        System.out.println("Find books of Lev Tolstoi");
+        Book[] booksF; // массив для результатов поиска
+        booksF = library.findBookAuthor("Lev Tolstoi", books);
+        for (int i = 0; i < booksF.length; i++) {
+            System.out.println(booksF[i]);
+        }
+        // удаление
+        System.out.println("Removed book:");
+        System.out.println(library.removeBook(2000000000000L, books));
+
+        System.out.println("Library size: "  + library.getSize());
+        // печать массива книг
+        for (int i = 0; i < books.length; i++) {
+            System.out.println(books[i]);
+        }
 
     }
 }

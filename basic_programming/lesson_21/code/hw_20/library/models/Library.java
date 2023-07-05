@@ -42,13 +42,27 @@ public class Library {
     }
 
     // метод поиска книг по автору
-    public Book findBookAuthor (String author) {
-        for (int i = 0; i < size; i++) { // пробегаем по массиву
+    public Book[] findBookAuthor (String author, Book[] books) {
+        //count how many books of author
+        int count = 0;
+        for (int i = 0; i < books.length; i++) { // пробегаем по массиву
             if (author.equals(books[i].getAuthor())) { // проверяем совпадение строк в поле author
-                return books[i]; // возвращаем элемент массива типа Book
+                count++; // возвращаем элемент массива типа Book
             }
         }
-        return null;
+        System.out.println("Number of books: " + count);
+
+        //заполним массив с результатами поиска
+        Book[] booksf = new Book[count]; // определил массив размером по кол-ву найденных
+        for (int i = 0; i < count; i++) {
+            for (int j = 0; j < books.length; j++) { // пробегаем по массиву
+                if (author.equals(books[j].getAuthor())) { // проверяем совпадение строк в поле author
+                    booksf[i] = books[j]; // заполняем массив booksf
+                    i++;
+                }
+            }
+        }
+        return booksf;
     }
 
     // метод возвращает размер библиотеки
@@ -57,6 +71,20 @@ public class Library {
     }
 
     // метод удаления книги из библиотеки
-
+    // надо найти книгу
+    // последнюю книгу поставим на место удаленной, , количество книг в библиотеке -1
+    public Book removeBook(long isbn, Book[] books ){
+        Book victim = null;
+        for (int i = 0; i < size; i++) {
+            if(books[i].getIsbn() == isbn){
+                victim = books[i];
+                books[i] = books[size - 1]; // на место удаляемой ставим последнюю книжку
+                books[size - 1] = null; // последнюю книгу стираем, тк она теперь стоит на месте удаленной
+                size--;
+                break;
+            }
+        }
+        return victim;
+    }
 
 }
