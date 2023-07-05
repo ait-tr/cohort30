@@ -3,13 +3,11 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_19/numbers/ArrayOfDiv.java",
-    "code/hw_19/numbers/IsPrime.java",
-    "code/practice/computer/model/Computer.java",
-    "code/practice/computer/ComputerAppl.java",
-    "code/practice/library/models/Book.java",
-    "code/practice/library/models/Library.java",
-    "code/practice/library/LibraryAppl.java"
+    "code/hw_20/array100/Array100Random.java",
+    "code/hw_20/library/LibraryAppl.java",
+    "code/hw_20/library/models/Library.java",
+    "code/hw_20/library/models/Book.java",
+    "code/hw_20/voter/Voter.java"
 
   ],
   "video": ""
