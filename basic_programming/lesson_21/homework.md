@@ -12,15 +12,6 @@ There are n coins on the table. Some of them lie tails up, and some - coat of ar
 Determine the minimum number of coins that must be flipped so that all coins are
 facing up the same side.
 
-Problem 4(*).
-In the User class, which was done in class work, implement the password validation method.
-In the UserAppl class, in the main method, check that the validator is working correctly.
-
-Remember that the approach to password validation is different from the approach to email validation.
-Whether the password is valid or not, we can only report after we check all the characters in the password.
-Therefore, in a loop in which we check each character of the password in turn, we need to store the information somewhere
-about each check. And after the loop, analyze this information.
-
 ___________________________
 
 Задча 1.
