@@ -20,7 +20,10 @@ Write a program to convert measures of length:
 * arshins to meters (1 arshin is equal to 0.7112 m)
 * inches to millimeters (1 inch equals 25.3995 mm)
 
-
+**Task 4.(*)**
+Read the article "Overloading and Overriding Methods in Java: Examples"
+https://timeweb.cloud/tutorials/java/peregruzka-i-pereopredelenie-metodov-v-java-primery
+Implement your own examples like those described in the article.
 ___________________________
 
 **Задча 1.**
@@ -44,6 +47,12 @@ ___________________________
 * футов в метры (1 фут равен 0,3048 м)
 * аршинов в метры (1 аршин равен 0,7112 м)
 * дюймов в миллиметры (1 дюйм равен 25,3995 мм)
+
+**Задача 4.(*)**
+Прочитать статью "Перегрузка и переопределение методов в Java: примеры"
+https://timeweb.cloud/tutorials/java/peregruzka-i-pereopredelenie-metodov-v-java-primery
+Реализовать свои собственные примеры по типу тех, которые описаны в статье.
+
 
 
 
