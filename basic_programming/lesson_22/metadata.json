@@ -3,12 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_20/array100/Array100Random.java",
-    "code/hw_20/library/LibraryAppl.java",
-    "code/hw_20/library/models/Library.java",
-    "code/hw_20/library/models/Book.java",
-    "code/hw_20/voter/Voter.java",
-    "code/practice/string/PracticeString.java"
+    "code/hw_21/coins/Coins.java",
+    "code/hw_21/string/Sentence.java",
+    "code/hw_21/voter/Voter.java",
+    "code/hw_21/voter/VoterAppl.java",
+    "code/practice/user/model/User.java",
+    "code/practice/user/UserAppl.java"
 
   ],
   "video": ""
