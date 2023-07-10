@@ -5,25 +5,24 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ArrayMethodsTest extends ArrayMethods {
+class ArrayMethodsTest {
 
-    ArrayMethods arrayMethods; // создали объект тестируемого класса
+    ArrayMethods arrayMethods;
 
     @BeforeEach
     void setUp() {
-       arrayMethods = new ArrayMethods();
+        arrayMethods = new ArrayMethods();
     }
 
     @Test
     void sumElOfArrayTest() {
-        int[] arr = {1, 2, 3, 4};
-        assertEquals(10, arrayMethods.sumElOfArray(arr));
+        int[] num = {10, 20, 30, 40, 50};
+        assertEquals(150, arrayMethods.sumElOfArray(num));
     }
 
     @Test
     void sumElOfOddIndexTest() {
-        int[] arr = {1, 2, 3, 4};
-        assertEquals(6, arrayMethods.sumElOfOddIndex(arr));
+        int[] num = {10, 20, 30, 40, 50};
+        assertEquals( 60, arrayMethods.sumElOfOddIndex(num));
     }
-
 }

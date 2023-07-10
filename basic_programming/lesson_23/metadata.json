@@ -5,7 +5,14 @@
   "code": [
     "code/hw_22/ameba/Ameba.java",
     "code/hw_22/calculator/CalculatorLength.java",
-    "code/hw_22/sentence/Sentence.java"
+    "code/hw_22/sentence/Sentence.java",
+    "code/practice/array/ArrayMethods.java",
+    "code/practice/array/ArrayMethodsTest.java",
+    "code/sentence_test/Sentence.java",
+    "code/sentence_test/SentenceAppl.java",
+    "code/sentence_test/SentenceTest.java",
+    "code/student/Student.java",
+    "code/student/StudentTest.java"
 
   ],
   "video": ""

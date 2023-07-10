@@ -9,6 +9,7 @@
 2. Topic of the lesson:
    TDD - test driven development
    unit tests
+see theory.
 
 3. Practice:
 
@@ -39,6 +40,7 @@ ______________________
 2. Тема занятия:
 TDD - test driven development
 Unit tests 
+см. раздел теория.
 
 3. Практика:
 
