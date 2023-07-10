@@ -8,11 +8,11 @@
     "code/hw_22/sentence/Sentence.java",
     "code/practice/array/ArrayMethods.java",
     "code/practice/array/ArrayMethodsTest.java",
-    "code/sentence_test/Sentence.java",
-    "code/sentence_test/SentenceAppl.java",
-    "code/sentence_test/SentenceTest.java",
-    "code/student/Student.java",
-    "code/student/StudentTest.java"
+    "code/practice/sentence_test/Sentence.java",
+    "code/practice/sentence_test/SentenceAppl.java",
+    "code/practice/sentence_test/SentenceTest.java",
+    "code/practice/student/Student.java",
+    "code/practice/student/StudentTest.java"
 
   ],
   "video": ""
