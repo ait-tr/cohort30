@@ -1,4 +1,4 @@
-# Lesson plan No. 21 dated 05/07/2023:
+# Lesson plan No. 23 dated 05/07/2023:
 
 1. Discussion of homework:
 
@@ -29,7 +29,7 @@ implement the following methods in the Arrays class:
 
 ______________________
 
-# План урока № 22 от 10.07.2023:
+# План урока № 23 от 10.07.2023:
 
 1. Обсуждение домашнего задания:
 

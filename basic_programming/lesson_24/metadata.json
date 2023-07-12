@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_23/array_methods/Array100Random.java",
+    "code/hw_23/array_methods/Array100RandomTest.java",
+    "code/hw_22/prime_number/IsPrime.java",
+    "code/hw_22/prime_number/IsPrimeTest.java"
+
+
+  ],
+  "video": ""
+}
