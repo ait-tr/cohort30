@@ -6,8 +6,11 @@
     "code/hw_23/array_methods/Array100Random.java",
     "code/hw_23/array_methods/Array100RandomTest.java",
     "code/hw_22/prime_number/IsPrime.java",
-    "code/hw_22/prime_number/IsPrimeTest.java"
-
+    "code/hw_22/prime_number/IsPrimeTest.java",
+    "code/practice/nod/Nod.java",
+    "code/practice/nod/NodTest.java",
+    "code/practice/nod/NodArgumentAppl.java",
+    "code/practice/WrapperClassesAppl.java"
 
   ],
   "video": ""
