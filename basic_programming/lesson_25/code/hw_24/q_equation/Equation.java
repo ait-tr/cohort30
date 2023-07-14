@@ -1,4 +1,4 @@
-package q_equation;
+package hw_24.q_equation;
 
 public class Equation {
     Double a;
