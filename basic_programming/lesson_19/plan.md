@@ -10,8 +10,8 @@
    Group work
    **Exercise:**
    design the class from the template:
-- class fields (list with types)
-- class methods (offer a list and what they do)
+- class fields (array_list with types)
+- class methods (offer a array_list and what they do)
 - what classes can be child for this class?
 
 Class options:

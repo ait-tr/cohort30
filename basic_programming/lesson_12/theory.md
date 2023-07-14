@@ -2,8 +2,8 @@
 1. Why do we need data arrays?
 
 ## Examples of arrays that you know from life:
-- a list of employees
-- list of cases / assignments
+- a array_list of employees
+- array_list of cases / assignments
 - telephone book
 - ...
 

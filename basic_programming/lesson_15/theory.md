@@ -25,7 +25,7 @@ program code that describes:
 
 ## Create a Class (capsule)
 - Step 1: create fields:
-  - we define the list of types, names of variables and make decisions about the values of modifiers
+  - we define the array_list of types, names of variables and make decisions about the values of modifiers
     *public
     * static
   - when writing code, we go in the opposite direction, first we write:

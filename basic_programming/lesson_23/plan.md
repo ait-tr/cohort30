@@ -1,4 +1,4 @@
-# Lesson plan No. 23 dated 05/07/2023:
+# Lesson plan No. 23 dated 10/07/2023:
 
 1. Discussion of homework:
 

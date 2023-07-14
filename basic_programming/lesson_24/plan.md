@@ -1,4 +1,4 @@
-# Lesson plan No. 21 dated 05/07/2023:
+# Lesson plan No. 24 dated 12/07/2023:
 1. Discussion of homework:
 - array, methods and their testing
 - test method isPrimeNumber
