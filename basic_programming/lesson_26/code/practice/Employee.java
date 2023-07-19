@@ -59,7 +59,7 @@ public abstract class Employee {
     @Override
     public String toString() {
     // воспользуемся классом StringBuilder - это "класс-обертка" для класса String
-        final StringBuilder sb = new StringBuilder("Employee");
+        final StringBuilder sb = new StringBuilder("practice.model.Employee");
         sb.append("id = ").append(id);
         sb.append(", firstName = '").append(firstName).append('\'');
         sb.append(", lastName = '").append(lastName).append('\'');

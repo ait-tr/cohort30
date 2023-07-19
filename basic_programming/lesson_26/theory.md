@@ -30,11 +30,11 @@ Shape
 
 
 3. Practice for today:
-    - create an abstract class Employee and define an abstract method calcSalary() in it
+    - create an abstract class practice.model.Employee and define an abstract method calcSalary() in it
 
-    - create child classes Manager, SalesManager and Worker, implement payroll methods in them:
-        - Manager: base + grade*hours
-        - SalesManager: salesValue * percent
+    - create child classes practice.model.Manager, practice.model.SalesManager and Worker, implement payroll methods in them:
+        - practice.model.Manager: base + grade*hours
+        - practice.model.SalesManager: salesValue * percent
         - Worker: grade*hours
 
     - in the EmployeAppl application, hire several employees (up to 10) in the company and calculate the total annual salary.
@@ -93,11 +93,11 @@ Shape (геометрическая фигура)
 
 
 3. Практика на сегодня:
-   - создать абстрактный класс Employee и определить в нем абстрактный метод calcSalary()
+   - создать абстрактный класс practice.model.Employee и определить в нем абстрактный метод calcSalary()
 
-   - создать дочерние классы Manager, SalesManager и  Worker, реализовать в них методы начисления зарплаты:
-     - Manager: base + grade*hours
-     - SalesManager: salesValue * percent
+   - создать дочерние классы practice.model.Manager, practice.model.SalesManager и  Worker, реализовать в них методы начисления зарплаты:
+     - practice.model.Manager: base + grade*hours
+     - practice.model.SalesManager: salesValue * percent
      - Worker: grade*hours
      
    - в приложении EmployeeAppl нанять в компанию несколько сотрудников (до 10) и подсчитать общий 

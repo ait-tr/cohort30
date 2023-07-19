@@ -1,6 +1,6 @@
 package practice;
 
-// Manager: base + grade*hours
+// practice.model.Manager: base + grade*hours
 
 public class Manager extends Employee {
     // поля класса
