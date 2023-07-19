@@ -11,7 +11,7 @@ public class FigureAppl {
 
         // решение "в лоб, перебор руками"
 
-        double s = figure[0].calcArea(10) + figure[1].calcArea(3) + figure[2].calcArea(5) + figure[3].calcArea(10);
+        double s = figure[0].calcArea(figure[0].getLength()) + figure[1].calcArea(figure[1].getLength()) + figure[2].calcArea(5) + figure[3].calcArea(10);
         System.out.println("S = " + s);
 
         double p = figure[0].calcPerimetr(10) + figure[1].calcPerimetr(3) + figure[2].calcPerimetr(5) + figure[3].calcPerimetr(10);
