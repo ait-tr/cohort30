@@ -14,7 +14,8 @@
     "code/practice/model/Employee.java",
     "code/practice/model/Manager.java",
     "code/practice/model/SalesManager.java",
-    "code/practice/model/WageEmployee.java"
+    "code/practice/model/WageEmployee.java",
+    "code/practice/tests/CompanyImplTest.java"
 
   ],
   "video": ""
