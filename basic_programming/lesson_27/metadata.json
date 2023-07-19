@@ -3,13 +3,18 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_25/bus/Bus.java",
-    "code/hw_25/bus/BusAppl.java",
-    "code/practice/Employee.java",
-    "code/practice/EmployeeAppl.java",
-    "code/practice/Manager.java",
-    "code/practice/SalesManager.java",
-    "code/practice/bus/Worker.java"
+    "code/hw_26/shape/Circle.java",
+    "code/hw_26/shape/FigureAppl.java",
+    "code/hw_26/shape/Shape.java",
+    "code/hw_26/shape/Square.java",
+    "code/hw_26/shape/Triangle.java",
+    "code/practice/dao/Company.java",
+    "code/practice/dao/CompanyImpl.java",
+    "code/practice/model/Employee.java",
+    "code/practice/model/Manager.java",
+    "code/practice/model/SalesManager.java",
+    "code/practice/model/WageEmployee.java",
+    "code/practice/tests/CompanyImplTest.java"
 
   ],
   "video": ""
