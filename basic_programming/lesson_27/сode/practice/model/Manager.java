@@ -32,6 +32,7 @@ public class Manager extends Employee {
 	@Override
 	public double calcSalary() {
 		double salary = baseSalary + hours * grade; // почасовая ставка
+
 		if (salary < hours * minWage) { // если получилось меньше минимальной зарплаты, то назначаем минималку
 			salary = hours * minWage;
 		}
