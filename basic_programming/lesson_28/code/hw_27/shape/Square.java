@@ -7,13 +7,13 @@ public class Square extends Shape {
     }
 
     @Override
-    public double calcArea(double length) {
-        return length * length;
+    public double calcArea() {
+        return length * length; // площадь квадрата
     }
 
     @Override
-    public double calcPerimetr(double length) {
+    public double calcPerimetr() {
         return 4 * length;
-    }
+    } // периметр
 
 }

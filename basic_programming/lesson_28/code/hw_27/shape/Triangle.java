@@ -6,12 +6,12 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public double calcArea(double length) {
-        return length * length * Math.sqrt(3)/4;
+    public double calcArea() {
+        return length * length * Math.sqrt(3)/4; // площадь треугольника
     }
 
     @Override
-    public double calcPerimetr(double length) {
-        return 3 * length;
+    public double calcPerimetr() {
+        return 3 * length; // периметр
     }
 }

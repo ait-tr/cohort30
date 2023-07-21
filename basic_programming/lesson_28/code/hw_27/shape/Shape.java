@@ -5,21 +5,25 @@ package hw_27.shape;
 //        один треугольник и один квадрат. Рассчитайте общую площадь и общий периметр всех фигур из массива фигур.
 
 public abstract class Shape {
-    double length;
+    double length; // длина какого-то ребра для фигуры, для окружности - радиус, для квадрата - сторона,
+    // для треугольника - сторона
 
+    // конструктор
     public Shape(double length) {
         this.length = length;
     }
 
+    // геттер
     public double getLength() {
         return length;
     }
-
+    // сеттер
     public void setLength(double length) {
         this.length = length;
     }
 
-    public abstract double calcArea(double length);
-    public abstract double calcPerimetr(double length);
+    public abstract double calcArea(); // тело метода отсутствует!
+
+    public abstract double calcPerimetr(); // тело метода отсутствует!
 
 }
