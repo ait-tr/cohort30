@@ -48,7 +48,7 @@ public class FigureAppl {
         double s2 = 0;
         for (int i = 0; i < figure.length; i++) {
             if ( figure[i] instanceof Circle) {
-//                s2 = s2 + figure[i].calcArea(figure[i].getLength());
+//          s2 = s2 + figure[i].calcArea(figure[i].getLength());
             }
         }
         System.out.println("Sum of 2 circles area is ( other way of calculation ) = " + s2);

@@ -34,13 +34,13 @@ _________________________________________________________
 А после имплементируем эти методы в классе так, чтобы тесты проходили.
 
 ## Checklist for Unit tests for CRUD operations
-   1.Create
-- add regular record (assertTrue)
-- add exist record (assertFalse)
-- add null record (assertFalse)
-- checking add record when size is full (assertFalse)
+   1.Create (or add)
+- add regular record (assertTrue) // метод boolean, если добавляет, то возвращает true
+- add exist record (assertFalse) // метод boolean, не должен добавлять дубликат, возвращает false
+- add null record (assertFalse) // метод boolean, не долженн сделать, возвращает false
+- checking add record when size is full (assertFalse) // не можем выйти за размер массива
 
-  2.Read
+  2.Read (or find)
 - read exist record (assertEquals)
 - read null/not exist record (assertFalse)
 
