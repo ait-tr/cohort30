@@ -47,5 +47,6 @@ public class CompanyImplTest {
 
     @Test
     void printEmployees() {
+        company.printEmployees();
     }
 }

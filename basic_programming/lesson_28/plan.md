@@ -1,10 +1,10 @@
-# Lesson plan No. 27 dated 19/07/2023:
+# Lesson plan No. 28 dated 21/07/2023:
 1. Discussion of homework:
 - abstract class Shape and its methods
+- search for duplicates in an array
 
 2. Topic of the lesson:
-- interfaces in Java and how to use them
-  see section Theory
+- development of methods of the CompanyImpl class using the TDD approach
 
 3. Practice:
 - create an interface Company, define the necessary methods in it
@@ -14,14 +14,14 @@
 
 ______________________
 
-# План урока № 27 от 19.07.2023:
+# План урока № 28 от 21.07.2023:
 
 1. Обсуждение домашнего задания:
-- абстрактный класс Shape и его методы
+- абстрактный класс Shape и его методы 
+- поиск дубликатов в массиве
 
 2. Тема занятия:
-- интерфейсы в Java и как их использовать
-см. раздел Теория
+- разработка методов класса CompanyImpl, используя подход TDD
 
 3. Практика:
  - создать interface Company, определить в нем необходимые методы 

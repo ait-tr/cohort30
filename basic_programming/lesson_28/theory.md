@@ -33,3 +33,22 @@ _________________________________________________________
 необходимая функциональность(методы). Потом пишем тесты, для этих методов. 
 А после имплементируем эти методы в классе так, чтобы тесты проходили.
 
+## Checklist for Unit tests for CRUD operations
+   1.Create
+- add regular record (assertTrue)
+- add exist record (assertFalse)
+- add null record (assertFalse)
+- checking add record when size is full (assertFalse)
+
+  2.Read
+- read exist record (assertEquals)
+- read null/not exist record (assertFalse)
+
+  3.Update
+- checking for data updates (assertEquals or assertTrue)
+
+  4.Delete/Remove
+- remove regular record (assertTrue)
+- remove not exist record (assertNull or assertFalse)
+- remove null (assertFalse) (edited) 
+
