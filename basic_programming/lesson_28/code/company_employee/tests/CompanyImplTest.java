@@ -9,8 +9,6 @@ import company_employee.model.WageEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import org.junit.jupiter.api.Assertions.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CompanyImplTest {
@@ -21,24 +19,26 @@ public class CompanyImplTest {
     void setUp() {
         company = new CompanyImpl(5);
         firm = new Employee[4];
+        // создаем работников
         firm[0] = new Manager(100, "John","Smith",174,5000,5);
         firm[1] = new SalesManager(101, "Bread", "Pitt", 174, 300000, 0.1);
         firm[2] = new SalesManager(102, "Julia", "Roberts", 174, 300000, 0.1);
         firm[3] = new WageEmployee(103, "Robert", "Robert", 80,20 );
 
-//        for (int i = 0; i < firm.length; i++) {
-//            company.addEmployee(firm[i]);
-//        }
+        // добавляем сотрудников в компанию
+        for (int i = 0; i < firm.length; i++) {
+            company.addEmployee(firm[i]);
+        }
 
     }
 
     @Test
     void addEmployee() {
         assertFalse(company.addEmployee(null)); // нельзя добавить "пустого" сотрудника
-        assertTrue(company.addEmployee(firm[0])); // можно добавить сотрудника
-        assertTrue(company.addEmployee(firm[1])); // можно добавить сотрудника
-        assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
-        assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
+//        assertTrue(company.addEmployee(firm[0])); // можно добавить сотрудника
+//        assertTrue(company.addEmployee(firm[1])); // можно добавить сотрудника
+//        assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
+//        assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
         assertEquals(4, company.size());
         Employee employee = new SalesManager(106, "Peter", "Petrov", 180, 40000, 0.1);
         assertTrue(company.addEmployee(employee));
@@ -51,14 +51,21 @@ public class CompanyImplTest {
 
     @Test
     void removeEmployee() {
+        System.out.println(company.size());
+        assertEquals(firm[2], company.removeEmployee(102));
+        System.out.println(company.size());
     }
 
     @Test
     void findEmployee() {
+        System.out.println(company.size());
+        assertEquals(firm[1], company.findEmployee(101));
+
     }
 
     @Test
     void size() {
+
     }
 
     @Test

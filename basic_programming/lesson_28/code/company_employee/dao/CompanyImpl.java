@@ -25,6 +25,22 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee removeEmployee(int id) {
+        // алгоритм удаления сотрудника из массива по его id
+        // ищем в цикле по всем employee (перебираем в цикле, обегаем массив)
+        // если нашелся сотрудник с заданным id,
+        // 1. сохранить удаляемого сотрудника victim в объектную переменную
+        // 2. на место удаленного переносим последнего в массиве
+        // 3. последнего затираем с помощью null
+        // 4. size-- - уменьшаем размер массива
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getId() == id ) {
+                Employee victim = employees[i];
+                employees[i] = employees[size - 1];
+                employees[size - 1] = null;
+                size--;
+                return victim;
+            }
+        }
         return null;
     }
 
