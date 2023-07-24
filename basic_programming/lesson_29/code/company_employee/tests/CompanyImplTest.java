@@ -35,10 +35,10 @@ public class CompanyImplTest {
     @Test
     void addEmployee() {
         assertFalse(company.addEmployee(null)); // нельзя добавить "пустого" сотрудника
-//        assertTrue(company.addEmployee(firm[0])); // можно добавить сотрудника
-//        assertTrue(company.addEmployee(firm[1])); // можно добавить сотрудника
-//        assertTrue(company.addEmployee(firm[2])); // можно добавить сотрудника
-//        assertTrue(company.addEmployee(firm[3])); // можно добавить сотрудника
+        assertFalse(company.addEmployee(firm[0])); // нельзя добавить сотрудника, он уже есть в компании
+        assertFalse(company.addEmployee(firm[1])); // нельзя добавить сотрудника, он уже есть в компании
+        assertFalse(company.addEmployee(firm[2])); // нельзя добавить сотрудника, он уже есть в компании
+        assertFalse(company.addEmployee(firm[3])); // нельзя добавить сотрудника, он уже есть в компании
         assertEquals(4, company.size());
         Employee employee = new SalesManager(106, "Peter", "Petrov", 180, 40000, 0.1);
         assertTrue(company.addEmployee(employee));
@@ -60,12 +60,12 @@ public class CompanyImplTest {
     void findEmployee() {
         System.out.println(company.size());
         assertEquals(firm[1], company.findEmployee(101));
-
     }
 
     @Test
     void size() {
-
+        System.out.println(company.size());
+        assertEquals(4, company.size()); // в компании уже есть 4 работника
     }
 
     @Test
