@@ -4,19 +4,8 @@
   "homework": "homework.md",
   "code": [
     "code/hw_28/shape/Circle.java",
-    "code/hw_28/shape/FigureAppl.java",
-    "code/hw_28/shape/Shape.java",
-    "code/hw_28/shape/Square.java",
-    "code/hw_28/shape/Triangle.java",
-    "code/company_employee/dao/Company.java",
-    "code/company_employee/dao/CompanyImpl.java",
-    "code/company_employee/model/Employee.java",
-    "code/company_employee/model/Manager.java",
-    "code/company_employee/model/SalesManager.java",
-    "code/company_employee/model/WageEmployee.java",
-    "code/company_employee/tests/CompanyImplTest.java",
-    "code/hw_28/duplicates_in_array/DuplicateArray.java",
-    "code/hw_28/duplicates_in_array/DuplicateArrayTest.java",
+    "code/hw_28/shape/FigureAppl.java"
+
   ],
   "video": ""
 }

@@ -15,13 +15,6 @@ public class DuplicateArray {
 
 
 
-
-
-
-
-
-
-
     public int displayArr(int[] arr) {
         int count = 0;
         int a = 100; // размер элементов.
