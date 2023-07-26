@@ -1,4 +1,4 @@
-# Lesson plan No. 28 dated 21/07/2023:
+# Lesson plan No. 30 dated 26/07/2023:
 1. Discussion of homework:
 - abstract class Shape and its methods
 - search for duplicates in an array
@@ -14,10 +14,10 @@
 
 ______________________
 
-# План урока № 28 от 21.07.2023:
+# План урока № 30 от 26.07.2023:
 
 1. Обсуждение домашнего задания:
-- тестирование методов для класса Shape
+- расширение класса Shape классами Rectangle и 
 - поиск дубликатов в массиве -> давайте напишем алгоритм
 
 2. Тема занятия:
