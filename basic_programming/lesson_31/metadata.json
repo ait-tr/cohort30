@@ -3,9 +3,10 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/cars/dao/Garage.java",
-    "code/cars/dao/GarageImpl.java",
-    "code/cars/model/Car.java",
+    "code/hw_30/cars/dao/Garage.java",
+    "code/hw_30cars/dao/GarageImpl.java",
+    "code/hw_30/cars/model/Car.java",
+    "code/hw_30/test/GarageTest.java",
     "code/duplicates_in_array/DuplicateArray.java",
     "code/duplicates_in_array/DuplicateArrayTest.java"
 
