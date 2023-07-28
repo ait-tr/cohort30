@@ -1,5 +1,12 @@
 # Generics in Java
+Starting with Java 5, Generics appeared in the language - parameterized types and methods.
+The task of generics is to make it possible to write universal strongly typed code in which the solution
+about konkrektny type is postponed "for later".
 
+For example, the type in which an object "specializes" is not determined at the time the class is created,
+but at the time of object creation.
+
+The (generic) parameter is indicated in angle brackets - <T>.
 
 
 _________________________________________________________
