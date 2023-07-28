@@ -1,6 +1,6 @@
 package practice;
 
-public class Wrapper2Appl {
+public class JsonWrapper2Appl {
     public static void main(String[] args) {
 
         JsonWrapper2<String> wrapper2 = new JsonWrapper2<>("10");
