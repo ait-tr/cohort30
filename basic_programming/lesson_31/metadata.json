@@ -7,8 +7,10 @@
     "code/hw_30/cars/dao/GarageImpl.java",
     "code/hw_30/cars/model/Car.java",
     "code/hw_30/tests/GarageTest.java",
-    "code/duplicates_in_array/DuplicateArray.java",
-    "code/duplicates_in_array/DuplicateArrayTest.java"
+    "code/practice/JsonWrapper1.java",
+    "code/practice/JsonWrapper1Appl.java",
+    "code/practice/JsonWrapper2.java",
+    "code/practice/JsonWrapper2Appl.java"
 
   ],
   "video": ""
