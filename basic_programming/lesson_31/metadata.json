@@ -6,7 +6,7 @@
     "code/hw_30/cars/dao/Garage.java",
     "code/hw_30/cars/dao/GarageImpl.java",
     "code/hw_30/cars/model/Car.java",
-    "code/hw_30/test/GarageTest.java",
+    "code/hw_30/tests/GarageTest.java",
     "code/duplicates_in_array/DuplicateArray.java",
     "code/duplicates_in_array/DuplicateArrayTest.java"
 
