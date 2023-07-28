@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/cars/dao/Garage.java",
+    "code/cars/dao/GarageImpl.java",
+    "code/cars/model/Car.java",
+    "code/duplicates_in_array/DuplicateArray.java",
+    "code/duplicates_in_array/DuplicateArrayTest.java"
+
+  ],
+  "video": ""
+}
