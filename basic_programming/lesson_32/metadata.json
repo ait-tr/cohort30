@@ -3,7 +3,8 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_30/cars/dao/Garage.java"
+    "code/practice/cats/Cat.java",
+    "code/practice/cats/CatTest.java"
 
   ],
   "video": ""
