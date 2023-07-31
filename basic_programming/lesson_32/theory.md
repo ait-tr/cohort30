@@ -1,5 +1,27 @@
 # Generics in Java
+1. Um ein Array von Objekten zu sortieren, müssen Sie eine Regel zum Vergleichen von Objekten definieren.
+   Das heißt, es muss eine Methode geben, die bestimmt, welches der beiden Objekte bedingt größer, kleiner oder gleich ist.
 
+   Sie können Objekte nur anhand des Inhalts eines der Felder oder durch Bildung eines logischen Ausdrucks anhand mehrerer Felder vergleichen.
+   Die Felder haben entweder einen numerischen Typ, in diesem Fall wird der Vergleich durch eine mathematische Methode durchgeführt, oder einen String-Typ, in diesem Fall erfolgt der Vergleich
+   geschieht alphabetisch durch Gleichheit (lexikografisch-grafische Methode).
+
+2. Java verfügt über eine Comparable<T>-Schnittstelle mit einer einzelnen abstrakten Methode int CompareTo(T e).
+   Wir waren uns einig, dass, wenn die Methode „compareTo“ eine positive Zahl zurückgibt, das aktuelle Objekt (dies) bedingt ist
+   mehr als ein Methodenargument. Wenn eine negative Zahl zurückgegeben wird, dann bedingt weniger.
+   Wenn Null, dann sind dieses und das empfangene Argument gemäß den in der Methode angegebenen Vergleichskriterien gleich.
+
+   Um eine Klasse sortierbar zu machen, muss sie Implements Comparable<T> hinzufügen und die Methode int CompareTo(T e) implementieren.
+
+3. Java verfügt über eine Comparator<T>-Schnittstelle mit einer einzelnen abstrakten Methode int Compare(T e1, T e2).
+   Das Funktionsprinzip ist das gleiche wie in der Comparable-Schnittstelle, nur vergleichen wir hier nicht dieses und das Argument (e),
+   und zwei Argumente (e1 und e2).
+
+4. Mit den Schnittstellen Comparable und Comparator können Sie Arrays von Objekten sortieren.
+   Wenn alle Elemente des Arrays vergleichbar sind, wird beim Sortieren die Entscheidung getroffen, zwei Elemente des Arrays zu vertauschen oder nicht
+   werden basierend auf dem Ergebnis der CompareTo-Methode akzeptiert.
+   Wenn zur Sortierung zusätzlich zum Array selbst ein Objekt vom Typ Comparator übergeben wird,
+   Anschließend wird die Entscheidung, die Elemente des Arrays neu anzuordnen, auf der Grundlage des Ergebnisses der Vergleichsmethode getroffen.
 
 _________________________________________________________
 
