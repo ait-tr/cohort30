@@ -58,8 +58,6 @@ class CatTest {
 
     }
 
-
-
     // ______________Methods____________
     public void printArray(Object[] arr) {
         for (int i = 0; i < arr.length; i++) {
