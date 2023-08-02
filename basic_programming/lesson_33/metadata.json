@@ -3,8 +3,8 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/practice/cats/Cat.java",
-    "code/practice/cats/CatTest.java"
+    "code/hw_32/cars/Car.java",
+    "code/hw_32/cars/CarTest.java"
 
   ],
   "video": ""
