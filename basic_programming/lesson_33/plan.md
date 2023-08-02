@@ -43,7 +43,7 @@ ______________________
 - bubbleSort массива объектов по условию в Comparator<T>
 
 После написания методов произвести их тестирование на массивах целых чисел, строк и объектов класса
-Soldier (name, height, waight, profile).
+Soldier (name, height, weight, profile). Profile = 1 до 99.
 
 
 
