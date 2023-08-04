@@ -1,4 +1,4 @@
-# Lesson plan No. 33 dated 02/08/2023:
+# Lesson plan No. 34 dated 04/08/2023:
 
 1. Testing ArrayTools on arrays of three types:
 - Integer
@@ -15,7 +15,7 @@
 
 ______________________
 
-# План урока № 33 от 02.08.2023:
+# План урока № 34 от 04.08.2023:
 
 1. Тестируем ArrayTools на массивах трех типов: 
 - Integer
