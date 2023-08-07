@@ -23,13 +23,46 @@ class CityTest {
         cities[4] = new City("New York", 8_500_000);
         cities[5] = new City("Dallas", 1_300_000);
     }
-
     // метод для печати массива + строка-анонс списка
     private void printArray(Object[] arr, String title) {
         System.out.println("===== " + title + " =====");
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
+    }
+
+        // будем искать город в массиве методом BinarySearch и смотреть, что он нам вернет
+        // BinarySearch можно применять ТОЛЬКО к ОТСОРТИРОВАННОМУ массиву
+    @Test
+    void testBinarySearch(){
+        printArray(cities, " Original array");
+        Arrays.sort(cities); // сортировка в "естественном" порядке
+        printArray(cities, "Natural order (population)");
+// теперь можно применять BinarySearch
+        City pattern = new City(null, 3_000_000);
+        int index = Arrays.binarySearch(cities, pattern);
+        System.out.println("Index = " + index);
+    }
+    // сортировку по имени (по алфавиту), сделаем с помощью Comarator
+    @Test
+    void testBinarySearch1() {
+        printArray(cities, " Original array");
+       Comparator<City> cityComparator = (c1, c2) -> c1.getName().compareTo(c2.getName());
+
+//        Comparator<City> cityComparator = new Comparator<City>() {
+//            @Override
+//            public int compare(City o1, City o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        };
+
+  //     Comparator<City> cityComparator = Comparator.comparing(City::getName); // сравниваем объекты класса City по именам
+        Arrays.sort(cities, cityComparator); // выполнили сортировку
+        printArray(cities, "Sort by name");
+        City pattern = new City ("Chicago", 0);
+        int index = Arrays.binarySearch(cities, pattern);
+        System.out.println("Index = " + index);
+
     }
 
 

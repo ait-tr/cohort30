@@ -38,6 +38,6 @@ public class City implements Comparable<City>{
     @Override
     public int compareTo(City o) {
         //return this.population - o.population;
-        return Integer.compare(population, o.population);
+        return Integer.compare(population, o.population); // по размеру населения
     }
 }
