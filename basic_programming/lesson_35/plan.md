@@ -12,6 +12,7 @@
 
 3. Workshop on the example of the City class
 
+4. ENUM
 
 ______________________
 
