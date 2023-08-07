@@ -47,7 +47,8 @@ class CityTest {
     @Test
     void testBinarySearch1() {
         printArray(cities, " Original array");
-       Comparator<City> cityComparator = (c1, c2) -> c1.getName().compareTo(c2.getName());
+
+        Comparator<City> cityComparator = (c1, c2) -> c1.getName().compareTo(c2.getName());
 
 //        Comparator<City> cityComparator = new Comparator<City>() {
 //            @Override
@@ -57,14 +58,27 @@ class CityTest {
 //        };
 
   //     Comparator<City> cityComparator = Comparator.comparing(City::getName); // сравниваем объекты класса City по именам
-        Arrays.sort(cities, cityComparator); // выполнили сортировку
+        Arrays.sort(cities, cityComparator); // выполнили сортировку по имени
         printArray(cities, "Sort by name");
         City pattern = new City ("Chicago", 0);
-        int index = Arrays.binarySearch(cities, pattern);
+        int index = Arrays.binarySearch(cities, pattern, cityComparator); // поиск по имени
         System.out.println("Index = " + index);
-
     }
 
-
+    // увеличиваем длину массива в 2 раза
+    @Test
+    void testArrayCopy() {
+        printArray(cities, " Original array");
+        City[] citiesCopy = Arrays.copyOf(cities, cities.length * 2);
+        printArray(citiesCopy, "citiesCopy before sorting" );
+        // пытаемся провести сортировку этого массива "натуральным" способом
+        //       Arrays.sort(citiesCopy);
+        printArray(citiesCopy, "citiesCopy after sorting ");
+        // массив с null внутри не сортируется стандартрным образом
+        Comparator<City> cityComparator = (c1, c2) -> c1.getName().compareTo(c2.getName());
+        Arrays.sort(citiesCopy, 0, cities.length, cityComparator);
+        printArray(citiesCopy, "citiesCopy after sorting ");
+        // сортировать можно только без null, ту часть массива, где их нет
+    }
 
 }
