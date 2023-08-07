@@ -1,5 +1,7 @@
 package practice.city;
 
+import practice.city.City;
+
 import java.util.Objects;
 
 public class City implements Comparable<City>{

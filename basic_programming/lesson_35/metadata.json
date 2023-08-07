@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_34/array_methods/ArrayTools.java",
+    "code/hw_34/array_methods/ArrayToolsTest.java",
+    "code/hw_34/model/Soldier.java",
+    "code/practice/city/City.java",
+    "code/practice/city/CityTest.java"
+
+  ],
+  "video": ""
+}

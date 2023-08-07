@@ -2,11 +2,10 @@ package practice.city;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import practice.city.City;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CityTest {
 // вызвать тестируемый класс
@@ -18,7 +17,7 @@ class CityTest {
 
         city = new City[10]; // создаем массив
 
-        city[0] = new City("Berlin", 3645000, 60, "13555");
+        city[0] = new City ("Berlin", 3_500_000, 60, "10001");
         city[8] = new City("Berlin", 36000, 50, "10009");
         city[1] = new City("Munchen", 1545000, 45, "85555");
         city[2] = new City("Bamberg", 400000, 35, "96138");
