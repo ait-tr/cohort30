@@ -2,7 +2,6 @@ package practice_33.city;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import practice_36.city.City;
 
 import java.util.Arrays;
 import java.util.Comparator;
