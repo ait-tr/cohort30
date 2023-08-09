@@ -1,4 +1,4 @@
-package practice;
+package practice_36.city;
 
 import org.junit.jupiter.api.BeforeEach;
 

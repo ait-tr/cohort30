@@ -1,10 +1,8 @@
 package practice.city;
 
-import practice.city.City;
-
 import java.util.Objects;
 
-public class City implements Comparable<City>{
+public class City implements Comparable<practice_36.city.City>{
     private String name;
     private int population;
     private int pollution;
@@ -58,7 +56,7 @@ public class City implements Comparable<City>{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        City city = (City) o;
+        practice_36.city.City city = (practice_36.city.City) o;
         return Objects.equals(name, city.name) && Objects.equals(postcode, city.postcode);
     }
 
@@ -68,7 +66,7 @@ public class City implements Comparable<City>{
     }
 
     @Override
-    public int compareTo(City o) { // City o - это второй объект из сравниваемых, а где первый объект, с которым происходит сравнение?
+    public int compareTo(practice_36.city.City o) { // City o - это второй объект из сравниваемых, а где первый объект, с которым происходит сравнение?
        // return this.name.compareTo(o.name); // сортируем по именам по алфавиту, таков естественный порядок для этого класса
         return -(this.population - o.population); // сортируем по кол-ву населения и большие города - сверху
     }
