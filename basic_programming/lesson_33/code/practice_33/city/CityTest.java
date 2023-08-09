@@ -1,4 +1,4 @@
-package practice.city;
+package practice_33.city;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

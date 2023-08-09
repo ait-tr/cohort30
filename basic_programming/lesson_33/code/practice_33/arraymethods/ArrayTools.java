@@ -1,4 +1,4 @@
-package practice.arraymethods;
+package practice_33.arraymethods;
 
 import java.util.function.Predicate;
 

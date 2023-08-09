@@ -5,9 +5,9 @@
   "code": [
     "code/hw_32/cars/Car.java",
     "code/hw_32/cars/CarTest.java",
-    "code/practice/city/City.java",
-    "code/practice/city/CityTest.java",
-    "code/practice/array_methods/ArrayTools.java"
+    "code/practice_33/city/City.java",
+    "code/practice_33/city/CityTest.java",
+    "code/practice_33/array_methods/ArrayTools.java"
 
   ],
   "video": ""
