@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +28,7 @@ class CatTest {
     @Test
     void testSort(){
         printArray(cats, "Original array");
-        Arrays.sort(cats);
+        Arrays.sort(cats); // метод sort - сортирует в "естественном" прядке, который определен в классе Cat
         printArray(cats, "Sorting by age");
     }
 
@@ -41,17 +42,20 @@ class CatTest {
 
     @Test
     void testBinarySearch(){
+        // бинарный поиск работает ТОЛЬКО с ОТСОРТИРОВАННЫМ МАССИВОМ
      // печать массива как есть
-
-
+    printArray(cats, "Original array");
     // сортировка компаратором по весу
-
-
+        Comparator<Cat> catComparator = Comparator.comparing(Cat :: getWeight);
+        Arrays.sort(cats,catComparator);
+        printArray(cats, "Sorting by weight");
     // поиск BinarySearch существующего элемента
-
-
+        Cat  pattern = new Cat("", 0, "", 9.0);
+        int index = Arrays.binarySearch(cats, pattern, catComparator);
+        System.out.println(index);
     // поиск BinarySearch НЕсуществующего элемента
-
-
+        Cat  pattern1 = new Cat("", 0, "", 5.0);
+        int index1 = Arrays.binarySearch(cats, pattern1, catComparator);
+        System.out.println(index1);
     }
 }

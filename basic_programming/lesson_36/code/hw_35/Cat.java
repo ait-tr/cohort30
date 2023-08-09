@@ -2,7 +2,7 @@ package hw_35;
 
 import java.util.Objects;
 
-public class Cat implements Comparable<Cat> {
+public class Cat implements Comparable<Cat>{
 
     private String name; // кличка
     private int age; // возраст
@@ -54,8 +54,22 @@ public class Cat implements Comparable<Cat> {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cat cat = (Cat) o;
+        return age == cat.age && Double.compare(weight, cat.weight) == 0 && Objects.equals(name, cat.name) && Objects.equals(color, cat.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, color, weight);
+    }
+
+    @Override
     public int compareTo(Cat o) {
-        // return this.age - o.age;
-        return Integer.compare(this.getAge(), o.getAge()); // сортировка по возрасту
+        // return - Integer.compare(this.getAge(), o.getAge()); // сортируем по годам
+
+        return this.age - o.age; // так тоже можно
     }
 }
