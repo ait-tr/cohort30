@@ -4,7 +4,7 @@
 - Arrays and its methods on the example of the Cat class (or your own class)
 - Cross-cutting example Employee - Company
 
-2. BinarySearch and insert array element:
+2. BinarySearch and insert array element
 
 3. Workshop on the example of the City class
 
@@ -31,7 +31,7 @@ ______________________
 - Arrays и его методы на примере класса Cat (или своего класса)
 - Сквозной пример Employee - Company 
 
-2. BinarySearch и вставка элемента массива:
+2. BinarySearch и вставка элемента массива
 
 3. Практикум на примере класса City
 
