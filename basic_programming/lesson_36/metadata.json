@@ -1,0 +1,13 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_35/Cat.java",
+    "code/hw_35/CatTest.java",
+    "code/practice/city/City.java",
+    "code/practice/city/CityTest.java"
+
+  ],
+  "video": ""
+}

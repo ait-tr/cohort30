@@ -1,31 +1,28 @@
-# Lesson plan No. 34 dated 04/08/2023:
+# Lesson plan No. 36 dated 09/08/2023:
 
-1. Testing ArrayTools on arrays of three types:
-- Integer
-- String 
-- Soldier
+1. Discussion of homework:
+    - bubble sort for arrInt and arrStr
+    - sort Soldiers by weight, by weight and height
 
-
-2. Methods Arrays.toString, Arrays.sort, Arrays.binarySearch
-   see theory section
-
+2. The Arrays class and its methods:
+    - Methods Arrays.copyOf, Arrays.copyOfRange, System.arraycopy
+    - Searching BinarySearch and using it to insert an element into an array
 
 3. Workshop on the example of the City class
 
-4. ENUM
 
+4.ENUM  
 ______________________
 
-# План урока № 35 от 07.08.2023:
+# План урока № 36 от 09.08.2023:
 
 1. Обсуждение домашнего задания:
-- bubble sort для arrInt и arrStr
-- сортировка Soldiers по весу, по весу и росту
+   - bubble sort для arrInt и arrStr
+   - сортировка Soldiers по весу, по весу и росту
 
 2. Класс Arrays и его методы:
-
-- Методы Arrays.copyOf, Arrays.copyOfRange, System.arraycopy
-- Поиск BinarySearch и его использование для вставки элемента в массив
+   - Методы Arrays.copyOf, Arrays.copyOfRange, System.arraycopy
+   - Поиск BinarySearch и его использование для вставки элемента в массив
 
 3. Практикум на примере класса City
 
