@@ -6,7 +6,6 @@ public class Employee implements Comparable<Employee>{
     String name; // имя
     int age; // возраст
     int experience; // стаж работы
-
     String education;
 
     //конструктор на все поля
