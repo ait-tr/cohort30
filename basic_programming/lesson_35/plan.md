@@ -1,4 +1,4 @@
-# Lesson plan No. 36 dated 09/08/2023:
+# Lesson plan No. 35 dated 09/08/2023:
 
 1. Discussion of homework:
     - bubble sort for arrInt and arrStr
@@ -14,7 +14,7 @@
 4.ENUM  
 ______________________
 
-# План урока № 36 от 09.08.2023:
+# План урока № 35 от 09.08.2023:
 
 1. Обсуждение домашнего задания:
    - bubble sort для arrInt и arrStr

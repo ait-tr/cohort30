@@ -1,4 +1,4 @@
-# Lesson plan No. 36 dated 08/09/2023:
+# Lesson plan No. 37 dated 11/08/2023:
 
 1. Discussion of homework:
 - Arrays and its methods on the example of the Cat class (or your own class)
@@ -25,15 +25,10 @@ LATTE
 Offer the user a coffee to choose from, according to the results of the choice, inform the cost of the drink. 
 ______________________
 
-# План урока № 36 от 09.08.2023:
+# План урока № 37 от 11.08.2023:
 
 1. Обсуждение домашнего задания:
-- Arrays и его методы на примере класса Cat (или своего класса)
-- Сквозной пример Employee - Company 
-
-2. BinarySearch и вставка элемента массива
-
-3. Практикум на примере класса City
+- Сквозной пример Employee - Company
 
 4. ENUM 
 - см. раздел телория
@@ -49,7 +44,7 @@ ______________________
   AMERICANO,
   CAPUCCINO,
   LATTE
-Предложите пользователю кофе на выбор, по результатм выбора сообщите стоимость напитка.
+Предложите пользователю кофе на выбор, по результатам выбора сообщите стоимость напитка.
 
 
 
