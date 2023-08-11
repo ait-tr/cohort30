@@ -2,6 +2,8 @@ package hw_36.employee_company.dao;
 
 import hw_36.employee_company.model.Employee;
 
+import java.util.Arrays;
+
 //**Задание 5.**
 //        CompanyImpl реализовать методы для поиска сотрудников по критериям:
 //        - имеющих стаж более 5 лет
@@ -10,15 +12,17 @@ import hw_36.employee_company.model.Employee;
 //
 
 public class CompanyImpl implements Company{
+
+    // это поля класса
     // заводим массив под сотрудников
-    private Employee[] employees;
-
+    private Employee[] employees;  // массив объектов класса Employee
     // кол-во сотрудников
-    private int size;
+    private int size; // это поле отвечает за количество сотрудников
 
+    // это конструктор
     // метод, который получив на вход capacity определяет размер массива employees
     public CompanyImpl(int capacity) {
-        employees = new Employee[capacity];
+        employees = new Employee[capacity]; //
     }
 
     // метод, который добавляет нового сотрудника в массив
@@ -26,9 +30,9 @@ public class CompanyImpl implements Company{
     public boolean addEmployee(Employee employee) {
         // если сотрудник не null ИЛИ size еще не равен длине массива ИЛИ такой сотрудник уже есть, ТО
         if (employee == null || size == employees.length || findEmployee((int) employee.getId()) != null) {
-            return false; // возвращаем false, т.к. его нельзя добавить!
+            return false; // возвращаем false, т.к. сотрудника нельзя добавить!
         }
-        employees[size++] = employee; // добавляем сотрудника в массив
+        employees[size++] = employee; // добавляем сотрудника в массив, и увеличиваем size на 1
         return true; // возвращаем true
     }
 
@@ -72,6 +76,8 @@ public class CompanyImpl implements Company{
         for (int i = 0; i < size; i++) {
             System.out.println(employees[i]);
         }
+        System.out.println("========================");
     }
+
 
 }

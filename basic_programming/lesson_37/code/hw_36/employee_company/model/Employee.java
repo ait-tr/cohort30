@@ -1,12 +1,14 @@
 package hw_36.employee_company.model;
 
-public class Employee implements Comparable<Employee>{
+public abstract class Employee implements Comparable<Employee>{
 
-    long id;
+    //поля, которые описывают объект
+    long id; // идентификатор
     String name; // имя
     int age; // возраст
     int experience; // стаж работы
-    String education;
+    String education; // образование: 4 - real school, 3 - high school, 3 - technical school, 3 - college, 2 - university, 1 - PHD
+
 
     //конструктор на все поля
     public Employee(long id, String name, int age, int experience, String education) {
@@ -69,5 +71,5 @@ public class Employee implements Comparable<Employee>{
     @Override
     public int compareTo(Employee o) {
         return this.name.compareTo(o.name);
-    }
+    } // по имени, в алфавитном порядке
 }

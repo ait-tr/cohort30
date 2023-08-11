@@ -1,11 +1,12 @@
 package hw_36.employee_company.model;
 
 public class Engineer extends Employee{
-
+    // поля класса
     private double baseSalary;
     private int grade;
     private int hours;
 
+    // конструктор класса, по имени он совпадает с наименованием класса, НО ничего не возвращает и не void
     public Engineer(long id, String name, int age, int experience, String education, double baseSalary, int grade, int hours) {
         super(id, name, age, experience, education);
         this.baseSalary = baseSalary;
@@ -13,6 +14,7 @@ public class Engineer extends Employee{
         this.hours = hours;
     }
 
+    // еще один конструктор (это ПОЛИМОРФИЗМ!)
     public Engineer(double baseSalary, int grade, int hours) {
         this.baseSalary = baseSalary;
         this.grade = grade;
