@@ -22,7 +22,7 @@ public class SeasonAppl {
             System.out.println(seasons[i]);
         }
 
-        System.out.println("============original==========");
+        System.out.println("============ordinal==========");
         System.out.println(season.name());
         System.out.println(season.ordinal()); // ordinal - порядковый номер в списке enum
         System.out.println(season.SPRING.ordinal());
