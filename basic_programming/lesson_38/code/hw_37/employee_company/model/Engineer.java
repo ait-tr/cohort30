@@ -1,4 +1,4 @@
-package hw_37.model;
+package hw_37.employee_company.model;
 
 public class Engineer extends Employee {
     // поля класса

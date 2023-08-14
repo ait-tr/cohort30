@@ -1,6 +1,6 @@
-package hw_37.dao;
+package hw_37.employee_company.dao;
 
-import hw_37.model.Employee;
+import hw_37.employee_company.model.Employee;
 
 //**Задание 5.**
 //        CompanyImpl реализовать методы для поиска сотрудников по критериям:

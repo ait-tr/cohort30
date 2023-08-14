@@ -1,8 +1,8 @@
-package hw_37.dao;
+package hw_37.employee_company.dao;
 
-import hw_37.model.Employee;
-import hw_37.model.Engineer;
-import hw_37.model.Worker;
+import hw_37.employee_company.model.Employee;
+import hw_37.employee_company.model.Engineer;
+import hw_37.employee_company.model.Worker;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

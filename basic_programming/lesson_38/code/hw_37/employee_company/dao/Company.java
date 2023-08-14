@@ -1,6 +1,6 @@
-package hw_37.dao;
+package hw_37.employee_company.dao;
 
-import hw_37.model.Employee;
+import hw_37.employee_company.model.Employee;
 
 public interface Company {
 
