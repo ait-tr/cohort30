@@ -1,8 +1,6 @@
-package hw_36.employee_company.dao;
+package hw_37.dao;
 
-import hw_36.employee_company.model.Employee;
-
-import java.util.Arrays;
+import hw_37.model.Employee;
 
 //**Задание 5.**
 //        CompanyImpl реализовать методы для поиска сотрудников по критериям:
@@ -11,7 +9,7 @@ import java.util.Arrays;
 //        - не имеющих высшее образование
 //
 
-public class CompanyImpl implements Company{
+public class CompanyImpl implements Company {
 
     // это поля класса
     // заводим массив под сотрудников

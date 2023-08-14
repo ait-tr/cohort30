@@ -1,0 +1,15 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/hw_36/employee_company/dao/Company.java",
+    "code/hw_36/employee_company/dao/CompanyImpl.java",
+    "code/hw_36/employee_company/dao/CompanyImplTest.java",
+    "code/hw_36/employee_company/model/Employee.java",
+    "code/hw_36/employee_company/model/Engineer.java",
+    "code/hw_36/employee_company/model/Worker.java"
+
+  ],
+  "video": ""
+}
