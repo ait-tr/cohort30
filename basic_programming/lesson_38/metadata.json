@@ -3,12 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_37/employee_company/dao/Company.java",
-    "code/hw_37/employee_company/dao/CompanyImpl.java",
-    "code/hw_37/employee_company/dao/CompanyImplTest.java",
-    "code/hw_37/employee_company/model/Employee.java",
-    "code/hw_37/employee_company/model/Engineer.java",
-    "code/hw_37/employee_company/model/Worker.java"
+    "code/practice/coffee/Coffee.java",
+    "code/practice/coffee/CoffeeMashine.java",
+    "code/practice/month/Month.java",
+    "code/practice/month/MonthAppl.java",
+    "code/practice/season/Season.java",
+    "code/practice/sena/SeasonAppl.java"
 
   ],
   "video": ""
