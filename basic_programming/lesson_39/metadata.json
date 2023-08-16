@@ -1,0 +1,15 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/practice/coffee/Coffee.java",
+    "code/practice/coffee/CoffeeMashine.java",
+    "code/practice/month/Month.java",
+    "code/practice/month/MonthAppl.java",
+    "code/practice/seasons/Season.java",
+    "code/practice/seasons/SeasonAppl.java"
+
+  ],
+  "video": ""
+}
