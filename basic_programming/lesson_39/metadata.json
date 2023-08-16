@@ -3,12 +3,11 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/practice/coffee/Coffee.java",
-    "code/practice/coffee/CoffeeMashine.java",
-    "code/practice/month/Month.java",
-    "code/practice/month/MonthAppl.java",
-    "code/practice/seasons/Season.java",
-    "code/practice/seasons/SeasonAppl.java"
+    "code/hw_38/dao/ToDoList.java",
+    "code/hw_38/dao/ToDoListImpl.java",
+    "code/hw_38/model/Menu.java",
+    "code/hw_38/model/Task.java",
+    "code/hw_38/ToDoAppl.java"
 
   ],
   "video": ""
