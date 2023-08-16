@@ -9,10 +9,12 @@ public enum Menu {
 
     private int menuItem;
 
+    // конструктор
     Menu(int menuItem) {
         this.menuItem = menuItem;
     }
 
+    // геттер и сеттер
     public int getMenuItem() {
         return menuItem;
     }
@@ -21,6 +23,7 @@ public enum Menu {
         this.menuItem = menuItem;
     }
 
+    // метод, void - ничего не возвращает, он печатает
     public static void printMenu(){
         Menu[] menu = Menu.values();
         for (int i = 0; i < Menu.values().length; i++) {

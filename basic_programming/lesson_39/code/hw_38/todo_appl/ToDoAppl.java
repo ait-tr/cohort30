@@ -7,15 +7,11 @@ public class ToDoAppl {
         // greeting
         System.out.println("Welcome to ToDo Application!");
         // print menu
-        Menu menu;
-        Menu.printMenu();
+        Menu.printMenu(); // статический метод вызывается по имени класса
         // ask choice
-
 
         // execute
 
-
-        // ask Continue?
 
     }
 

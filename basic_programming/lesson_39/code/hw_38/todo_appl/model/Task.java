@@ -2,15 +2,18 @@ package hw_38.todo_appl.model;
 
 import java.util.Objects;
 
-public class Task{
-    private int id;
-    private String task;
+public class Task implements Comparable<Task> {
+    // поля класса, они описывают ОБЪЕКТЫ класса
+    private int id; // идентификатор
+    private String task; // содержание задачи
 
-    public Task(int id, String task) {
+    // конструктор
+    public Task(int id, String task) { // по имени совпадает с именем класса, ничего не возвращает и не void
         this.id = id;
         this.task = task;
     }
 
+    // геттеры и сеттеры
     public int getId() {
         return id;
     }
@@ -27,8 +30,9 @@ public class Task{
         this.task = task;
     }
 
+    // метод toString
     @Override
-    public String toString() {
+    public String toString() { // переопределяем для себя, для использования в своей программе, ЭТО ПОЛИМОРФИЗМ
         return "Task{" + "id=" + id + ", task='" + task  + '}';
     }
 
@@ -43,5 +47,10 @@ public class Task{
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    @Override
+    public int compareTo(Task o) {
+        return this.id - o.id; // естественная сортировка по id, от меньшего к большему
     }
 }
