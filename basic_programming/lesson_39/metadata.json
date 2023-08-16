@@ -3,11 +3,11 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/hw_38/dao/ToDoList.java",
-    "code/hw_38/dao/ToDoListImpl.java",
-    "code/hw_38/model/Menu.java",
-    "code/hw_38/model/Task.java",
-    "code/hw_38/ToDoAppl.java"
+    "code/hw_38/todo_appl/dao/ToDoList.java",
+    "code/hw_38/todo_appl/dao/ToDoListImpl.java",
+    "code/hw_38/todo_appl/model/Menu.java",
+    "code/hw_38/todo_appl/model/Task.java",
+    "code/hw_38/todo_appl/ToDoAppl.java"
 
   ],
   "video": ""
