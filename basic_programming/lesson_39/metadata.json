@@ -7,7 +7,9 @@
     "code/hw_38/todo_appl/dao/ToDoListImpl.java",
     "code/hw_38/todo_appl/model/Menu.java",
     "code/hw_38/todo_appl/model/Task.java",
-    "code/hw_38/todo_appl/ToDoAppl.java"
+    "code/hw_38/todo_appl/ToDoAppl.java",
+    "code/practice/for_hw/DateOperation.java",
+    "code/practice/for_hw/DateOperationTest.java"
 
   ],
   "video": ""
