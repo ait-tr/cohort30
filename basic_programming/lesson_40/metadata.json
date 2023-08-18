@@ -4,7 +4,10 @@
   "homework": "homework.md",
   "code": [
     "code/hw_39/DateOperation.java",
-    "code/hw_39/DateOperationTest.java"
+    "code/hw_39/DateOperationTest.java",
+    "code/practice/dao/Album.java",
+    "code/practice/dao/AlbumImpl.java",
+    "code/practice/model/Photo.java"
 
   ],
   "video": ""
