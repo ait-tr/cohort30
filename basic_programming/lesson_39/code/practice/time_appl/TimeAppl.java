@@ -87,19 +87,22 @@ public class TimeAppl {
         System.out.println(gagarin.format(df));
         df = DateTimeFormatter.ofPattern("dd-MMM-yy");
         System.out.println(gagarin.format(df));
-
+        System.out.println("===== Date Formatter =====");
         String date1 = "06/07/2023";
+        System.out.println(date1);
         // String date2 = "2023-02-02";
 
         LocalDate localDate1 = dateParse(date1);
         System.out.println(localDate1);
+        df  = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        System.out.println(localDate1.format(df));
+
         // LocalDate localDate2 = dateParse(date2);
         // System.out.println(localDate2);
     }
     private static LocalDate dateParse(String date) {
        // DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][yyyy-MM-dd]");
         DateTimeFormatter df = DateTimeFormatter.ofPattern("[dd/MM/yyyy][dd.MM.yyyy]");
-
         return LocalDate.parse(date, df);
 //        if (date.contains("-")) {
 //            return LocalDate.parse(date);

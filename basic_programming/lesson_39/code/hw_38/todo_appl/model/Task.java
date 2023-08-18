@@ -6,10 +6,11 @@ public class Task implements Comparable<Task> {
     // поля класса, они описывают ОБЪЕКТЫ класса
     private int id; // идентификатор
     private String task; // содержание задачи
+    private static int nextId;
 
     // конструктор
-    public Task(int id, String task) { // по имени совпадает с именем класса, ничего не возвращает и не void
-        this.id = id;
+    public Task(String task) { // по имени совпадает с именем класса, ничего не возвращает и не void
+        this.id = nextId++;
         this.task = task;
     }
 
@@ -32,8 +33,8 @@ public class Task implements Comparable<Task> {
 
     // метод toString
     @Override
-    public String toString() { // переопределяем для себя, для использования в своей программе, ЭТО ПОЛИМОРФИЗМ
-        return "Task{" + "id=" + id + ", task='" + task  + '}';
+    public String toString() { // переопределяем метод для себя, ЭТО ПОЛИМОРФИЗМ
+        return  (id + 1) + " : " + task;
     }
 
     @Override

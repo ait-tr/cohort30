@@ -2,6 +2,9 @@ package hw_38.todo_appl.dao;
 
 import hw_38.todo_appl.model.Task;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 public interface ToDoList {
 
     // add Task
@@ -18,5 +21,11 @@ public interface ToDoList {
 
     // quantity of tasks
     int quantity();
+
+    // read tasks from file
+    void readTasks() throws IOException;
+
+    // save tasks to file
+    void saveTasks() throws IOException;
 
 }
