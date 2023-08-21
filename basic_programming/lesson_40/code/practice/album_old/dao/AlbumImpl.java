@@ -1,13 +1,13 @@
-package practice.album.dao;
+package practice.album_old.dao;
 
-import practice.album.model.Photo;
+import practice.album_old.model.Photo;
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
-public class AlbumImpl implements Album{
+public class AlbumImpl implements Album {
 
     static Comparator<Photo> comparator = (p1, p2) -> {
         int res = p1.getDate().compareTo(p2.getDate()); // сортировка по дате
@@ -40,6 +40,7 @@ public class AlbumImpl implements Album{
         size++;
         return true;
     }
+
 
     @Override
     public boolean removePhoto(int photoId, int albumId) {

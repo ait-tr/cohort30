@@ -1,6 +1,7 @@
-package practice.album.dao;
+package practice_41.album.dao;
 
-import practice.album.model.Photo;
+import practice.album_old.model.Photo;
+
 import java.time.LocalDate;
 
 public interface Album {

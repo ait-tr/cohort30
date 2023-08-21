@@ -1,18 +1,17 @@
-package practice.album.model;
+package practice_41.album.model;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-public class Photo {
-
-    // поля
+public class Photo implements Comparable<Photo>{
+    //fields of class Photo
     private int albumId;
     private int photoId;
-    private String title;
-    private String url;
+    private String title; // название фото
+    private String url; // сылка на фото
     private LocalDateTime date;
 
-    // конструктор
+    // all fields constructor
     public Photo(int albumId, int photoId, String title, String url, LocalDateTime date) {
         this.albumId = albumId;
         this.photoId = photoId;
@@ -29,6 +28,14 @@ public class Photo {
         return photoId;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -41,23 +48,12 @@ public class Photo {
         return date;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @Override // переопределение (или перегрузка?)
+    @Override
     public String toString() {
-        return "Photo{" +
-                "albumId=" + albumId +
-                ", photoId=" + photoId +
+        return "Photo albumId = " + albumId + ", photoId=" + photoId +
                 ", title='" + title + '\'' +
                 ", url='" + url + '\'' +
-                ", date=" + date +
-                '}';
+                ", date=" + date;
     }
 
     @Override
@@ -73,5 +69,10 @@ public class Photo {
         return Objects.hash(albumId, photoId);
     }
 
-    // конец класса
+
+    @Override
+    public int compareTo(Photo o) {
+        return date.compareTo(o.date); // sort by date LocalDateTime
+    }
 }
+
