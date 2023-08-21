@@ -5,6 +5,7 @@
   "code": [
     "code/practice_41/album/dao/Album.java",
     "code/practice_41/album/dao/AlbumImpl.java",
+    "code/practice_41/album/dao/AlbumImplTest.java",
     "code/practice_41/album/model/Photo.java"
 
   ],
