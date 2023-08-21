@@ -1,9 +1,11 @@
 package practice_41.album.dao;
 
-import practice.album_old.dao.Album;
-import practice.album_old.model.Photo;
+import practice_41.album.dao.Album;
+import practice_41.album.model.Photo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Predicate;
@@ -28,14 +30,18 @@ public class AlbumImpl implements Album {
     @Override
     public boolean addPhoto(Photo photo) {
         // нельзя добавить null, нельзя если photo.length == capacity, нельзя добавить то же самое photo (проверка на два id)
-        // нужно иметь отсортированный массив
-        // нужно применить binarySearch (получим индекс в массиве), чтобы найти место, куда вставить фото
-        // тогда можно делать addPhoto
+        // Нужно иметь отсортированный массив, так как BinarySearch работает только с такими массивами.
+        // Метод BinarySearch находит и возвращает index искомого элемента, если находит.
+        // Если элемент массива не найден, то BinarySearch вернет отрицательное число, где бы должен был стоять искомый элемент
+        // со знаком "минус" и на 1 меньше.
+        // Нам нужно применить binarySearch (получим индекс в массиве), чтобы найти место, куда вставить фото.
+        // Тогда можно выполнить addPhoto.
         if(photo == null || photos.length == size || getPhotoFromAlbum(photo.getPhotoId(), photo.getAlbumId()) != null) {
             return false;
         }
-        int index = Arrays.binarySearch(photos, 0, size, photo, comparator); // нашли место, куда вставить в массив photo
-        index = index >=0 ? index : - index -1;
+        int index = Arrays.binarySearch(photos, 0, size, photo, comparator); // находим индекс с помощью BinarySearch
+        // массив оказывается после binarySearch отсортированным
+        index = index >= 0 ? index : -index - 1; // индекс требует обработки
         System.arraycopy(photos, index, photos, index + 1, size - index); // копируем эл-ты массива от index на 1 место вправо
         photos[index] = photo;
         size++;
@@ -82,7 +88,14 @@ public class AlbumImpl implements Album {
 
     @Override
     public Photo[] getPhotoBetweenDate(LocalDate dateFrom, LocalDate dateTo) {
-        return new Photo[0];
+        // создадим фото с индексом максимально ранней фотографии и фото с максимально большим индексом
+        // сравнивая с этими фото будем искать индексы фото from и to
+        // для поиска опять будем использовать BinarySearch
+        Photo pattern = new Photo(0, Integer.MIN_VALUE, null, null, dateFrom.atStartOfDay());
+        int from = - Arrays.binarySearch(photos, 0, size, pattern, comparator) - 1; // находим индекс
+        pattern = new Photo(0, Integer.MAX_VALUE, null, null, LocalDateTime.of(dateTo, LocalTime.MAX)); // находим правый край
+        int to = - Arrays.binarySearch(photos, from, size, pattern, comparator) - 1;
+        return Arrays.copyOfRange(photos, from, to); // создаем массив с нужными нам фото
     }
 
     @Override

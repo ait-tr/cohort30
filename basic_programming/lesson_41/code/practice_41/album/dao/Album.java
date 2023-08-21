@@ -1,6 +1,6 @@
 package practice_41.album.dao;
 
-import practice.album_old.model.Photo;
+import practice_41.album.model.Photo;
 
 import java.time.LocalDate;
 

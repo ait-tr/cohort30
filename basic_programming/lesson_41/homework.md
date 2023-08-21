@@ -8,13 +8,13 @@ In the ToDoList application, save the list of tasks to a file and read the tasks
 when the application starts.
 
 
-___________________________________________________
-
+__________________________________________________
 **Задача 1.**
-Для приложения Album сделать Menu:
-List, Add, Find, Remove, Save, Exit
-Save должно сохранять созданные Photo в файл построчно.
+Знакомиться с теорией.
+
 
 **Задача 2.**
-В приложении ToDoList сделать сохранение списка задач в файл и считывание задач из файла
-при начале работы приложения.
+Открываем ссылку
+https://www.w3schools.com/java/java_files.asp
+Берём примеры кода и пробуем реализовать у себя.
+
