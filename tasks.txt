@@ -1,6 +1,3 @@
-1 :    go
-2 :    get
-3 :    do
-4 :    clean
-5 :    add
-6 : qwerty
+1 : to do
+2 : to bye
+3 : to go

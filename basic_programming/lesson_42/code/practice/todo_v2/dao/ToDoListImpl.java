@@ -1,8 +1,15 @@
 package practice.todo_v2.dao;
 
-import hw_38.todo_appl.model.Task;
+import practice.todo_v2.model.Task;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class ToDoListImpl implements ToDoList{
+
+    final String OUTPUT = "tasks.txt";
+    final String INPUT = "tasks.txt";
 
 // TODO - add file name for tasks
 
@@ -71,7 +78,15 @@ public class ToDoListImpl implements ToDoList{
         return quantity;
     }
 
-    //TODO - add method saveTasks()
+    @Override
+    public void saveTasks() throws IOException {
+        BufferedWriter bfWhriter = new BufferedWriter(new FileWriter(OUTPUT));
+        for (int i = 0; i < quantity; i++) {
+            String str = String.valueOf(tasks[i]); // переводим tasks в строку
+            bfWhriter.write(str + "\n");
+        }
+        bfWhriter.flush();
+    }
 
 
     //TODO - add method readTasks()

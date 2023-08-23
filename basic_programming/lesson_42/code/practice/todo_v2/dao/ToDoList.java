@@ -1,6 +1,6 @@
 package practice.todo_v2.dao;
 
-import hw_38.todo_appl.model.Task;
+import practice.todo_v2.model.Task;
 
 import java.io.IOException;
 
@@ -20,8 +20,9 @@ public interface ToDoList {
     // quantity of tasks
     int quantity();
 
-    // read tasks from file
+    // TODO read tasks from file
 
-    // save tasks to file
+    // TODO save tasks to file
+    void saveTasks() throws IOException;
 
 }

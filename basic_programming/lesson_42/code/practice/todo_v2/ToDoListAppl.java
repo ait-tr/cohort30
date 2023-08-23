@@ -1,13 +1,15 @@
 package practice.todo_v2;
 
-import hw_38.todo_appl.dao.ToDoListImpl;
-import hw_38.todo_appl.model.Menu;
-import hw_38.todo_appl.model.Task;
+import practice.todo_v2.dao.ToDoList;
+import practice.todo_v2.dao.ToDoListImpl;
+import practice.todo_v2.model.Menu;
+import practice.todo_v2.model.Task;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class ToDoListAppl {
+
     public static void main(String[] args) throws IOException {
         // greeting
         System.out.println("Welcome to ToDo Application!");
@@ -38,7 +40,7 @@ public class ToDoListAppl {
                     Task newTask = new Task(task);
                     toDoList.addTask(newTask);
                     // TODO - сохраняем в файл
-
+                    toDoList.saveTasks();
                     break;
                 }
                 case 3: {
@@ -54,7 +56,7 @@ public class ToDoListAppl {
                     Task removedTask = toDoList.removeTask(id -1);
                     System.out.println(removedTask + " is removed.");
                     // TODO - сохраняем в файл
-
+                    toDoList.saveTasks();
                     break;
                 }
                 case 5:
