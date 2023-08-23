@@ -1,4 +1,126 @@
+# Exceptopns, Try ... catch, throw. FileIO
 
+## Exceptopns, Try ... catch, throw.
+
+An error in a method breaks it at the point of origin of the error, and destroys the entire function stack.
+At the same time, Java creates and "throws" a special object characterizing the error.
+All such objects inherit the **Throwable** class.
+
+All Throwable descendants fall into two categories: **Error** and **Exception**.
+Error - these are errors with which nothing can be done. For example, lack of memory.
+The second category, Exception, is an exception caused by an incorrect program state.
+
+There are two types of errors: **checked** (checked) and **unchecked** (unchecked).
+The compiler "sees" the first type and forces the programmer to react to them somehow.
+How to react to unchecked errors (and whether to react at all) is up to the developer to decide.
+
+Error handling is done using the **try-catch-finally** construct.
+In try blocks, we specify what to do if everything is fine. We handle errors in the catch block.
+The finally block is executed anyway.
+
+We can create our own errors and "throw" them with the throw keyword.
+If we want to create a checked exception, then we can inherit from the Exception class.
+If unchecked, then we inherit the RuntimeException class.
+
+If we encounter a checked exception, but do not want to handle it in this method with
+try-catch and decide to throw this exception to the calling method, you can use the key
+the word throws in the method signature.
+______________________
+
+# Exceptions
+
+Exception - exception, special situation (translated from English)
+
+## Major reasons why an exception Occurs
+* **Invalid user input - invalid user input (80-90% of cases)**
+* Device failure - the device is broken, the power is turned off, etc.
+* Loss of network connection - lost Internet, Ethernet, etc.
+* Physical limitations (out of disk memory) - lack of memory RAM, hard drives
+* Opening an unavailable file - opening an unavailable file
+* * **Code errors - code errors of programmers**
+
+### Differences between Error and Exception that is as follows:
+* **Error:** An Error indicates a **serious problem** that a reasonable application
+  should **not try to catch**.
+* **Exception:** Exception indicates **conditions** that a reasonable application
+  **might try to catch**.
+
+The **try ... catch** construct is used when the program exits.
+incorrectly, Program exit code is different from 0.
+
+### Syntax
+`try { // try
+// Block of code to try
+
+}
+catch(Exception e) { // catch
+// Block of code to handle errors
+}`
+#### Explanations
+The **try** statement allows you to define a block of code
+to be tested for errors while it is being executed.
+
+The **catch** statement allows you to define a block of code
+to be executed, if an error occurs in the try block.
+The **try and catch keywords come in pairs**:
+
+Many exceptions and user errors can be handled by yourself using if , BUT WHY?
+Java developers provide a standard toolkit for this -
+this is the Throwable class (a descendant of the Object class) and its methods.
+
+Examples:
+1. Division by 0;
+2. Out of bounds array;
+3. Checking user input for correctness.
+
+Good article with examples:
+https://www.geeksforgeeks.org/flow-control-in-try-catch-finally-in-java/
+
+try ... catch algorithm
+1. If the program crashes (end code is not equal to 0), work with the user stops
+2. then we look at diagnostics - what is printed at the time the program crashes, there are indications of line numbers
+   in the code where errors occur
+3. These lines should be "dressed" with a try ... catch construction
+
+____________________________________________
+
+## Files I/O
+
+### The file structure contains:
+- directories and subdirectories
+- sequence of nested directories \directory_name\name_of_another_directory\
+- this is called the path (path) to the file
+
+- files: a named area of memory containing two parts in the name, separated by an exact:
+    - file name
+    - name extension, for example .txt, .doc or yuvsch .docx - these are MS Word program files, .jpg, .pdf, which says
+      about the type of information stored in the file.
+
+### Working with files from Java code
+Opening the link
+https://www.w3schools.com/java/java_files.asp
+We take code examples and try to implement them ourselves.
+
+Step 1. File creation
+`import java.io.File; // Import the File class
+File myObj = new File("filename.txt"); // Specify the filename`
+
+Step 2. Writing information to a file
+`FileWriter myWriter = new FileWriter("filename.txt");
+myWriter.write("Files in Java might be tricky, but it is fun enough!");
+myWriter.close();
+`
+Step 3. Reading information from a file
+`File myObj = new File("filename.txt");
+Scanner myReader = new Scanner(myObj);
+while (myReader.hasNextLine()) {
+String data = myReader.nextLine();
+System.out.println(data);`
+`myReader.close();`
+
+____________________________________________
+
+Abstract class **Writer**, contains methods for writing a single character
 
 _____________________________________________
 
