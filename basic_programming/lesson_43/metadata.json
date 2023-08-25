@@ -3,14 +3,10 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/practice/todo_v2/dao/ToDoList.java",
-    "code/practice/todo_v2/dao/ToDoListImpl.java",
-    "code/practice/todo_v2/model/Menu.java",
-    "code/practice/todo_v2/model/Task.java",
-    "code/practice/todo_v2/ToDoListAppl.java",
-    "code/practice/try_catch/TryCatchAppl.java",
-    "code/consultation/ArrayCopyTest.java"
-
+    "code/forum/dao/Forum.java",
+    "code/forum/dao/ForumImpl.java",
+    "code/forum/dao/ForumImplTest.java",
+    "code/forum/model/Post.java"
 
   ],
   "video": ""
