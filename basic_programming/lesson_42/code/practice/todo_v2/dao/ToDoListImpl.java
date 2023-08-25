@@ -2,9 +2,7 @@ package practice.todo_v2.dao;
 
 import practice.todo_v2.model.Task;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class ToDoListImpl implements ToDoList{
 
@@ -79,17 +77,32 @@ public class ToDoListImpl implements ToDoList{
     }
 
     @Override
+    public void readTasks() throws IOException {
+        //TODO - add method readTasks()
+        // задачи надо считывать тоже в цикле по строкам
+        // строку надо превратить в объект task: номер строки - это id, а то, что стоит после ":" - это содержание задачи
+        BufferedReader bfReader = new BufferedReader(new FileReader(INPUT));
+        String str;
+        int countTasks = 0;
+        while ( (str = bfReader.readLine()) != null) {
+            int index = str.indexOf(':'); // нашли индекс символа ":"
+            String t = str.substring(index + 1, str.length()).trim(); // "выкусисли" из строки тест после ":" и до конца строки
+            Task task = new Task(t); // создали новый объект класса Task
+            tasks[countTasks] = task; // поместили эту задачу в массив
+            countTasks++; // счетчик увеличили на 1
+            quantity++;
+        }
+    }
+
+    @Override
     public void saveTasks() throws IOException {
-        BufferedWriter bfWhriter = new BufferedWriter(new FileWriter(OUTPUT));
+        BufferedWriter bfWhriter = new BufferedWriter(new FileWriter(OUTPUT)); // встроенный в Java класс
         for (int i = 0; i < quantity; i++) {
             String str = String.valueOf(tasks[i]); // переводим tasks в строку
             bfWhriter.write(str + "\n");
         }
-        bfWhriter.flush();
+        bfWhriter.flush(); // толчок к исполнению
     }
-
-
-    //TODO - add method readTasks()
 
 
 }

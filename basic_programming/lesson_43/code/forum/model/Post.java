@@ -71,7 +71,7 @@ public class Post {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;  // вернем false, когда сравниваем с null или с объектом другого класса
         Post post = (Post) o;
         return postId == post.postId;
     }

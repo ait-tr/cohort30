@@ -6,7 +6,11 @@
     "code/forum/dao/Forum.java",
     "code/forum/dao/ForumImpl.java",
     "code/forum/dao/ForumImplTest.java",
-    "code/forum/model/Post.java"
+    "code/forum/model/Post.java",
+    "code/hw_42/Forum.java",
+    "code/hw_42/ForumImpl.java",
+    "code/hw_42/ForumTest.java",
+    "code/hw_42/Post.java"
 
   ],
   "video": ""
