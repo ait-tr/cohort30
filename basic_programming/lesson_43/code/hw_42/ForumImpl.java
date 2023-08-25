@@ -1,43 +1,27 @@
-package forum.dao;
+package hw_42;
 
-import forum.model.Post;
+import hw_42.Post;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.function.Predicate;
 
 public class ForumImpl implements Forum{
 
-    private static Comparator<Post> comparator = (p1, p2) -> {
-        int res = p1.getAuthor().compareTo(p2.getAuthor()); // авторы по алфавиту
-        res = res != 0 ? res : p1.getDate().compareTo(p2.getDate()); // посты по дате
-        return res != 0 ? res : Integer.compare(p1.getPostId(), p2.getPostId()); // посты по id
-    };
-
     private Post[] posts;
     private int size;
 
-    public ForumImpl(){
+    public ForumImpl() {
         posts = new Post[0];
     }
-
     @Override
     public boolean addPost(Post post) {
-        //TODO throw RuntimeException if post == null
-        if(post == null){
-            throw new RuntimeException();
-        }
-        if (getPostById(post.getPostId()) != null) {
+        Post tmp = getPostById(post.getPostId());
+        if (post == null || getPostById(post.getPostId()) != null) {
             return false;
         }
         posts = Arrays.copyOf(posts, posts.length + 1);
-        int index = Arrays.binarySearch(posts, 0, size, post, comparator);
-        index = index >= 0 ? index : -index - 1;
-        System.arraycopy(posts, index, posts, index + 1, size - index);
-        posts[index] = post;
+        posts[posts.length - 1] = post;
         size++;
         return true;
     }
@@ -75,25 +59,13 @@ public class ForumImpl implements Forum{
 
     @Override
     public Post[] getPostsByAuthor(String author) {
-        Post pattern = new Post(Integer.MIN_VALUE, author, null, null);
-        pattern.setDate(LocalDateTime.MIN);
-        int from = -Arrays.binarySearch(posts, pattern, comparator) - 1;
-        pattern = new Post(Integer.MAX_VALUE, author, null, null);
-        pattern.setDate(LocalDateTime.MAX);
-        int to = -Arrays.binarySearch(posts, pattern, comparator) - 1;
-        return Arrays.copyOfRange(posts, from, to);
+        return findByPredicate(p -> p.getAuthor().equals(author));
     }
 
     @Override
     public Post[] getPostsByAuthor(String author, LocalDate dateFrom, LocalDate dateTo) {
-        //FIXME increase performance. Hint: use binary search. Upgrade comparator
-        Post pattern = new Post(Integer.MIN_VALUE, author, null, null);
-        pattern.setDate(dateFrom.atStartOfDay());
-        int from = -Arrays.binarySearch(posts, pattern, comparator) - 1;
-        pattern = new Post(Integer.MAX_VALUE, author, null, null);
-        pattern.setDate(LocalDateTime.of(dateTo, LocalTime.MAX));
-        int to = -Arrays.binarySearch(posts, pattern, comparator) - 1;
-        return Arrays.copyOfRange(posts, from, to);
+        return findByPredicate(p -> p.getAuthor().equals(author) && p.getDate().toLocalDate().compareTo(dateFrom) >= 0
+                && p.getDate().toLocalDate().compareTo(dateTo) <= 0);
     }
 
     @Override
