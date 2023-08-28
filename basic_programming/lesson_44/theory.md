@@ -1,13 +1,68 @@
-## Итератор 
+## Iterator
 
-Если объект инкапсулирует внутри себя какое-то множество элементов, и есть необходимость перебрать 
+If the object encapsulates inside itself some set of elements, and there is a need to iterate
+all the elements of this set, then this may be a problem.
+If a getter is created to pass this set, then by returning a reference, we essentially give an unsafe
+access to the set outside of the object. The programmer who has received this access can, without our knowledge,
+modify an object - change the composition of elements, reduce its size, etc.
+If you return a copy of the set, then this can affect performance.
+
+To solve this problem, there is the "Iterator" pattern.
+
+The essence of the pattern is to create a third-party object that knows how to "sort" (iterate) a set
+elements encapsulated in the original object.
+An iterator object should have two functionality:
+1) know how to determine if there is a next element;
+2) return the current element and move on to the next one.
+
+Java has an Iterator<T> interface with two abstract methods: boolean hasNext(),
+returning true if there are still elements, and false if the end of the set has been reached, and T next()
+returns the current element, and translates the "pointer" to the next element.
+The Iterator interface also has an additional default void remove() method,
+which has an empty body. But if we need to implement the correct deletion functionality
+the current element during iteration, then the remove method must be overridden.
+
+The class that encapsulates the set to be iterated can implement the Iterable<T> interface,
+which has only one abstract method Iterator<T> iterator() that returns an iterator for objects
+of this class.
+
+For Iterable objects, you can use a for-each loop. Its signature is this:
+for(T e: "set of T"){
+do something};
+
+In the body of this loop, the variable "e" takes on the value of each element in turn
+(T e: "set of T"){
+do something};
+In the body of this loop, the variable "e" takes in turn the value of each element from the iterated set.
+You cannot modify an iterable in a for-each loop.
+
+
+## Complexity (computational complexity)
+
+The concept of Complexity (computational complexity) allows you to evaluate the effectiveness of algorithmic solutions.
+In simple terms, we can say that the computational complexity says, in proportion to which function grows
+the number of actions when processing a set of elements, if you increase the number of elements of this
+sets.
+
+To describe the computational complexity, the so-called. "Big O notation".
+For example, the notation O(n) indicates the linear complexity of the algorithm.
+And O(log(n)), characterizes the logarithmic complexity.
+_______________________________
+
+## Итератор
+
+Итератор и итерации - это способ перебора всего множества элементов. 
+
+Это системная проблема: 
+**Если объект инкапсулирует внутри себя какое-то множество элементов, и есть необходимость перебрать 
 все элементы этого множества, то с этим может возникнуть проблема. 
 Если для передачи этого множества создать геттер, то возвращая ссылку, мы по сути даем небезопасный 
 доступ к множеству за пределами объекта. Получивший этот доступ программист может без нашего ведома
-модифицировать объект - изменить состав элементов, сократить его размер и т.д.
-Если возвращать копию множества, то это может повлиять на производительность. 
+модифицировать объект - изменить состав элементов, сократить его размер и т.д**.
 
-Для решения этой проблемы существует паттерн "Итератор". 
+**Если возвращать копию множества, то это может повлиять на производительность.**
+
+Для решения этой проблемы существует **паттерн "Итератор"**. 
 
 Суть паттерна это создать сторонний объект, который знает как "перебирать" (итерировать) множество 
 элементов инкапсулированных в исходном объекте. 
@@ -15,8 +70,8 @@
 1) знать как определить есть ли следующий элемент; 
 2) вернуть текущий элемент и перейти к следующему.
 
-В Java существует интерфейс Iterator<T> с двумя абстрактными методами: boolean hasNext(), 
-возвращающий true, если еще есть элементы, и false если дошли до конца множества, и T next() 
+В Java существует интерфейс Iterator<T> с двумя абстрактными методами: **boolean hasNext()**, 
+возвращающий true, если еще есть элементы, и false если дошли до конца множества, и **T next()** 
 возвращающий текущий элемент, и переводящий "указатель" к следующему элементу. 
 В интерфейсе Iterator существует еще дополнительный дефолтный метод void remove(), 
 который имеет пустое тело. Но если нам надо реализовать функциональность корректного удаления 
