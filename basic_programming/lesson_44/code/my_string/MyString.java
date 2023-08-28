@@ -1,6 +1,10 @@
 package my_string;
 
-public class MyString {
+import my_string.model.MyStringIterator;
+
+import java.util.Iterator;
+
+public class MyString implements Iterable<Character> {
 
     // поле класса
     private StringBuilder str; // StringBuilder - это встроенный в Java класс
@@ -32,4 +36,8 @@ public class MyString {
         return str.toString();
     }
 
+    // метод, который возвращает объект типа Iterator<Character>
+    public Iterator<Character> iterator() {
+        return new MyStringIterator(str);
+    }
 }
