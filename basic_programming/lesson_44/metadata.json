@@ -4,8 +4,8 @@
   "homework": "homework.md",
   "code": [
     "code/complexity/Complexity.java",
-    "code/my_string/model/MyStingIterator.java",
-    "code/my_string/MySting.java",
+    "code/my_string/model/MyStringIterator.java",
+    "code/my_string/MyString.java",
     "code/my_string/MyStringAppl.java"
 
   ],
