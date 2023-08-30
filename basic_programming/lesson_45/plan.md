@@ -2,7 +2,6 @@
 
 1. JCF - an overview of the interfaces and classes included in it.
 
-
 2. We write our MyArrayList:
    - IList interface - we define the functionality of working with the list;
    - MyArrayList implements IList - implement methods;
@@ -17,14 +16,13 @@ _________________________________________________
 
 1. JCF - обзор входящих в него интерфейсов и классов.
 
-
 2. Пишем свой MyArrayList:
    - интерфейс IList - определяем функционал работы со списком;
    - MyArrayList implements IList - реализуем методы;
    - по каждому методу оцениваем вычислительную сложность;
    - применяем методы в классе ListAppl.
 
-3. Создаем свой ArrayList на примере класса Bus.
+3. Создаем свой ArrayList на примере целых чисел, строк, класса Bus.
 
 
 
