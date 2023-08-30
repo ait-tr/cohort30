@@ -3,9 +3,9 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/array_list/IList.java",
-    "code/array_list/ListAppl.java",
-    "code/array_list/MyArrayList.java"
+    "code/practice/array_list/IList.java",
+    "code/practice/array_list/ListAppl.java",
+    "code/practice/array_list/MyArrayList.java"
 
   ],
   "video": ""
