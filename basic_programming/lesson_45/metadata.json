@@ -3,10 +3,9 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/complexity/Complexity.java",
-    "code/my_string/model/MyStringIterator.java",
-    "code/my_string/MyString.java",
-    "code/my_string/MyStringAppl.java"
+    "code/array_list/IList.java",
+    "code/array_list/ListAppl.java",
+    "code/array_list/MyArrayList.java"
 
   ],
   "video": ""
