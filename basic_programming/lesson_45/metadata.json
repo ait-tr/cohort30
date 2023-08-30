@@ -1,0 +1,13 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/complexity/Complexity.java",
+    "code/my_string/model/MyStringIterator.java",
+    "code/my_string/MyString.java",
+    "code/my_string/MyStringAppl.java"
+
+  ],
+  "video": ""
+}
