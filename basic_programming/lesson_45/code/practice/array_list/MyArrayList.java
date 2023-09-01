@@ -95,12 +95,19 @@ public class MyArrayList<E> implements IList<E>{
     public E remove(int index) {
         // TODO
         // реализовать самостоятельно по аналогии с boolean add(int index, E element)
-        return null;
+        checkIndex(index);
+        E el = (E) elements[index];
+        System.arraycopy(elements, index + 1, elements, index, --size - index);
+        elements[size] = null;
+        return el;
     }
 
     @Override
     public E set(int index, E element) {
-        return null;
+        checkIndex(index); // проверить индекс
+        E victim = (E) elements[index]; // элемент на месте индекс забираем для возврата из метода, он должен быть типа E
+        elements[index] = element; // ставим на это место новый элемент, который пришел нам на вход метода
+        return victim; // возвращаем затертый элемент
     }
 
     @Override
