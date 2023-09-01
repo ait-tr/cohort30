@@ -1,0 +1,12 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/practice/array_list/IList.java",
+    "code/practice/array_list/ListAppl.java",
+    "code/practice/array_list/MyArrayList.java"
+
+  ],
+  "video": ""
+}

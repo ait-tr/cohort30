@@ -1,6 +1,6 @@
 package hw_36.employee_company.model;
 
-public class Engineer extends Employee{
+public class Engineer extends Employee {
     // поля класса
     private double baseSalary;
     private int grade;

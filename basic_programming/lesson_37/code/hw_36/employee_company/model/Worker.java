@@ -1,6 +1,6 @@
 package hw_36.employee_company.model;
 
-public class Worker extends Employee{
+public class Worker extends Employee {
     private double rate;
     private int hours;
 
