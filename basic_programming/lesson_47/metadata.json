@@ -1,0 +1,19 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/practice/city_bus/model/Bus.java",
+    "code/practice/city_bus/CityBusAppl.java",
+    "code/practice/city_bus/CircularRoute.java",
+    "code/practice/city_bus/BusStopNode.java",
+    "code/practice/company_employee/dao/Company.java",
+    "code/practice/company_employee/dao/CompanyArrayListImpl.java",
+    "code/practice/company_employee/dao/CompanyImpl.java",
+    "code/practice/company_employee/model/Employee.java",
+    "code/practice/company_employee/model/Manager.java",
+    "code/practice/company_employee/model/SalesManager.java",
+    "code/practice/company_employee/model/WageEmployee.java"
+  ],
+  "video": ""
+}
