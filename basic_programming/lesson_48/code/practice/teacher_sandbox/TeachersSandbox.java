@@ -67,5 +67,11 @@ public class TeachersSandbox {
         int y = twoDimArrayFullInit[0].length + twoDimArrayFullInit[1].length; // сколько элементов храниться в массиве [0] + [1]
 
 
+        String str = "hello"; // ячейка1
+
+        str = "HELLO"; //ячейка2, теперь значения в ячейка1 никому не нужны (на них никто не ссылается)
+
+        System.gc(); // gc - сокращенно от garbage collector, вызывает сборщик мусора, который очищает содержимое всех
+        // ячеек на которые никто не ссылается, в нашем примере содержимое ячейка1
     }
 }
