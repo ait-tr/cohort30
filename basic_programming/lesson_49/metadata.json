@@ -1,0 +1,10 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/practice/MyLinkedList",
+    "code/practice/MyLinkedListImpl"
+  ],
+  "video": ""
+}
