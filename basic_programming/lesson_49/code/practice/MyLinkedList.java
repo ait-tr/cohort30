@@ -12,7 +12,7 @@ public interface MyLinkedList {
     // a->b->c->d->e  add(2, f) -> a->b->f->c->d->e
     boolean add(int index, String data) throws IndexOutOfBoundsException;
 
-    // вставляет (заменяет существующий) элемент в конец списка
+    // вставляет (заменяет существующий) элемент по индексу
     // a->b->c->d->e  set(2, f) -> a->b->f->d->e
     boolean set(int index, String data) throws IndexOutOfBoundsException;
 
