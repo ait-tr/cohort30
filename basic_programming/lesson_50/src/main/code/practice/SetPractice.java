@@ -8,9 +8,9 @@ public class SetPractice {
         //тк Set - интерфейс, для создания объекта мы используем конкретную реализацию, например HashSet
         // три основные реализации Set - представлены ниже. вы можете раскомментироавть любую, закомментировав две
         // другие, и посмотреть, что измениться
-        Set<String> set = new HashSet<>();
+//        Set<String> set = new HashSet<>();
 //        Set<String> set = new TreeSet<>();
-//        Set<String> set = new LinkedHashSet<>();
+        Set<String> set = new LinkedHashSet<>();
 
 
         //добавление
@@ -28,7 +28,7 @@ public class SetPractice {
         //.contains() - возвращает true или false в зависимости от того, содержится ли данный элемент в коллекции или нет
         System.out.println(set.contains("one"));
 
-        // ужаляет данный эелемент из коллекции.
+        // удаляет данный эелемент из коллекции.
         set.remove("one");
 
         // возвращает количество элементов в коллекции
@@ -58,7 +58,6 @@ public class SetPractice {
         Set<String> immutable = Set.of("one", "two", "three");
         //immutable.add("four");
         //immutable.remove("one");
-
 
     }
 

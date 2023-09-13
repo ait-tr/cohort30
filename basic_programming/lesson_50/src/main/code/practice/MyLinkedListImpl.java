@@ -9,6 +9,7 @@ public class MyLinkedListImpl implements MyLinkedList {
 
     // Вложенный класс для узла списка
     private static class Node {
+
         String data;  // Данные, хранящиеся в узле
         Node prev;    // Указатель на предыдущий узел
         Node next;    // Указатель на следующий узел
@@ -281,7 +282,6 @@ public class MyLinkedListImpl implements MyLinkedList {
         return index;
     }
 
-
     /**
      * Вспомогательный метод для получения узла по индексу
      *
@@ -306,9 +306,6 @@ public class MyLinkedListImpl implements MyLinkedList {
         // Возвращаем найденный узел
         return current;
     }
-
-
-
 
     // Метод для переворота всего списка
     public MyLinkedList reverseLinkedList() {
@@ -399,6 +396,4 @@ public class MyLinkedListImpl implements MyLinkedList {
 
         return this;
     }
-
-
 }

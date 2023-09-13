@@ -59,6 +59,7 @@ public class House {
 //        return result;
 //    }
 
+
     // плохо определенный метод equals
     @Override
     public boolean equals(Object o) {
@@ -67,9 +68,21 @@ public class House {
 
         House house = (House) o; // создаем новый экземпляр для работы с ним
 
-        return getFloor() == house.getFloor(); // сравнение идет только по этажу, если этаж один и тот же, то считаем,
+        return this.getFloor() == house.getFloor(); // сравнение идет только по этажу, если этаж один и тот же, то считаем,
         // что объекты равны
     }
+
+    public static void main(String[] args) {
+        House h1 = new House(12, "abc", 30.00000001);
+        House h2 = new House(12, "abc", 30.00000002);
+
+        System.out.println(h1 == h2);
+        System.out.println(h1.equals(h2));
+
+        System.out.println("h1 hashCode = " + h1.hashCode());
+        System.out.println("h2 hashCode = " + h2.hashCode());
+    }
+
 
     //плохо определенный метод hashCode
     @Override
