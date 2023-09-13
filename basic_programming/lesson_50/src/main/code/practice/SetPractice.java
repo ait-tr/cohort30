@@ -59,6 +59,22 @@ public class SetPractice {
         //immutable.add("four");
         //immutable.remove("one");
 
+        Set<String> one  = new HashSet<>();
+        one.add("one");
+        one.add("two");
+        one.add("three");
+        one.add("four");
+
+
+        Set<String> two  = new HashSet<>();
+        two.add("three");
+        two.add("four");
+        two.add("five");
+        two.add("six");
+
+        Set<String> union = unionSet(one, two);
+        print(union);
+
     }
 
     //метод распечатает любой класс, который имплементирует интерфейс Iterable, то есть это может быть любая коллекция
@@ -72,8 +88,20 @@ public class SetPractice {
     // Задача1. Объединение множеств: Напишите метод, который принимает два множества и возвращает новое множество,
     // содержащее их объединение.
     public static Set<String> unionSet(Set<String> first, Set<String> second) {
-        //ваш код тут
-        return null;
+        if(first != null) {
+            first.addAll(second);
+            return first;
+        }
+
+        Set<String> set = new HashSet<>();
+        for (String s : first) {
+            set.add(s);
+        }
+        for (String s : second) {
+            set.add(s);
+        }
+
+        return set;
     }
 
     // Задача 2. Разность множеств: Создайте метод, который принимает два множества и возвращает новое множество,

@@ -68,7 +68,7 @@ public class House {
 
         House house = (House) o; // создаем новый экземпляр для работы с ним
 
-        return this.getFloor() == house.getFloor(); // сравнение идет только по этажу, если этаж один и тот же, то считаем,
+        return this.getFloor() == house.getFloor() && this.getAddress().equals(house.address); // сравнение идет только по этажу, если этаж один и тот же, то считаем,
         // что объекты равны
     }
 
