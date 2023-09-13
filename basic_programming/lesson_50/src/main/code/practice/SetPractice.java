@@ -1,4 +1,4 @@
-package practice;
+package main.code.practice;
 
 import java.util.*;
 

@@ -1,6 +1,6 @@
-package teacher_sandbox;
+package main.code.teacher_sandbox;
 
-import practice.House;
+import main.code.practice.House;
 
 import java.util.HashSet;
 

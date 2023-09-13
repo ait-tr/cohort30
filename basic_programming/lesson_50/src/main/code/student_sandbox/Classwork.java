@@ -1,4 +1,4 @@
-package student_sandbox;
+package main.code.student_sandbox;
 
 public class Classwork {
 }
