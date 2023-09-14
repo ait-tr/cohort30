@@ -4,6 +4,12 @@ import main.code.practice.House;
 
 import java.util.HashSet;
 
+
+// проект
+// перебирать сет, но взять не все элементы (Раду)
+// проверить пути
+// ошибки в пути, создании модуля
+
 public class TeacherClasswork {
     public static void main(String[] args) {
         House h1 = new House(2, "123", 50);
