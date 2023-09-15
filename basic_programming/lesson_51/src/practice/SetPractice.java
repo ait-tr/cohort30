@@ -109,6 +109,7 @@ public class SetPractice {
 
     // Задача 2. Разность множеств: Создайте метод, который принимает два множества и возвращает новое множество,
     // содержащее только уникальные элементы из двух сетов (не совпадающие)
+    // (A, B, C, D, E) (D, E, F, G, H) -> (A, B, C, F, G, H)
     public static Set<String> uniqueElement(Set<String> first, Set<String> second) {
         //ваш код тут
         return null;
