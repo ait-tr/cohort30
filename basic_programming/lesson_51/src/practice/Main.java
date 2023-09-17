@@ -21,7 +21,7 @@ public class Main {
         }
 
         long endTimeHashSet = System.nanoTime();
-        System.out.println("Time taken with HashSet:   " + (endTimeHashSet - startTimeHashSet) + " ns");
+        System.out.println(String.format("Time taken with HashSet:       %012d ns", endTimeHashSet - startTimeHashSet));
 
         long startTimeTreeSet = System.nanoTime();
 
@@ -32,7 +32,7 @@ public class Main {
         }
 
         long endTimeTreeSet = System.nanoTime();
-        System.out.println("Time taken with TreeSet:   " + (endTimeTreeSet  - startTimeTreeSet ) + " ns");
+        System.out.println(String.format("Time taken with TreeSet:       %012d ns", endTimeTreeSet - startTimeTreeSet));
 
         long startTimeLinkedHashSet = System.nanoTime();
 
@@ -43,7 +43,7 @@ public class Main {
         }
 
         long endTimeLinkedHashSet = System.nanoTime();
-        System.out.println("Time taken with LinkedHashSet:   " + (endTimeLinkedHashSet  - startTimeLinkedHashSet) + " ns");
+        System.out.println(String.format("Time taken with LinkedHashSet: %012d ns", endTimeLinkedHashSet - startTimeLinkedHashSet));
 
 
         // Добавляем только уникальные числа в лист
@@ -55,7 +55,7 @@ public class Main {
                 arrayList.add(num);
         }
         long endTimeArrayList = System.nanoTime();
-        System.out.println("Time taken with ArrayList: " + (endTimeArrayList - startTimeArrayList) + " ns");
+        System.out.println(String.format("Time taken with ArrayList:     %012d ns", endTimeArrayList - startTimeArrayList));
 
 
         // Добавляем только уникальные числа в лист
@@ -67,7 +67,7 @@ public class Main {
                 linkedList.add(num);
         }
         long endTimeLinkedList = System.nanoTime();
-        System.out.println("Time taken with LinkedList: " + (endTimeLinkedList - startTimeLinkedList) + " ns");
+        System.out.println(String.format("Time taken with LinkedList:    %012d ns", endTimeLinkedList - startTimeLinkedList));
     }
 }
 
