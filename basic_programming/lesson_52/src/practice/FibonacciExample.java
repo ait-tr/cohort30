@@ -19,9 +19,20 @@ public class FibonacciExample {
             return cache.get(n);
         }
 
-        int start = cache.isEmpty() ? 2 : Collections.max(cache.keySet()) + 1;
+        // если мы еще не считали, то начнем с двух, если считали число Фибоначчи, то начнем с макимума + 1
+        // если уже посчитали для 20, а теперь надо для 25, то цикл начнем с промежуточного значени, то есть с 25,
+        // что позволит сделать меньше операций
+        int start = cache.isEmpty() ? 2 : Collections.max(cache.keySet()) + 1; // 5 + 1   200
 
-        int a = cache.getOrDefault(start - 2, 0);
+
+        //int a = cache.getOrDefault(start - 2, 0);
+        int a = 0;
+        if (cache.containsKey(start - 2)) {
+            a = cache.get(start - 2);
+        } else {
+            a = 0;
+        }
+
         int b = cache.getOrDefault(start - 1, 1);
 
         // Вычисление числа Фибоначчи и сохранение промежуточных значений в кэше
