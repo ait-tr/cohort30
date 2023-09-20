@@ -446,9 +446,9 @@ Steps:
 3. Go to the index 3 of the array and compare the key of the first element with the specified key. If both keys match, return the value, otherwise check the next element if it exists.
    In our case, it is found as the first element, and the return value is 30.
 
-Get the data for the vaibhav key:
+Get the data for the golang key:
 
-```map.get(new Key("vaibhav"));```
+```map.get(new Key("golang"));```
 
 Steps:
 1. Calculate the hash code of the key {“golang”}. It will be equal to 118.
@@ -913,9 +913,9 @@ map.get(new Key("python"));
 3. Перейти к индексу 3 массива и сравнить ключ первого элемента с указанным ключом. Если оба ключа совпадают, верните значение, в противном случае проверьте следующий элемент, если он существует.
    В нашем случае он найден как первый элемент, и возвращаемое значение равно 30.
 
-Получите данные для ключа vaibhav:
+Получите данные для ключа golang:
 
-```map.get(new Key("vaibhav"));```  
+```map.get(new Key("golang"));```  
 
 Шаги:
 1. Вычислить хеш-код ключа {“golang”}. Он будет равен 118.
