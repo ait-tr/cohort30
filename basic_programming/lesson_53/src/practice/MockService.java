@@ -6,7 +6,7 @@ public class MockService {
     private static final HashMap<String, String> loginPasswordMap = new HashMap<>();
 
     private String data;
-    private String login;
+    private final String login;
     private String password;
 
     // Приватный конструктор, чтобы запретить прямое создание экземпляров

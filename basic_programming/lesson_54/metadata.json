@@ -1,0 +1,13 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/HanoiTower.java",
+    "src/practice/SimpleConsumer.java",
+    "src/practice/SimpleManager.java",
+    "src/practice/Task.java",
+    "src/practice/Starter.java"
+  ],
+  "video": ""
+}

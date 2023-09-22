@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class LanguageCard {
     // Хранилище для слов и их переводов
     private HashMap<String, String> wordMap = new HashMap<>();
+    // Map mistakeCountMap = new HashMap<>(); содержит слово и количество неверных ответов
+
+
 
     // Метод для добавления нового слова и его перевода
     public void addWord(String foreignWord, String nativeWord) {
@@ -44,6 +47,8 @@ public class LanguageCard {
 
         scanner.close();
     }
+
+    public void practiceDifficultWord(){}
 
     public static void main(String[] args) {
         // Пример использования класса LanguageCard

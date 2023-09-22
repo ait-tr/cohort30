@@ -19,9 +19,14 @@ public class ReadFileByWords {
         }
 
         words.forEach(i -> buckets.get(i.hashCode() & 0xF).add(i));
+//
+//        for (String word : words) {
+//            int index = word.hashCode() > 0 ? words.hashCode() % 16 : words.hashCode() % 16 * -1;
+//            buckets.get(index).add(word);
+//        }
 
         for (LinkedList<String> bucket : buckets) {
-            System.out.println(bucket);
+            System.out.println(bucket.size() + " : " + bucket);
         }
     }
 
