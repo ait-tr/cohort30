@@ -12,7 +12,7 @@ public class SimpleConsumer {
     public void listenQueue() throws InterruptedException {
         while (true) {
             Task task = manager.getTaskFromQueue();
-            int time = new Random().nextInt(900, 1200);
+            Integer time = new Random().nextInt(900, 1200);
             if (task != null) {
                 System.out.printf("Execution %s,  time %5d ms Queue\n", task.getTaskName(), time);
             }
@@ -23,7 +23,7 @@ public class SimpleConsumer {
     public void listenStack() throws InterruptedException {
         while (true) {
             Task task = manager.getTaskFromStack();
-            int time = new Random().nextInt(900, 1200);
+            Integer time = new Random().nextInt(900, 1200);
             if (task != null) {
                 System.out.printf("Execution %s,  time %5d ms Stack\n", task.getTaskName(), time);
             }

@@ -1,7 +1,7 @@
 package practice;
 
 public class Task {
-    String taskName;
+    private String taskName;
 
     public Task(String taskName) {
         this.taskName = taskName;

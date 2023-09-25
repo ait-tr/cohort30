@@ -1,15 +1,15 @@
 package hw_42;
 
-import static org.junit.jupiter.api.Assertions.*;
-import hw_42.Forum;
-import hw_42.ForumImpl;
-import hw_42.Post;
+
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ForumTest {
     Forum forum;

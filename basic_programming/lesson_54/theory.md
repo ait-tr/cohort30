@@ -21,7 +21,7 @@ In order to make manipulations in a stack, there are certain operations provided
 
 - `push()` to insert an element into the stack
 - `pop()` to remove an element from the stack
-- `top()` Returns the top element of the stack.
+- `peek()` Returns the top element of the stack.
 - `isEmpty()` returns true if stack is empty else false.
 - `size()` returns the size of stack.
 
@@ -33,7 +33,7 @@ Adds an item to the stack. If the stack is full, then it is said to be an Overfl
 ### Pop:
 Removes an item from the stack. The items are popped in the reversed order in which they are pushed. If the stack is empty, then it is said to be an Underflow condition.
 
-### Top:
+### peek:
 Returns the top element of the stack.
 
 ### isEmpty:
@@ -123,7 +123,7 @@ Method       | Complexity
 
 - `push()` - вставить элемент в стек.
 - `pop()` - удалить элемент из стека.
-- `top()` - возвращает верхний элемент стека.
+- `peek()` - возвращает верхний элемент стека.
 - `isEmpty()` - возвращает `true`, если стек пуст, иначе `false`.
 - `size()` - возвращает размер стека.
 
@@ -135,7 +135,7 @@ Method       | Complexity
 **Pop**:
 Удаляет элемент из стека. Элементы извлекаются в обратном порядке их добавления. Если стек пуст, говорят о состоянии недополнения.
 
-**Top**:
+**peek**:
 Возвращает верхний элемент стека.
 
 **isEmpty**:
