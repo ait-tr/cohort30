@@ -357,12 +357,12 @@ public class FunctionExample {
 
 ## Сравнительная таблица и примеры для Function, Consumer, Supplier и Predicate в Java
 
-| Интерфейс | Описание | Метод | Пример |
-|-----------|-----------|--------|---------|
-| Function  | Принимает один аргумент и возвращает результат. | `R apply(T t)` | #CODE `Function<String, Integer> func = String::length; int length = func.apply("Hello"); // Output: 5` |
-| Consumer  | Принимает один аргумент и не возвращает результат. | `void accept(T t)` | #CODE `Consumer<String> consumer = System.out::println; consumer.accept("Hello"); // Output: Hello` |
-| Supplier  | Не принимает аргументов, но возвращает результат. | `T get()` | #CODE `Supplier<String> supplier = () -> "Hello"; String str = supplier.get(); // Output: Hello` |
-| Predicate | Принимает один аргумент и возвращает boolean. | `boolean test(T t)` | #CODE `Predicate<String> predicate = String::isEmpty; boolean result = predicate.test(""); // Output: true` |
+| Интерфейс | Описание | Метод | Пример                                                                                                    |
+|-----------|-----------|--------|-----------------------------------------------------------------------------------------------------------|
+| `Function`  | Принимает один аргумент и возвращает результат. | `R apply(T t)` | ``` Function<String, Integer> func = String::length; int length = func.apply("Hello"); // Output: 5```      |
+| `Consumer`  | Принимает один аргумент и не возвращает результат. | `void accept(T t)` | `Consumer<String> consumer = System.out::println; consumer.accept("Hello"); // Output: Hello`       |
+| `Supplier`  | Не принимает аргументов, но возвращает результат. | `T get()` | `Supplier<String> supplier = () -> "Hello"; String str = supplier.get(); // Output: Hello`          |
+| `Predicate` | Принимает один аргумент и возвращает `boolean`. | `boolean test(T t)` | `Predicate<String> predicate = String::isEmpty; boolean result = predicate.test(""); // Output: true` |
 
 ## Примеры использования
 
@@ -477,13 +477,13 @@ Integer oldOdd = 0;
 
 | Источник                                                      | Способ               | Пример                                                                |
 |---------------------------------------------------------------|---------------------|-----------------------------------------------------------------------|
-| Коллекция                                                      | `collection.stream()`| ```java Collection<String> collection = Arrays.asList("f5", "b6", "z7"); Stream<String> collectionS = collection.stream();``` |
-| Значения                                                       | `Stream.of(v1,… vN)` | ```java Stream<String> valuesS = Stream.of("f5", "b6", "z7");```       |
-| Примитивы                                                      | `IntStream.of(1, … N)`| ```java IntStream intS = IntStream.of(9, 8, 7);```                    |
-|                                                               | `DoubleStream.of(1.1, … N)`| ```java DoubleStream doubleS = DoubleStream.of(2.4, 8.9);```     |
-| Массив                                                         | `Arrays.stream(arr)` | ```java String[] arr = {"f5","b6","z7"}; Stream<String> arrS = Arrays.stream(arr);``` |
-| Файл — каждая новая строка становится элементом                | `Files.lines(file_path)` | ```java Stream<String> fromFileS = Files.lines(Paths.get("doc.txt"))``` |
-| Stream.builder                                                 | `Stream.builder().add(...)....build()` | ```java Stream.builder().add("f5").add("b6").build();```    |
+| Коллекция                                                      | `collection.stream()`| ``` Collection<String> collection = Arrays.asList("f5", "b6", "z7"); Stream<String> collectionS = collection.stream();``` |
+| Значения                                                       | `Stream.of(v1,… vN)` | ``` Stream<String> valuesS = Stream.of("f5", "b6", "z7");```       |
+| Примитивы                                                      | `IntStream.of(1, … N)`| ``` IntStream intS = IntStream.of(9, 8, 7);```                    |
+|                                                               | `DoubleStream.of(1.1, … N)`| ``` DoubleStream doubleS = DoubleStream.of(2.4, 8.9);```     |
+| Массив                                                         | `Arrays.stream(arr)` | ``` String[] arr = {"f5","b6","z7"}; Stream<String> arrS = Arrays.stream(arr);``` |
+| Файл — каждая новая строка становится элементом                | `Files.lines(file_path)` | ``` Stream<String> fromFileS = Files.lines(Paths.get("doc.txt"))``` |
+| Stream.builder                                                 | `Stream.builder().add(...)....build()` | ``` Stream.builder().add("f5").add("b6").build();```    |
 
 ## Методы стримов
 
@@ -497,32 +497,32 @@ Integer oldOdd = 0;
 
 | Метод             | Что сделает                                                                          | Использование                                                                                       |
 |-------------------|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| `filter`          | Отработает как фильтр, вернет значения, которые подходят под заданное условие        | ```java collection.stream().filter("e22"::equals).count();```                                       |
-| `sorted`          | Отсортирует элементы в естественном порядке; можно использовать `Comparator`          | ```java collection.stream().sorted().collect(Collectors.toList());```                               |
-| `limit`           | Лимитирует вывод по тому, количеству, которое вы укажете                               | ```java collection.stream().limit(10).collect(Collectors.toList());```                               |
-| `skip`            | Пропустит указанное вами количество элементов                                         | ```java collection.stream().skip(3).findFirst().orElse("4");```                                      |
-| `distinct`        | Найдет и уберет элементы, которые повторяются; вернет элементы без повторов          | ```java collection.stream().distinct().collect(Collectors.toList());```                              |
-| `peek`            | Выполнит действие над каждым элементом элементов, вернет стрим с исходными элементами| ```java collection.stream().map(String::toLowerCase).peek((e) -> System.out.print("," + e)). collect(Collectors.toList());```|
-| `map`             | Выполнит действия над каждым элементом; вернет элементы с результатами функций       | ```java Stream.of("3", "4", "5").map(Integer::parseInt).map(x -> x + 10).forEach(System.out::println);``` |
-| `mapToInt`        | Сработает как `map`, только вернет числовой `stream`                                 | ```java collection.stream().mapToInt((s) -> Integer.parseInt(s)).toArray();```                       |
-| `flatMap`         | Сработает как `map`, но преобразует один элемент в ноль, один или множество других   | ```java collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);``` |
+| `filter`          | Отработает как фильтр, вернет значения, которые подходят под заданное условие        | ``` collection.stream().filter("e22"::equals).count();```                                       |
+| `sorted`          | Отсортирует элементы в естественном порядке; можно использовать `Comparator`          | ``` collection.stream().sorted().collect(Collectors.toList());```                               |
+| `limit`           | Лимитирует вывод по тому, количеству, которое вы укажете                               | ``` collection.stream().limit(10).collect(Collectors.toList());```                               |
+| `skip`            | Пропустит указанное вами количество элементов                                         | ``` collection.stream().skip(3).findFirst().orElse("4");```                                      |
+| `distinct`        | Найдет и уберет элементы, которые повторяются; вернет элементы без повторов          | ``` collection.stream().distinct().collect(Collectors.toList());```                              |
+| `peek`            | Выполнит действие над каждым элементом элементов, вернет стрим с исходными элементами| ``` collection.stream().map(String::toLowerCase).peek((e) -> System.out.print("," + e)). collect(Collectors.toList());```|
+| `map`             | Выполнит действия над каждым элементом; вернет элементы с результатами функций       | ``` Stream.of("3", "4", "5").map(Integer::parseInt).map(x -> x + 10).forEach(System.out::println);``` |
+| `mapToInt`        | Сработает как `map`, только вернет числовой `stream`                                 | ``` collection.stream().mapToInt((s) -> Integer.parseInt(s)).toArray();```                       |
+| `flatMap`         | Сработает как `map`, но преобразует один элемент в ноль, один или множество других   | ``` collection.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);``` |
 
 ### Терминальные
 | Метод             | Что сделает                                                                         | Использование                                                                                        |
 |-------------------|-------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
-| `findFirst`       | Вернет элемент, соответствующий условию, который стоит первым                       | ```java collection.stream().findFirst().orElse("10");```                                              |
-| `findAny`         | Вернет любой элемент, соответствующий условию                                      | ```java collection.stream().findAny().orElse("10");```                                                |
-| `collect`         | Соберет результаты обработки в коллекции и не только                                | ```java collection.stream().filter((s) -> s.contains("10")).collect(Collectors.toList());```          |
-| `count`           | Посчитает и выведет, сколько элементов, соответствующих условию                     | ```java collection.stream().filter("f5"::equals).count();```                                          |
-| `anyMatch`        | True, когда хоть один элемент соответствует условиям                                | ```java collection.stream().anyMatch("f5"::equals);```                                                |
-| `noneMatch`       | True, когда ни один элемент не соответствует условиям                               | ```java collection.stream().noneMatch("b6"::equals);```                                               |
-| `allMatch`        | True, когда все элементы соответствуют условиям                                    | ```java collection.stream().allMatch((s) -> s.contains("8"));```                                      |
-| `min`             | Найдет самый маленький элемент, используя переданный сравнитель                    | ```java collection.stream().min(String::compareTo).get();```                                          |
-| `max`             | Найдет самый большой элемент, используя переданный сравнитель                     | ```java collection.stream().max(String::compareTo).get();```                                          |
-| `forEach`         | Применит функцию ко всем элементам, но порядок выполнения гарантировать не может   | ```java set.stream().forEach((p) -> p.append("_2"));```                                                |
-| `forEachOrdered`  | Применит функцию ко всем элементам по очереди, порядок выполнения гарантировать может | ```java list.stream().forEachOrdered((p) -> p.append("_nv"));```                                      |
-| `toArray`         | Приведет значения стрима к массиву                                                  | ```java collection.stream().map(String::toLowerCase).toArray(String[]::new);```                       |
-| `reduce`          | Преобразует все элементы в один объект                                              | ```java collection.stream().reduce((c1, c2) -> c1 + c2).orElse(0);```                                 |
+| `findFirst`       | Вернет элемент, соответствующий условию, который стоит первым                       | ``` collection.stream().findFirst().orElse("10");```                                              |
+| `findAny`         | Вернет любой элемент, соответствующий условию                                      | ``` collection.stream().findAny().orElse("10");```                                                |
+| `collect`         | Соберет результаты обработки в коллекции и не только                                | ``` collection.stream().filter((s) -> s.contains("10")).collect(Collectors.toList());```          |
+| `count`           | Посчитает и выведет, сколько элементов, соответствующих условию                     | ``` collection.stream().filter("f5"::equals).count();```                                          |
+| `anyMatch`        | True, когда хоть один элемент соответствует условиям                                | ``` collection.stream().anyMatch("f5"::equals);```                                                |
+| `noneMatch`       | True, когда ни один элемент не соответствует условиям                               | ``` collection.stream().noneMatch("b6"::equals);```                                               |
+| `allMatch`        | True, когда все элементы соответствуют условиям                                    | ``` collection.stream().allMatch((s) -> s.contains("8"));```                                      |
+| `min`             | Найдет самый маленький элемент, используя переданный сравнитель                    | ``` collection.stream().min(String::compareTo).get();```                                          |
+| `max`             | Найдет самый большой элемент, используя переданный сравнитель                     | ``` collection.stream().max(String::compareTo).get();```                                          |
+| `forEach`         | Применит функцию ко всем элементам, но порядок выполнения гарантировать не может   | ``` set.stream().forEach((p) -> p.append("_2"));```                                                |
+| `forEachOrdered`  | Применит функцию ко всем элементам по очереди, порядок выполнения гарантировать может | ``` list.stream().forEachOrdered((p) -> p.append("_nv"));```                                      |
+| `toArray`         | Приведет значения стрима к массиву                                                  | ``` collection.stream().map(String::toLowerCase).toArray(String[]::new);```                       |
+| `reduce`          | Преобразует все элементы в один объект                                              | ``` collection.stream().reduce((c1, c2) -> c1 + c2).orElse(0);```                                 |
 
 
 ### Конвейерные операции обрабатывают данные и передают их дальше по конвейеру, не завершая поток, в то время как терминальные операции обрабатывают данные и возвращают результат, завершая поток.

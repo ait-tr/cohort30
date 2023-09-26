@@ -11,7 +11,20 @@ import java.io.PrintStream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AttendanceTrackerTest {
-
+    /**
+     * ByteArrayOutputStream и PrintStream: ByteArrayOutputStream это класс, который реализует выходной поток, в который
+     * данные могут быть записаны. Записанные байты можно затем извлечь в виде массива байтов. PrintStream это класс,
+     * который добавляет возможность печати различных данных в другой выходной поток. В данном коде создается новый
+     * объект PrintStream, который перенаправляет вывод в объект ByteArrayOutputStream, чтобы тесты могли затем
+     * проверить, что было напечатано.
+     *
+     * System.setOut(new PrintStream(outContent));: Эта строка перенаправляет
+     * стандартный вывод в outContent, что позволяет нам затем извлекать и проверять весь текст, который был напечатан в
+     * System.out.
+     *
+     * assertEquals(expectedOutput, outContent.toString());: Эта строка сравнивает ожидаемый вывод с
+     * фактическим выводом, который был сохранен в outContent.
+     */
     private AttendanceTracker attendanceTracker;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
