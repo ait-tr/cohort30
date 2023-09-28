@@ -6,11 +6,11 @@ import java.util.stream.*;
 public class Classwork {
 
     public static void main(String[] args) {
-        first();
+//        first();
         second();
-        third();
-        fourth();
-        fifth();
+//        third();
+//        fourth();
+//        fifth();
     }
 
     // Задача 1: Найти максимальный элемент в списке.
@@ -38,18 +38,24 @@ public class Classwork {
 
         // С использованием цикла:
         StringBuilder result = new StringBuilder();
-        for (String str : list) {
-            if (result.length() > 0) {
-                result.append(", ");
-            }
-            result.append(str);
-        }
-        System.out.println(result.toString());  // Output: apple, banana, cherry
+//        for (String str : list) {
+//            if (result.length() > 0) {
+//                result.append(", ");
+//            }
+//            result.append(str);
+//        }
+//        System.out.println(result.toString());  // Output: apple, banana, cherry
+//
+
 
         // решить с помощью collect и Collectors.joining(", ")
+
+
+
         String resultStream = null;
 
-        System.out.println(resultStream);  // Output: apple, banana, cherry
+
+        System.out.println(result);  // Output: apple, banana, cherry
     }
 
     // Задача 3: Проверить, есть ли в списке число больше 10.
