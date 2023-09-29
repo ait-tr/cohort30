@@ -1,5 +1,5 @@
 Тест на пройденный материал: [ссылка](https://docs.google.com/forms/d/e/1FAIpQLSdrx8RjABk3yGg5n_vB1rA3sBXeAjg-57LgCLs040YGCpfHcA/viewform?usp=sf_link)
-
+ 
 ### Задание 1: Работа с потоками данных
 
 1. Создайте коллекцию типа `List<Integer>` с числами от 1 до 100.
