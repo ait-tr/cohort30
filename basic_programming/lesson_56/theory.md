@@ -279,11 +279,63 @@ List<String> result List = myList
     .map(String::toUpperCase)
     ..collect(Collectors.toList());  // result List: [A1, A2, B1, C2, C1]
 ```
+<details>
+<summary>IO streams. Information input and output streams</summary>
 
+# Java Input/Output Streams
+
+## 1. Input Streams:
+- Used to read data from various sources (e.g. files, network connections, etc.).
+- Main abstract class: `java.io.InputStream'.
+    - Methods: `read()` to read individual bytes or an array of bytes.
+
+## 2. Output Streams:
+- Used to write data to various destinations (e.g. files, network connections, etc.).
+- Main abstract class: `java.io.OutputStream'.
+    - Methods: `write()` to write individual bytes or an array of bytes.
+
+## 3. Readers and Writers:
+- Wrap I/O streams and provide methods for working with symbolic data.
+- Basic abstract classes: `java.io .Reader` and `java.io.Writer'.
+    - Methods: `read()` and `write()` for reading and writing character data.
+
+##4. Buffered Streams:
+- Allow you to collect or store data in a buffer before they are actually read or written, which can improve I/O performance.
+- Examples of classes: `BufferedReader', `BufferedWriter', `BufferedInputStream', and `BufferedOutputStream'.
+
+## 5. Exception Handling:
+- It is important to handle exceptions such as `IOException' when working with I/O.
+
+# Examples:
+
+## Reading from file:
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt "))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+## Write to file:
+```java
+try (BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))) {
+    bw.write("Hello, world!");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 </details>
+</details>
+
 -------------------------------------
 <details>
 <summary>Stream API. Введение в Функциональное Программирование и Stream API в Java</summary>
+
+<details>
+<summary>Функциональный Интерфейс в Java</summary>
 
 # Функциональный Интерфейс в Java
 
@@ -424,6 +476,10 @@ public class PredicateExample {
     }
 }
 ```
+</details>
+
+<details>
+<summary>Stream API. Введение в Функциональное Программирование и Stream API в Java</summary>
 
 # Stream API. Введение в Функциональное Программирование и Stream API в Java
 Обработка данных — стандартная задача при разработке. Раньше для этого приходилось использовать циклы или рекурсивные функции. С появлением в Java 8 Stream API процесс обработки данных значительно ускорился. Этот инструмент языка позволяет описать, как нужно обработать данные, кратко и емко.
@@ -564,4 +620,54 @@ List<String> resultList = myList
     .collect(Collectors.toList());  // resultList: [A1, A2, B1, C2, C1]
 ```
 
+</details>
+<details>
+<summary>IO streams. Потоки ввода и вывода информации</summary>
+
+# Java Input/Output Streams
+
+## 1. Input Streams (Потоки ввода):
+- Используются для чтения данных из различных источников (например, файлы, сетевые соединения и т. д.).
+- Основной абстрактный класс: `java.io.InputStream`.
+    - Методы: `read()` для чтения отдельных байтов или массива байтов.
+
+## 2. Output Streams (Потоки вывода):
+- Используются для записи данных в различные назначения (например, файлы, сетевые соединения и т. д.).
+- Основной абстрактный класс: `java.io.OutputStream`.
+    - Методы: `write()` для записи отдельных байтов или массива байтов.
+
+## 3. Readers and Writers:
+- Оборачивают потоки ввода-вывода и предоставляют методы для работы с символьными данными.
+- Основные абстрактные классы: `java.io.Reader` и `java.io.Writer`.
+    - Методы: `read()` и `write()` для чтения и записи символьных данных.
+
+## 4. Buffered Streams (Буферизованные потоки):
+- Позволяют собирать или хранить данные в буфере перед их фактическим чтением или записью, что может улучшить производительность I/O.
+- Примеры классов: `BufferedReader`, `BufferedWriter`, `BufferedInputStream`, и `BufferedOutputStream`.
+
+## 5. Exception Handling (Обработка исключений):
+- Важно обрабатывать исключения, такие как `IOException`, при работе с I/O.
+
+# Примеры:
+
+## Чтение из файла:
+```java
+try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+## Запись в файл:
+```java
+try (BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))) {
+    bw.write("Hello, world!");
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
+</details>
 </details>

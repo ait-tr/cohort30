@@ -1,13 +1,16 @@
 package practice;
 
-import java.util.*;
-import java.util.stream.*;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Classwork {
 
     public static void main(String[] args) {
 //        first();
-//        second();
+        second();
 //        third();
 //        fourth();
 //        fifth();
@@ -27,7 +30,10 @@ public class Classwork {
         System.out.println(max);  // Output: 5
 
         // решить с помощью mapToInt и max
-        int maxStream = Integer.MIN_VALUE;
+        int maxStream = list.stream()
+                .mapToInt(Integer::intValue)
+                .max()
+                .orElse(Integer.MIN_VALUE);
 
         System.out.println(maxStream);  // Output: 5
     }
@@ -47,15 +53,11 @@ public class Classwork {
 //        System.out.println(result.toString());  // Output: apple, banana, cherry
 //
 
-
         // решить с помощью collect и Collectors.joining(", ")
+        String resultStream = list.stream().collect(Collectors.joining(", "));
 
 
-
-        String resultStream = null;
-
-
-        System.out.println(result);  // Output: apple, banana, cherry
+        System.out.println(resultStream);  // Output: apple, banana, cherry
     }
 
     // Задача 3: Проверить, есть ли в списке число больше 10.
