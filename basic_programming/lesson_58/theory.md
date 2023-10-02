@@ -268,7 +268,7 @@ Runnable r = new MyRunnable() { () ->
     System.out.println(“Hello!”);
 }
 ```
-`Thread t = new Thread(r);`
+`r.start();`
 
 ### Запуск потоков
 
