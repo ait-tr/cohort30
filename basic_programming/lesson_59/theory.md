@@ -1421,7 +1421,7 @@ public class Example {
 быть «интересен» не только коду, но и потоку, который выполняет этот код.
 
 <details style="margin-left: 20px;">
-<summary>Мутод 3:</summary>
+<summary>Метод 3:</summary>
 
 ```java
 public class InterruptedExceptionExample {
@@ -1461,7 +1461,6 @@ public class InterruptedExceptionExample {
         exampleThread.interrupt();
     }
 }
-
 ```
 
 Давайте разберем приведенный выше код:
