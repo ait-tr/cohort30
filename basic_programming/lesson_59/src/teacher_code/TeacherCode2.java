@@ -21,6 +21,8 @@ public class TeacherCode2 {
     static long generateRandomWords(int numberOfWords) {
         long start = System.currentTimeMillis();
 
+        words = new ArrayList<>(numberOfWords);
+
         Random random = new Random();
 
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -41,7 +43,7 @@ public class TeacherCode2 {
     }
 
     static long singleThread() {
-        List<String> upper = new ArrayList<>(1_000_000);
+        List<String> upper = new ArrayList<>(words.size());
 
         long start = System.currentTimeMillis();
 
@@ -81,7 +83,6 @@ public class TeacherCode2 {
             e.printStackTrace();
         }
 
-        long end = System.currentTimeMillis() - start;
-        return end;
+        return System.currentTimeMillis() - start;
     }
 }
