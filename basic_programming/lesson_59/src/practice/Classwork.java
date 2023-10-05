@@ -57,4 +57,17 @@ public class Classwork {
 
         System.out.println("Task 5: Main Thread is finishing and daemon will be terminated");
     }
+
+    // Задача 6: создайте 2 потока 1.поток - демон, который 10 раз выводи в консоль "Daemon Thread is running", засыпая
+    // на 1 секунду каждый раз. Второй пото должен проделать аналогичную работу, но 5 раз и выводить сообщение
+    // "Non Daemon Thread is running" и остановить свое выполнение. В потоке мейн следует проверить, работает ли
+    // поток-демон, если да, то остановить его, если нет, то просто закончить работу.
+
+    public void task6() {
+        Thread daemonThread = null;
+        Thread nonDaemonThread = null;
+
+        daemonThread.start();
+        nonDaemonThread.start();
+    }
 }
