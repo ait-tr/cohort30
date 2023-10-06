@@ -1,17 +1,7 @@
 # Домашнее задание по теме "Многопоточность в Java"
 
+## повторить пройденные матриалы!
 
-## Задачи
-
-### Задача 1: Имена потоков и приоритеты
-
-#### Описание
-
-Создайте несколько потоков (не менее трех), присвойте им осмысленные имена и различные приоритеты. Реализуйте в этих
-потоках бесконечные циклы, в которых потоки выводят свое имя и приоритет.
-
-#### Пример вывода
-Thread-1, Priority: 5
-Thread-2, Priority: 3
-Thread-3, Priority: 8
-
+#### дополнитель но желанию тесты:
+[interface Comparator](https://docs.google.com/forms/d/e/1FAIpQLScS1CiRwejnOSjF8EI9fvqpbwLPJVmSvyqqjE_KuPWzXxOOtQ/viewform?usp=sf_link)  
+[Java Basic String](https://docs.google.com/forms/d/e/1FAIpQLScS1CiRwejnOSjF8EI9fvqpbwLPJVmSvyqqjE_KuPWzXxOOtQ/viewform?usp=sf_link)
