@@ -1,0 +1,11 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/MultithreadingExamples.java",
+    "src/practice/LectionTwo.java",
+    "src/practice/Classwork.java"
+  ],
+  "video": ""
+}
