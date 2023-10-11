@@ -2119,6 +2119,688 @@ System.out.println("Floor key than 2: " + map.floorKey(2)); // less than or equa
 </details>
 </details>
 
+<details style="margin-left: 20px;">
+<summary>Multithreading in Java. Lecture 5. Thread pools.</summary>
+
+# Multithreading in Java. Lecture 5. Thread pools.
+
+## `Runnable` and `Callable` thread pools
+
+Creating threads to perform a large number of tasks is very time—consuming: creating a thread and freeing resources are
+expensive operations. To solve the problem, thread pools and task queues were introduced, from which tasks for
+pools are taken.
+
+**Thread pool** is a kind of container that contains threads that can perform tasks, and after execution
+one can independently move on to the next.
+
+The second reason for creating thread pools is the ability to separate the object that executes the code and directly the code of the task
+that needs to be performed. Using a thread pool provides better control over thread creation and saves
+thread creation resources. Also, using a thread pool simplifies the development of multithreaded programs, simplifying the creation
+and manipulation of threads. Several classes and interfaces are responsible for creating and managing the thread pool, which
+are called the Executor Framework in Java.
+
+<details style="margin-left: 20px;">
+<summary>Figure 1. Simplified schematic representation of classes responsible for the thread pool</summary>
+
+![img_10.png](img_10.png)
+
+This is not a class inheritance scheme or a UML diagram, but a simple block diagram that shows who
+uses what, what methods there are and what results.
+</details>
+
+Let's look at the main interfaces and classes included in this framework. Its main interfaces are `Executor`
+, `ExecutorService` and
+the 'Executors` factory. Objects that implement the 'Executor` interface can perform a `runnable` task.
+The `Executor` interface
+has one method `void execute(Runnable command)'. After calling this method and passing the task for execution, the task
+will be executed asynchronously in the future. Also, this interface separates who will perform the task and what will be performed
+— unlike the `Thread` class.
+
+The 'ExecutorService` interface inherits from the `Executor` interface and provides opportunities for performing tasks
+`Callable`, for interrupting an ongoing task and shutting down the thread pool. To perform tasks that return
+As a result, there is a `submit()` method that returns an object that implements the `Future<T>` interface. Using this
+object, you can find out if there is a result by calling the `isDone()` method. Using the 'get()` method, you can get the result
+of the task, if there is one. You can also cancel a task by using the `cancel()` method.
+
+The 'Executors` class is a utility class, such as the `Collections' class. The 'Executors` class creates classes that
+implement
+the `Executor` and `ExecutorService` interfaces. The main implementations of the thread pool, i.e. implementations of the `Executor` interfaces and
+`ExecutorServcie`:
+
+- `ThreadPoolExecutor` is a thread pool that contains a fixed number of threads. Also, this pool can be created
+  using the constructor via the keyword `new'.
+- `Executors.newCachedThreadPool()` returns a thread pool, if there are not enough threads in the pool, a new one will be created in it
+  flow.
+- `Executors.newSingleThreadExecutor()` — a thread pool with only one thread.
+- `ScheduledThreadPoolExecutor` — this thread pool allows you to run tasks with a certain frequency or one
+  once after a period of time.
+
+<details style="margin-left: 20px;">
+<summary>Code example:</summary>
+
+<details style="margin-left: 20px;">
+<summary>Executor:</summary>
+
+```java
+import java.util.concurrent.Executor;
+
+public class ExecutorExample {
+
+    public static void main(String[] args) {
+        Executor executor = command -> new Thread(command).start();
+
+        executor.execute(() -> System.out.println("Task is executed asynchronously by Executor!"));
+    }
+}
+```
+
+**Explanations**:   
+Here we create a simple `Executor` that starts the passed task in a new thread. This example
+shows how the `Executor` can asynchronously perform the transferred tasks (in this case, printing a line to the console).
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ExecutorService:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ExecutorServiceExample {
+
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        Future<String> future = executorService.submit(() -> {
+            Thread.sleep(1000);  // Imitating some work
+            return "Task's result";
+        });
+
+        try {
+            System.out.println("Waiting for the task to complete...");
+            String result = future.get();
+            System.out.println("Result: " + result);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            executorService.shutdown();
+        }
+    }
+}
+```
+
+**Explanations**:   
+Here `ExecutorService` is used to asynchronously execute a task that returns a result. We
+use `Future` to get the result of the task, which will be available after its completion.
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ThreadPoolExecutor:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ThreadPoolExecutorExample {
+
+    public static void main(String[] args) {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 4,
+                60L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(2));
+
+        executor.execute(() -> System.out.println("Task 1 is executed"));
+        executor.execute(() -> System.out.println("Task 2 is executed"));
+
+        executor.shutdown();
+    }
+}
+```
+
+**Explanations**:  
+Here `ThreadPoolExecutor` is used to create a thread pool with 2 main threads, maximum 4 threads,
+60 seconds of waiting time and a blocking queue for 2 items.
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ScheduledExecutorService:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ScheduledThreadPoolExecutorExample {
+
+    public static void main(String[] args) {
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
+
+        scheduledExecutorService.scheduleAtFixedRate(
+                () -> System.out.println("Periodic task execution"),
+                0,
+                1,
+                TimeUnit.SECONDS
+        );
+
+        // Allow the periodic task to execute a few times before shutdown
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            scheduledExecutorService.shutdown();
+        }
+    }
+}
+```
+
+**Explanations**:  
+In this example `ScheduledThreadPoolExecutor` is used for periodic task execution (in this case
+in the case of a message output to the console) with a fixed interval of 1 second. The task will start running immediately after
+the start (0 start delay).
+
+<details style="margin-left: 20px;">
+<summary>Creating a thread pool the size of the number of cores:</summary>
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolExample {
+
+    public static void main(String[] args) {
+        // Get the number of available processor cores
+        int coreCount = Runtime.getRuntime().availableProcessors();
+
+        // Creating a thread pool in which the number of threads is equal to the number of processor cores
+        ExecutorService executorService = Executors.newFixedThreadPool(coreCount);
+
+        // Sending tasks to the thread pool for execution
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Task());
+        }
+
+        // Stopping the thread pool when all tasks are completed
+        executorService.shutdown();
+    }
+
+    // Example of a task to complete
+    static class Task implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Task executed by " + Thread.currentThread().getName());
+        }
+    }
+}
+```
+
+In this example, we are creating a thread pool, the number of threads in which is equal to the number of available processor cores. Then
+we send 10 tasks for execution to the thread pool. Each task simply outputs the name of the thread that executes it. At
+the end, we call `ExecutorService.shutdown()` in order for the thread pool to be stopped after all tasks are completed.
+</details>
+</details>
+
+| Class/Interface | Description | Key methods and properties | Usage features |
+|-------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------|------------------------------------------------------------|
+| `Executor`                    | Interface for objects that can perform tasks.                                                  | `execute(Runnable command)`              | Simplicity, asynchronous task execution.                       |
+| `ExecutorService`             | Extends the `Executor' by adding methods to manage the lifecycle and tasks that return the result. | `submit(Callable<T> task)`, `shutdown()`, `invokeAll(...)`, `invokeAny(...)` | Lifecycle management, support for execution results. |
+| `Executors`                   | Factory for creating various types of performers.                                                      | `newFixedThreadPool(int)`, `newSingleThreadExecutor()`, `newCachedThreadPool()` | Convenience of creating standard types of performers.             |
+| `ThreadPoolExecutor`          | Implementation of a thread pool that can be used directly to create customized thread pools. | Designer for customization | Flexibility, the ability to fine-tune.                       |
+| `ScheduledThreadPoolExecutor` | Allows you to execute commands with a delay or periodicity.                                              | `schedule(...)`, `scheduleAtFixedRate(...)` | Task scheduling, support for periodic execution.     |
+
+</details>
+
+## ThreadFactory
+
+The thread pool uses a class that implements the `ThreadFactory` interface to create threads so that a single thread can
+execute multiple `Runnable-` or `Callable-` objects. A thread that executes multiple `Runnable` objects
+is called
+`Worker`. The execution chain is as follows: `ThreadPoolExecutor` -> `Thread` -> `Worker' -> `YourRunnable'. By default
+
+, the `Executors$DefaultThreadFactory` class is used. `ThreadFactory' is an interface with one method `Thread newThread(Runnable r)'.
+Standard
+naming threads in the thread pool pool-n-thread-m. The class that implements `ThreadFactory` is used to
+configure
+a thread for a thread pool. For example, set a thread name or priority, set an `ExceptionHandler` for a thread, or
+make threads inside an `Executor' daemons.
+
+<details style="margin-left: 20px;">
+<summary>Code example:</summary>
+
+```java
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CustomThreadFactoryExample {
+    public static void main(String[] args) {
+        // Creating a thread factory with a custom configuration
+        ThreadFactory customThreadFactory = new ThreadFactory() {
+            private final AtomicInteger threadNumber = new AtomicInteger(1);
+
+            @Override
+            public Thread newThread(Runnable r) {
+                Thread thread = new Thread(r);
+                // Setting the stream name
+                thread.setName("MyCustomThread-" + threadNumber.getAndIncrement());
+                // Setting the priority of the stream
+                thread.setPriority(Thread.MAX_PRIORITY);
+                // Installing an unhandled exception handler
+                thread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+                    @Override
+                    public void uncaughtException(Thread t, Throwable e) {
+                        System.out.println("Unhandled exception in thread: " + t.getName());
+                        e.printStackTrace();
+                    }
+                });
+                return thread;
+            }
+        };
+
+        // Creating an executor with a thread pool using our custom thread factory
+        ExecutorService executor = new ThreadPoolExecutor(
+                2, // main pool size
+                4, // maximum pool size
+                60, // flow retention time
+                TimeUnit.SECONDS, // holding time units
+                new LinkedBlockingQueue<>(), // task queue
+                customThreadFactory // our custom thread factory
+        );
+
+        // Sending the task for execution
+        executor.submit(() -> {
+            System.out.println("Task execution in: " + Thread.currentThread().getName());
+            throw new RuntimeException("Oh! An exception has occurred.");
+        });
+
+        // We stop the performer after completing all the presented tasks
+        executor.shutdown();
+    }
+}
+```
+
+**Explanations**:
+
+1. Creating a `ThreadFactory`:
+
+- We create an anonymous class implementing `ThreadFactory` and override the `newThread(Runnable r)` method.
+- We set a custom name for the stream using `AtomicInteger` for the uniqueness of the name.
+- Setting the maximum priority for the stream.
+- Install an unhandled exception handler that outputs exception information to standard output.
+
+2. Creating an 'ExecutorService`:
+
+- Use the `ThreadPoolExecutor` constructor to create a thread pool, passing the custom `ThreadFactory` as
+  one of the parameters.
+- We set various parameters of the thread pool, such as the minimum and maximum number of threads, time
+  thread retention and task queue.
+
+3. Starting the task:
+
+- We run the task using the `submit()` method, which executes the task in a thread created by our custom
+  thread factory.
+- We throw an exception inside the task specifically to demonstrate the operation of the unhandled exception handler.
+
+4. Shutdown:
+
+Shutting down the `ExecutorService` by calling the `shutdown()` method. This ensures that after all the submitted
+tasks are completed, the thread pool will be stopped.
+
+Thus, `ThreadFactory` is used to create threads with a custom configuration (for example, with a specific
+name or priority), which are then used by `ThreadPoolExecutor` to perform the tasks presented. The
+example also demonstrates the use of an unhandled exception handler to handle
+exceptions thrown during task execution.
+</details>
+
+## Completion of thread pool execution
+
+To terminate the thread pool, the `ExecutorService` interface has several methods: `shutdown()`, `shutdownNow()`
+and
+`Await Termination(long timeout, TimeUnit unit)'.
+
+After calling the `shutdown()' method` the thread pool will continue to work, but when trying to transfer new tasks to execution, they
+will be rejected, and a `RejectedExecutionException` will be generated.
+
+The `shutdownNow()' method` does not start tasks that have already been set for execution, and tries to finish those that have already
+been started.
+
+The `Await Termination(long timeout, TimeUnit unit)` method blocks the thread that called this method until all tasks have
+completed their work, or until the timeout that was passed when calling the method expires, or until the current waiting thread
+is interrupted. In general, until one of these conditions is met first.
+<details style="margin-left: 20px;">
+<summary>Code example:</summary>
+
+example code that demonstrates the use of the methods `shutdown()`, `shutdownNow()`,
+and `Await Termination(long timeout,
+TimeUnit unit)` of the `ExecutorService` interface:
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+public class ThreadPoolShutdownExample {
+
+    public static void main(String[] args) {
+        // Creating a thread pool with two threads
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        // Sending tasks for execution
+        for (int i = 0; i < 5; i++) {
+            executorService.execute(new Task());
+        }
+
+        // Completion of thread pool execution after all tasks are completed
+        executorService.shutdown();
+
+        try {
+            // Waiting for completion of all tasks or timeout within 10 seconds
+            if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
+                // Forced termination if the thread pool has not terminated after the timeout
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            // In case of interruption, we try to terminate the thread pool immediately
+            executorService.shutdownNow();
+        }
+    }
+
+    // Example of a task to complete
+    static class Task implements Runnable {
+        @Override
+        public void run() {
+            try {
+                // Simulation of a long-term task
+                Thread.sleep(2000);
+                System.out.println("Task executed by " + Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                System.out.println("Task interrupted: " + Thread.currentThread().getName());
+            }
+        }
+    }
+}
+```
+
+**Explanation of the Code**:
+
+1. Creating and Launching Tasks:
+   A thread pool with two threads is created, and five tasks are sent to it for execution.
+
+2. Termination Of The Thread Pool:
+
+- `shutdown()`: After sending all tasks for execution, the `shutdown()` method is called so that the thread pool is completed
+  after all the tasks have completed their work.
+
+3. Waiting For Tasks To Complete:
+
+- `Await()': The `Await()` method is called with a timeout of 10 seconds, which means that the main thread
+  will wait for all tasks to complete within 10 seconds.
+
+4. Forced Termination:
+
+- `shutdownNow()`: If all tasks are not completed after waiting 10 seconds, `shutdownNow()` is called to
+  forcibly terminate all task execution.
+
+5. Interrupt Handling:
+
+- If the main thread is interrupted while waiting, `shutdownNow()` is called again to force
+  thread pool completion.
+
+Each task in this example just sleeps for 2 seconds (to simulate a long job) and then outputs the name of the thread
+that executed it. If the task is interrupted due to the `shutdownNow()` call, it will output a message that it was
+interrupted.
+</details>
+
+## Canceling tasks in Executors
+
+After passing `Runnable` or `Callable`, the `Future` object is returned. This object has a `cancel()` method that can
+be used to cancel a job. Calling this method has a different effect depending on when the method was called.
+If the method was called when the task has not yet started executing, the task is simply removed from the task queue. If
+
+the task has already been completed, calling the `cancel()' method` will not lead to any results.
+
+The most interesting case occurs when the task is in progress. The task may not stop because
+that in Java tasks rely on a mechanism called thread interruption. If the thread does not ignore this signal, the thread
+will stop. However, it may not respond to the interrupt signal.
+
+Sometimes it is necessary to implement a non-standard cancellation of a task. For example, a task executes a blocking method,
+say, `ServerSocket.accept()`, which is waiting for some client to connect. This method ignores any
+flag checks
+`interrupted`. In the above case, to stop the task, you need to close the socket, and an
+exception will occur,
+which should be processed. There are two ways to implement non-standard thread termination. The first is the redefinition
+of the `interrupt()` method in the `Thread` class, which is not recommended to use. The second is redefining the method
+`Future.cancel()`. However, the `Future' object is an interface, and the objects that implement this interface are not
+created
+manually by the user. So, we need to find a way that will allow us to do this. And there is such a way. The `Future` object is returned
+after
+calling the 'submit()` method. Under the hood, `ExecutorService` calls the `newTaskFor(Callable<V> c) method` to get an object
+`Future`. The `newTaskFor` method should be redefined so that it returns the `Future` object with the desired functionality
+of the cancel() method.
+
+<details style="margin-left: 20px;">
+<summary>Code example:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class Example {
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Future<?> futureTask = executorService.submit(new LongRunningTask());
+
+        try {
+            // We will try to get the result of the task within 2 seconds
+            futureTask.get(2, TimeUnit.SECONDS);
+        } catch (TimeoutException e) {
+            // The task did not finish within 2 seconds
+            System.out.println("The task has been running for too long. An attempt to cancel it...");
+            FutureTask.cancel(true); // Attempt to cancel the task
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        executorService.shutdown();
+    }
+
+    static class LongRunningTask implements Runnable {
+        @Override
+        public void run() {
+            try {
+                // Emulating a long task running for 5 seconds
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("The task was interrupted!");
+            }
+        }
+    }
+}
+```
+
+**Canceling Tasks in Executors**
+
+The code contains the following main components:
+
+1. `ExecutorService executorService = Executors.newFixedThreadPool(2);`
+   Creates a thread pool with two worker threads. This means that the pool can perform a maximum of two tasks at the same time
+   tasks.
+
+2. `Future<?> futureTask = executorService.submit(new LongRunningTask());`
+   The `LongRunningTask` task is submitted for execution. The `submit()` method returns a `Future` object that can
+   use to cancel a task.
+
+3. `futureTask.get(2, TimeUnit.SECONDS);`
+   We are trying to get the result of the task within two seconds. Since the task is designed to
+   run for 5 seconds (see `Thread.sleep(5000);` inside `LongRunningTask'), this will result in
+   the occurrence of a `TimeoutException'.
+
+4. Exception Handling:
+
+- `TimeoutException e`: An exception occurs when `FutureTask.get(2, TimeUnit.SECONDS);` can't get the result in
+  during the specified time (2 seconds). We are trying to cancel the task using `FutureTask.cancel(true);`.
+
+- `InterruptedException | ExecutionException e`: Handle other exceptions that may occur in the process
+  getting the result of the task.
+
+5. `futureTask.cancel(true);`
+   The `cancel()` method is called with the `true` parameter, which allows the task to be interrupted. If the task has not started yet, it
+   will never be completed. If the task has already started, an interrupt signal will be sent to it (and it depends on the
+   tasks, whether the interrupt signal will be processed).
+
+6. `ExecutorService.shutdown();`
+   Causes the thread pool to stop after the completion of the previous submitted tasks.
+
+Additional remarks
+
+- `LongRunningTask': This is a `Runnable` that emulates a long task using `Thread.sleep(5000);`. Please note
+  note that it also handles the `InterruptedException`, which allows you to respond correctly to the cancellation of the task.
+- `InterruptedException`: If the thread is interrupted during sleep, we output
+
+</details>
+
+## Exception handling
+
+To handle exceptions that occur when executing Runnable objects, an exception handler is set to
+`ThreadFactory`, then `ThreadFactory` sets the thread:
+
+```java
+public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+    @Override
+    public void uncaughtException(Thread thread, Throwable t) {
+        System.out.println("Uncaught exception is detected! " + t + " st: " +
+                Arrays.toString(t.getStackTrace()));
+    }
+}
+```
+
+```java
+public class CustomThreadFactory implements ThreadFactory {
+    private final Thread.UncaughtExceptionHandler handler;
+
+    public CustomThreadFactory(Thread.UncaughtExceptionHandler handler) {
+        this.handler = handler;
+    }
+
+    @Override
+    public Thread newThread(Runnable run) {
+        Thread thread = Executors.defaultThreadFactory().newThread(run);
+        thread.setUncaughtExceptionHandler(handler);
+        return thread;
+    }
+}
+```
+
+```java
+public class ExceptionHandlerExample {
+    public static void main(String[] args) throws InterruptedException {
+        ThreadFactory threadFactory =
+                new CustomThreadFactory(new ExceptionHandler());
+        ExecutorService threadPool =
+                Executors.newFixedThreadPool(4, threadFactory);
+        Runnable r = () -> {
+            throw new RuntimeException("Exception from pool");
+        };
+        threadPool.execute(r);
+        threadPool.shutdown();
+        threadPool.awaitTermination(10, TimeUnit.SECONDS);
+    }
+}
+```
+
+In the example above, an exception handler is created, which is passed to the thread factory. A pool of four threads is created with
+using the transferred factory. When an exception occurs, it is intercepted by the exception handler
+`ExceptionHandler`. This method is suitable when the thread pool performs `Runnable` tasks. If an exception occurred during
+the execution of the `Callable<V>` task, an `ExecutionException` will be generated when retrieving the value from the `Future<V>` object
+.
+
+<details style="margin-left: 20px;">
+<summary>Code example:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class Example {
+    public static void main(String[] args) {
+        // Creating a thread pool
+        ExecutorService executorService = Executors.newFixedThreadPool(2, new CustomThreadFactory());
+        // Sending the task for execution
+        executorService.execute(new ExceptionThrowingTask());
+        // Shutting down the thread pool after completing all tasks
+        executorService.shutdown();
+    }
+
+    static class ExceptionThrowingTask implements Runnable {
+        @Override
+        public void run() {
+throw new RuntimeException("An exception occurred in the thread!");
+        }
+    }
+
+    static class CustomThreadFactory implements ThreadFactory {
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread thread = new Thread(r);
+            // Installing an uncaught exception handler
+            thread.setUncaughtExceptionHandler(new CustomUncaughtExceptionHandler());
+            return thread;
+        }
+    }
+
+    static class CustomUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            System.out.println("Stream" + t.getName() + "threw an exception: " + e.GetMessage());
+        }
+    }
+}
+```
+
+**Explanation of the code**
+
+Exception handling using `Thread.UncaughtExceptionHandler` in the Thread Pool
+
+The example demonstrates how to handle uncaught exceptions in threads created by a thread pool.
+
+1. `ExecutorService executorService = Executors.newFixedThreadPool(2, new CustomThreadFactory());`
+   Creating a thread pool with two worker threads using `CustomThreadFactory` to create new threads to
+   configure their exception handling.
+
+2. `executorService.execute(new ExceptionThrowingTask());`
+   We send the task `ExceptionThrowingTask` for execution in the thread pool.
+
+3. `executorService.shutdown();`
+   Shutting down the thread pool after all tasks have been completed.
+
+Classes and Interfaces:
+
+A. `ExceptionThrowingTask`
+
+- Implements `Runnable` and in the `run()` method simply generates a `RuntimeException`, simulating an uncontrolled error in
+  the thread.
+
+B. `CustomThreadFactory`
+
+- Implements `ThreadFactory'.
+- The `newThread(Runnable r) method` creates and returns a new stream using the passed `Runnable'.
+- The `Thread` object is configured to use `CustomUncaughtExceptionHandler` as a handler
+  uncaught exceptions.
+
+C. `CustomUncaughtExceptionHandler`
+
+- Implements `Thread.UncaughtExceptionHandler`.
+- Method `uncaughtException(Thread t, Throwable e)` is called when an uncaught
+  exception `e` occurs in the thread `t`.
+- In this implementation, a message is displayed indicating which thread threw an exception and which message contains an exception.
+
+General Principles Of Operation
+When the `ExceptionThrowingTask` throws an exception, it is not caught inside the 'run()` method. In this
+case, `Custom UncaughtExceptionHandler` is automatically called, passing the stream and the exception as arguments
+to the `uncaught Exception(...) method`. This allows you to handle uncaught exceptions in a centralized manner, outputting
+error information or logging them as required.
+
+It Is Important To Know
+
+- The lack of exception handling can lead to unexpected behavior of the application.
+- Centralized exception handling helps in detecting and diagnosing problems by providing information that
+  happened in a specific thread.
+
+</details>
+</details>
+
+
 
 
 </details>
@@ -4270,5 +4952,685 @@ public class ConcurrentSkipListMapExample {
 </details>
 </details>
 
+
+<details style="margin-left: 20px;">
+<summary>Многопоточность в Java. Лекция 5. Пулы потоков.</summary>
+
+# Многопоточность в Java. Лекция 5. Пулы потоков.
+
+## Пулы потоков `Runnable` и `Callable`
+
+Создавать потоки для выполнения большого количества задач очень трудоемко: создание потока и освобождение ресурсов —
+дорогостоящие операции. Для решения проблемы ввели _пулы потоков_ и _очереди задач_, из которых берутся задачи для
+пулов.
+**Пул потоков** — своего рода контейнер, в котором содержатся потоки, которые могут выполнять задачи, и после выполнения
+одной самостоятельно переходить к следующей.
+
+Вторая причина создания пулов потоков — возможность разделить объект, выполняющий код, и непосредственно код задачи,
+которую необходимо выполнить. Использование пула потоков обеспечивает лучший контроль создания потоков и экономит
+ресурсы создания потоков. Также использование пула потоков упрощает разработку многопоточных программ, упрощая создание
+и манипулирование потоками. За созданием и управлением пулом потоков отвечают несколько классов и интерфейсов, которые
+называются Executor Framework in Java.
+
+<details style="margin-left: 20px;">
+<summary>Рис. 1. Упрощенное схематическое представление классов, отвечающих за пул потоков</summary>
+
+![img_10.png](img_10.png)
+
+Это не схема наследования классов и не UML-диаграмма, а простая структурная схема, которая показывает, кто что
+использует, какие есть методы и что получается в результате.
+</details>
+
+Рассмотрим основные интерфейсы и классы, входящие в этот фреймворк. Его основные интерфейсы: `Executor`
+, `ExecutorService` и
+фабрика `Executors`. Объекты, которые реализуют интерфейс `Executor`, могут выполнять `runnable`-задачу.
+Интерфейс `Executor`
+имеет один метод `void execute(Runnable command)`. После вызова этого метода и передачи задачи на выполнение задача в
+будущем будет выполнена асинхронно. Также этот интерфейс разделяет, кто будет выполнять задачу и что будет выполняться,
+— в отличии от класса `Thread`.
+
+Интерфейс `ExecutorService` наследуется от интерфейса `Executor` и предоставляет возможности для выполнения заданий
+`Callable`, для прерывания выполняемой задачи и завершения работы пула потоков. Для выполнения задач, которые возвращают
+результат, существует метод `submit()`, возвращающий объект, который реализует интерфейс `Future<T>`. С помощью этого
+объекта можно узнать, есть ли результат, вызовом метода `isDone()`. С помощью метода `get()` можно получить результат
+выполнения задачи, если он есть. Также можно отменить задание на выполнение при помощи метода `cancel()`.
+
+Класс `Executors` — утилитный клас, как например, класс `Collections`. Класс `Executors` создает классы, которые
+реализуют
+интерфейсы `Executor` и `ExecutorService`. Основные реализации пула потоков, т. е. реализации интерфейсов `Executor` и
+`ExecutorServcie`:
+
+- `ThreadPoolExecutor` — пул потоков, который содержит фиксированное количество потоков. Также этот пул можно создать с
+  использованием конструктора через ключевое слово `new`.
+- `Executors.newCachedThreadPool()` возвращает пул потоков, если в пуле не хватает потоков, в нем будет создан новый
+  поток.
+- `Executors.newSingleThreadExecutor()` — пул потоков, в котором есть только один поток.
+- `ScheduledThreadPoolExecutor` — этот пул потоков позволяет запускать задания с определенной периодичностью или один
+  раз по истечении промежутка времени.
+
+<details style="margin-left: 20px;">
+<summary>Пример кода:</summary>
+
+<details style="margin-left: 20px;">
+<summary>Executor:</summary>
+
+```java
+import java.util.concurrent.Executor;
+
+public class ExecutorExample {
+
+    public static void main(String[] args) {
+        Executor executor = command -> new Thread(command).start();
+
+        executor.execute(() -> System.out.println("Task is executed asynchronously by Executor!"));
+    }
+}
+```
+
+**Пояснения**:   
+Здесь мы создаем простой `Executor`, который запускает переданную задачу в новом потоке. Этот пример
+показывает, как `Executor` может асинхронно выполнять переданные задачи (в данном случае, печать строки в консоль).
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ExecutorService:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ExecutorServiceExample {
+
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        Future<String> future = executorService.submit(() -> {
+            Thread.sleep(1000);  // Imitating some work
+            return "Task's result";
+        });
+
+        try {
+            System.out.println("Waiting for the task to complete...");
+            String result = future.get();
+            System.out.println("Result: " + result);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            executorService.shutdown();
+        }
+    }
+}
+```
+
+**Пояснения**:   
+Здесь `ExecutorService` используется для асинхронного выполнения задачи, которая возвращает результат. Мы
+используем `Future` для получения результата выполнения задачи, который будет доступен после завершения её выполнения.
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ThreadPoolExecutor:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ThreadPoolExecutorExample {
+
+    public static void main(String[] args) {
+        ThreadPoolExecutor executor = new ThreadPoolExecutor(2, 4,
+                60L, TimeUnit.SECONDS, new ArrayBlockingQueue<>(2));
+
+        executor.execute(() -> System.out.println("Task 1 is executed"));
+        executor.execute(() -> System.out.println("Task 2 is executed"));
+
+        executor.shutdown();
+    }
+}
+```
+
+**Пояснения**:  
+Здесь используется `ThreadPoolExecutor` для создания пула потоков с 2 основными потоками, максимум 4 потоками,
+60 секундами времени ожидания и блокирующей очередью на 2 элемента.
+</details>
+
+<details style="margin-left: 20px;">
+<summary>ScheduledExecutorService:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class ScheduledThreadPoolExecutorExample {
+
+    public static void main(String[] args) {
+        ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(2);
+
+        scheduledExecutorService.scheduleAtFixedRate(
+                () -> System.out.println("Periodic task execution"),
+                0,
+                1,
+                TimeUnit.SECONDS
+        );
+
+        // Allow the periodic task to execute a few times before shutdown
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            scheduledExecutorService.shutdown();
+        }
+    }
+}
+```
+
+**Пояснения**:  
+В этом примере `ScheduledThreadPoolExecutor` используется для периодического выполнения задачи (в данном
+случае, вывода сообщения в консоль) с фиксированным интервалом в 1 секунду. Задача начнет выполняться сразу же после
+старта (0 задержка начала).
+
+<details style="margin-left: 20px;">
+<summary>Создание пула потоков размером с количество ядер:</summary>
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadPoolExample {
+
+    public static void main(String[] args) {
+        // Получаем количество доступных процессорных ядер
+        int coreCount = Runtime.getRuntime().availableProcessors();
+
+        // Создаем пул потоков, в котором количество потоков равно количеству процессорных ядер
+        ExecutorService executorService = Executors.newFixedThreadPool(coreCount);
+
+        // Отправляем задачи на выполнение в пул потоков
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(new Task());
+        }
+
+        // Останавливаем пул потоков, когда все задачи будут выполнены
+        executorService.shutdown();
+    }
+
+    // Пример задачи для выполнения
+    static class Task implements Runnable {
+        @Override
+        public void run() {
+            System.out.println("Task executed by " + Thread.currentThread().getName());
+        }
+    }
+}
+```
+
+В этом примере мы создаем пул потоков, количество потоков в котором равно количеству доступных процессорных ядер. Затем
+мы отправляем 10 задач на выполнение в пул потоков. Каждая задача просто выводит имя потока, который её выполняет. В
+конце мы вызываем `executorService.shutdown()` для того, чтобы пул потоков был остановлен после завершения всех задач.
+</details>
+</details>
+
+| Класс/Интерфейс               | Описание                                                                                                 | Ключевые методы и свойства                | Особенности использования                                     |
+|-------------------------------|----------------------------------------------------------------------------------------------------------|-----------------------------------------|------------------------------------------------------------|
+| `Executor`                    | Интерфейс для объектов, которые могут выполнять задачи.                                                  | `execute(Runnable command)`              | Простота, асинхронное выполнение задач.                       |
+| `ExecutorService`             | Расширяет `Executor`, добавляя методы для управления жизненным циклом и задачами, которые возвращают результат. | `submit(Callable<T> task)`, `shutdown()`, `invokeAll(...)`, `invokeAny(...)` | Управление жизненным циклом, поддержка результатов выполнения. |
+| `Executors`                   | Фабрика для создания различных видов исполнителей.                                                      | `newFixedThreadPool(int)`, `newSingleThreadExecutor()`, `newCachedThreadPool()`  | Удобство создания стандартных типов исполнителей.             |
+| `ThreadPoolExecutor`          | Реализация пула потоков, которая может использоваться напрямую для создания кастомизированных пулов потоков. | Конструктор для кастомизации            | Гибкость, возможность тонкой настройки.                       |
+| `ScheduledThreadPoolExecutor` | Позволяет выполнять команды с задержкой или периодичностью.                                              | `schedule(...)`, `scheduleAtFixedRate(...)` | Планирование задач, поддержка периодического выполнения.     |
+
+</details>
+
+## ThreadFactory
+
+Пул потоков использует класс, который реализует интерфейс `ThreadFactory` для создания потоков, чтобы один поток мог
+выполнять несколько `Runnable-` или `Callable-`объектов. Поток, который выполняет несколько объектов `Runnable`,
+называется
+`Worker`. Цепочка выполнения такая: `ThreadPoolExecutor` -> `Thread` -> `Worker` -> `YourRunnable`. По умолчанию
+используется
+класс `Executors$DefaultThreadFactory`. `ThreadFactory` — интерфейс с один методом `Thread newThread(Runnable r)`.
+Стандартно
+именование потоков в пуле потоков pool-n-thread-m. Класс, который реализует `ThreadFactory`, используется, чтобы
+настроить
+поток для пула потоков. Например, установить имя или приоритет потока, установить `ExceptionHandler` для потока или
+сделать потоки внутри `Executor` демонами.
+
+<details style="margin-left: 20px;">
+<summary>Пример кода:</summary>
+
+```java
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+public class CustomThreadFactoryExample {
+    public static void main(String[] args) {
+        // Создаем фабрику потоков с кастомной конфигурацией
+        ThreadFactory customThreadFactory = new ThreadFactory() {
+            private final AtomicInteger threadNumber = new AtomicInteger(1);
+
+            @Override
+            public Thread newThread(Runnable r) {
+                Thread thread = new Thread(r);
+                // Устанавливаем имя потока
+                thread.setName("MyCustomThread-" + threadNumber.getAndIncrement());
+                // Устанавливаем приоритет потока
+                thread.setPriority(Thread.MAX_PRIORITY);
+                // Устанавливаем обработчик необработанных исключений
+                thread.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+                    @Override
+                    public void uncaughtException(Thread t, Throwable e) {
+                        System.out.println("Необработанное исключение в потоке: " + t.getName());
+                        e.printStackTrace();
+                    }
+                });
+                return thread;
+            }
+        };
+
+        // Создаем исполнителя с пулом потоков, используя нашу кастомную фабрику потоков
+        ExecutorService executor = new ThreadPoolExecutor(
+                2, // основной размер пула
+                4, // максимальный размер пула
+                60, // время удержания потока
+                TimeUnit.SECONDS, // единицы измерения времени удержания
+                new LinkedBlockingQueue<>(), // очередь задач
+                customThreadFactory // наша кастомная фабрика потоков
+        );
+
+        // Отправляем задачу на выполнение
+        executor.submit(() -> {
+            System.out.println("Выполнение задачи в: " + Thread.currentThread().getName());
+            throw new RuntimeException("Ой! Произошло исключение.");
+        });
+
+        // Останавливаем исполнителя после выполнения всех представленных задач
+        executor.shutdown();
+    }
+}
+```
+
+**Пояснения**:
+
+1. Создание `ThreadFactory`:
+
+- Мы создаем анонимный класс, реализующий `ThreadFactory`, и переопределяем метод `newThread(Runnable r)`.
+- Задаем кастомное имя для потока с использованием `AtomicInteger` для уникальности имени.
+- Устанавливаем максимальный приоритет для потока.
+- Устанавливаем обработчик необработанных исключений, который выводит информацию об исключении в стандартный вывод.
+
+2. Создание `ExecutorService`:
+
+- Используем конструктор `ThreadPoolExecutor` для создания пула потоков, передавая кастомный `ThreadFactory` в качестве
+  одного из параметров.
+- Устанавливаем различные параметры пула потоков, такие как минимальное и максимальное количество потоков, время
+  удержания потока и очередь задач.
+
+3. Запуск задачи:
+
+- Запускаем задачу, используя метод `submit()`, который выполняет задачу в потоке, созданном нашей кастомной фабрикой
+  потоков.
+- Внутри задачи специально выбрасываем исключение для демонстрации работы обработчика необработанных исключений.
+
+4. Завершение работы:
+
+Завершаем работу `ExecutorService`, вызвав метод `shutdown()`. Это гарантирует, что после завершения всех представленных
+задач пул потоков будет остановлен.
+
+Таким образом, `ThreadFactory` используется для создания потоков с кастомной конфигурацией (например, с определенным
+именем или приоритетом), которые затем используются `ThreadPoolExecutor` для выполнения представленных задач. В
+приведенном примере, также продемонстрировано использование обработчика необработанных исключений для обработки
+исключений, выброшенных во время выполнения задач.
+</details>
+
+## Завершение выполнения пула потоков
+
+Для завершения работы пула потоков у интерфейса `ExecutorService` есть несколько методов: `shutdown()`, `shutdownNow()`
+и
+`awaitTermination(long timeout, TimeUnit unit)`.
+
+После вызова метода `shutdown()` пул потоков продолжит работу, но при попытке передать на выполнение новые задачи они
+будут отклонены, и будет сгенерирован `RejectedExecutionException`.
+
+Метод `shutdownNow()` не запускает задачи, которые были уже установлены на выполнение, и пытается завершить уже
+запущенные.
+
+Метод `awaitTermination(long timeout, TimeUnit unit)` блокирует поток, который вызвал этот метод, пока все задачи не
+выполнят работу, или пока не истечет таймаут, который передан при вызове метода, или пока текущий ожидающий поток не
+будет прерван. В общем, пока какое-то из этих условий не выполнится первым.
+<details style="margin-left: 20px;">
+<summary>Пример кода:</summary>
+
+пример кода, который демонстрирует использование методов `shutdown()`, `shutdownNow()`,
+и `awaitTermination(long timeout,
+TimeUnit unit)` интерфейса `ExecutorService`:
+
+```java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
+public class ThreadPoolShutdownExample {
+
+    public static void main(String[] args) {
+        // Создание пула потоков с двумя потоками
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        // Отправляем задачи на выполнение
+        for (int i = 0; i < 5; i++) {
+            executorService.execute(new Task());
+        }
+
+        // Завершение выполнения пула потоков после выполнения всех задач
+        executorService.shutdown();
+
+        try {
+            // Ждем завершения всех задач или таймаута в течение 10 секунд
+            if (!executorService.awaitTermination(10, TimeUnit.SECONDS)) {
+                // Принудительное завершение, если пул потоков не завершил работу после таймаута
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            // В случае прерывания пытаемся завершить пул потоков немедленно
+            executorService.shutdownNow();
+        }
+    }
+
+    // Пример задачи для выполнения
+    static class Task implements Runnable {
+        @Override
+        public void run() {
+            try {
+                // Имитация длительной работы задачи
+                Thread.sleep(2000);
+                System.out.println("Task executed by " + Thread.currentThread().getName());
+            } catch (InterruptedException e) {
+                System.out.println("Task interrupted: " + Thread.currentThread().getName());
+            }
+        }
+    }
+}
+```
+
+**Объяснение Кода**:
+
+1. Создание и Запуск Задач:
+   Создается пул потоков с двумя потоками, и в него отправляется пять задач на выполнение.
+
+2. Завершение Пула Потоков:
+
+- `shutdown()`: После отправки всех задач на выполнение, вызывается метод `shutdown()`, чтобы пул потоков был завершен
+  после того, как все задачи завершат свою работу.
+
+3. Ожидание Завершения Задач:
+
+- `awaitTermination()`: Метод `awaitTermination()` вызывается с таймаутом в 10 секунд, что означает, что основной поток
+  будет ждать завершения всех задач в течение 10 секунд.
+
+4. Принудительное Завершение:
+
+- `shutdownNow()`: Если все задачи не завершены после ожидания 10 секунд, вызывается `shutdownNow()`, чтобы
+  принудительно завершить все выполнение задач.
+
+5. Обработка Прерываний:
+
+- В случае, если основной поток прерван во время ожидания, снова вызывается `shutdownNow()` для принудительного
+  завершения пула потоков.
+
+Каждая задача в этом примере просто спит 2 секунды (чтобы имитировать длительную работу) и затем выводит имя потока,
+который её выполнил. Если задача будет прервана из-за вызова `shutdownNow()`, она выведет сообщение, что она была
+прервана.
+</details>
+
+## Отмена задач в Executors
+
+После передачи `Runnable` или `Callable` возвращается объект `Future`. Этот объект имеет метод `cancel()`, который может
+использоваться для отмены задания. Вызов этого метода имеет разный эффект в зависимости от того, когда был вызван метод.
+Если метод был вызван, когда задача еще не начала выполняться, задача просто удаляется из очереди задач. Если
+
+задача уже выполнилась, вызов метода `cancel()` не приведет ни к каким результатам.
+
+Самый интересный случай возникает, когда задача находится в процессе выполнения. Задача может не остановиться, потому
+что в Java задачи полагаются на механизм называемый прерыванием потока. Если поток не проигнорирует этот сигнал, поток
+остановится. Однако он может и не отреагировать на сигнал прерывания.
+
+Иногда необходимо реализовать нестандартную отмену выполнения задачи. Например, задача выполняет блокирующий метод,
+скажем, `ServerSocket.accept()`, который ожидает подключения какого-то клиента. Этот метод игнорирует любые проверки
+флага
+`interrupted`. В представленном выше случае для остановки задачи необходимо закрыть сокет, при этом возникнет
+исключение,
+которое следует обработать. Есть два способа реализации нестандартного завершения потока. Первый — переопределение
+метода `interrupt()` в классе `Thread`, который не рекомендуется использовать. Второй — переопределение метода
+`Future.cancel()`. Однако объект `Future` — интерфейс, и объекты, которые реализуют этот интерфейс, пользователь не
+создает
+вручную. Значит, надо найти способ, который позволит это сделать. И такой способ есть. Объект `Future` возвращается
+после
+вызова метода `submit()`. Под капотом `ExecutorService` вызывает метод `newTaskFor(Callable<V> c)` для получения объекта
+`Future`. Метод `newTaskFor` стоит переопределить, чтобы он вернул объект `Future` с нужной функциональностью метода
+cancel().
+
+<details style="margin-left: 20px;">
+<summary>Пример кода:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class Example {
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+        Future<?> futureTask = executorService.submit(new LongRunningTask());
+
+        try {
+            // Попытаемся получить результат выполнения задачи в течение 2 секунд
+            futureTask.get(2, TimeUnit.SECONDS);
+        } catch (TimeoutException e) {
+            // Задача не завершилась в течение 2 секунд
+            System.out.println("Задача выполняется слишком долго. Попытка ее отменить...");
+            futureTask.cancel(true); // Попытка отменить задачу
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+
+        executorService.shutdown();
+    }
+
+    static class LongRunningTask implements Runnable {
+        @Override
+        public void run() {
+            try {
+                // Эмулируем долгую задачу, выполняющуюся 5 секунд
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                System.out.println("Задача была прервана!");
+            }
+        }
+    }
+}
+```
+
+**Отмена Задач в Executors**
+
+Код содержит следующие основные компоненты:
+
+1. `ExecutorService executorService = Executors.newFixedThreadPool(2);`
+   Создает пул потоков с двумя рабочими потоками. Это означает, что пул может одновременно выполнять максимум две
+   задачи.
+
+2. `Future<?> futureTask = executorService.submit(new LongRunningTask());`
+   Подается задача `LongRunningTask` на выполнение. Метод `submit()` возвращает объект `Future`, который можно
+   использовать для отмены задачи.
+
+3. `futureTask.get(2, TimeUnit.SECONDS);`
+   Мы пытаемся получить результат выполнения задачи в течение двух секунд. Поскольку задача спроектирована так, чтобы
+   выполняться 5 секунд (см. `Thread.sleep(5000);` внутри `LongRunningTask`), это приведет к
+   возникновению `TimeoutException`.
+
+4. Обработка Исключений:
+
+- `TimeoutException e`: Исключение возникает, когда `futureTask.get(2, TimeUnit.SECONDS);` не может получить результат в
+  течение указанного времени (2 секунды). Мы пытаемся отменить задачу при помощи `futureTask.cancel(true);`.
+
+- `InterruptedException | ExecutionException e`: Обрабатывают другие исключения, которые могут возникнуть в процессе
+  получения результата задачи.
+
+5. `futureTask.cancel(true);`
+   Метод `cancel()` вызывается с параметром `true`, который разрешает прерывание задачи. Если задача еще не начата, она
+   никогда не будет выполнена. Если задача уже начата, то ей будет передан сигнал прерывания (и это зависит от самой
+   задачи, будет ли сигнал прерывания обработан).
+
+6. `executorService.shutdown();`
+   Вызывает остановку пула потоков после завершения предыдущих поданных задач.
+
+Дополнительные замечания
+
+- `LongRunningTask`: Это `Runnable`, который эмулирует долгую задачу с использованием `Thread.sleep(5000);`. Обратите
+  внимание, что он также обрабатывает `InterruptedException`, что позволяет корректно реагировать на отмену задачи.
+- `InterruptedException`: В случае прерывания потока во время сна, мы выводим
+
+</details>
+
+## Обработка исключений
+
+Для обработки исключений, которые возникают при выполнении объектов Runnable, устанавливается обработчик исключений в
+`ThreadFactory`, затем `ThreadFactory` устанавливает потоку:
+
+```java
+public class ExceptionHandler implements Thread.UncaughtExceptionHandler {
+    @Override
+    public void uncaughtException(Thread thread, Throwable t) {
+        System.out.println("Uncaught exception is detected! " + t + " st: " +
+                Arrays.toString(t.getStackTrace()));
+    }
+}
+```
+
+```java
+public class CustomThreadFactory implements ThreadFactory {
+    private final Thread.UncaughtExceptionHandler handler;
+
+    public CustomThreadFactory(Thread.UncaughtExceptionHandler handler) {
+        this.handler = handler;
+    }
+
+    @Override
+    public Thread newThread(Runnable run) {
+        Thread thread = Executors.defaultThreadFactory().newThread(run);
+        thread.setUncaughtExceptionHandler(handler);
+        return thread;
+    }
+}
+```
+
+```java
+public class ExceptionHandlerExample {
+    public static void main(String[] args) throws InterruptedException {
+        ThreadFactory threadFactory =
+                new CustomThreadFactory(new ExceptionHandler());
+        ExecutorService threadPool =
+                Executors.newFixedThreadPool(4, threadFactory);
+        Runnable r = () -> {
+            throw new RuntimeException("Exception from pool");
+        };
+        threadPool.execute(r);
+        threadPool.shutdown();
+        threadPool.awaitTermination(10, TimeUnit.SECONDS);
+    }
+}
+```
+
+В примере выше создается обработчик исключений, который передается фабрике потоков. Создается пул из четырех потоков с
+использованием переданной фабрики. При возникновении исключения оно перехватывается обработчиком исключения
+`ExceptionHandler`. Такой способ подходит, когда пул поток выполняет задачи `Runnable`. Если исключение возникло при
+выполнении задания `Callable<V>`, при получении значения из объекта `Future<V>` будет сгенерировано `ExecutionException`
+.
+
+<details style="margin-left: 20px;">
+<summary>Пример кода:</summary>
+
+```java
+import java.util.concurrent.*;
+
+public class Example {
+    public static void main(String[] args) {
+        // Создаем пул потоков
+        ExecutorService executorService = Executors.newFixedThreadPool(2, new CustomThreadFactory());
+        // Отправляем задачу на выполнение
+        executorService.execute(new ExceptionThrowingTask());
+        // Завершаем работу пула потоков после выполнения всех задач
+        executorService.shutdown();
+    }
+
+    static class ExceptionThrowingTask implements Runnable {
+        @Override
+        public void run() {
+            throw new RuntimeException("Произошло исключение в потоке!");
+        }
+    }
+
+    static class CustomThreadFactory implements ThreadFactory {
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread thread = new Thread(r);
+            // Устанавливаем обработчик неотловленных исключений
+            thread.setUncaughtExceptionHandler(new CustomUncaughtExceptionHandler());
+            return thread;
+        }
+    }
+
+    static class CustomUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler {
+        @Override
+        public void uncaughtException(Thread t, Throwable e) {
+            System.out.println("Поток " + t.getName() + " выбросил исключение: " + e.getMessage());
+        }
+    }
+}
+```
+
+**Объяснение кода**
+
+Обработка Исключений с использованием `Thread.UncaughtExceptionHandler` в Пуле Потоков
+
+Пример демонстрирует, как обрабатывать неотловленные исключения в потоках, созданных пулом потоков.
+
+1. `ExecutorService executorService = Executors.newFixedThreadPool(2, new CustomThreadFactory());`
+   Создаем пул потоков с двумя рабочими потоками, используя `CustomThreadFactory` для создания новых потоков, чтобы
+   настроить их обработку исключений.
+
+2. `executorService.execute(new ExceptionThrowingTask());`
+   Отправляем задачу `ExceptionThrowingTask` на выполнение в пуле потоков.
+
+3. `executorService.shutdown();`
+   Завершаем работу пула потоков после того, как все задачи были выполнены.
+
+Классы и Интерфейсы:
+
+A. `ExceptionThrowingTask`
+
+- Реализует `Runnable` и в методе `run()` просто генерирует `RuntimeException`, имитируя неконтролируемую ошибку в
+  потоке.
+
+B. `CustomThreadFactory`
+
+- Реализует `ThreadFactory`.
+- Метод `newThread(Runnable r)` создает и возвращает новый поток, используя переданный `Runnable`.
+- Объект `Thread` конфигурируется для использования `CustomUncaughtExceptionHandler` в качестве обработчика
+  неотловленных исключений.
+
+C. `CustomUncaughtExceptionHandler`
+
+- Реализует `Thread.UncaughtExceptionHandler`.
+- Метод `uncaughtException(Thread t, Throwable e)` вызывается, когда в потоке `t` происходит неотловленное
+  исключение `e`.
+- В данной реализации, выводится сообщение о том, какой поток выбросил исключение и какое сообщение содержит исключение.
+
+Общие Принципы Работы
+Когда `ExceptionThrowingTask` генерирует исключение, оно не отлавливается внутри метода `run()`. В таком
+случае, `CustomUncaughtExceptionHandler` автоматически вызывается, передавая поток и исключение как аргументы
+метода `uncaughtException(...)`. Это позволяет обрабатывать неотловленные исключения в централизованной манере, выводя
+информацию об ошибках или логгируя их, как требуется.
+
+Важно Знать
+
+- Отсутствие обработки исключений может привести к неожиданному поведению приложения.
+- Централизованная обработка исключений помогает в обнаружении и диагностике проблем, предоставляя информацию о том, что
+  произошло в конкретном потоке.
+
+</details>
+</details>
 </details>
 
