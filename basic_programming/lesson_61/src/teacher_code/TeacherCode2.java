@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TeacherCode2 {
     private static ArrayList<Integer> arrayList = new ArrayList<>(100_000);
@@ -46,6 +47,8 @@ public class TeacherCode2 {
     }
 
     public static void main(String[] args) {
+        AtomicInteger atomicInt = new AtomicInteger(0);
+
         long startAL = System.nanoTime();
         startAdding(arrayList);
         System.out.println("ArrayList.size: " + arrayList.size() + ", time to fill ArrayList: " + (System.nanoTime() - startAL) + "ns");                  //   4731458ns 5123083ns 4603750ns
