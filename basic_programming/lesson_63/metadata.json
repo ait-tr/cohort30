@@ -4,6 +4,10 @@
   "homework": "homework.md",
   "code": [
     "src/practice/ThreadPoolTasks.java",
+    "src/practice/Calculator.java",
+    "src/practice/CalculatorTest.java",
+    "src/practice/ShoppingCart.java",
+    "src/practice/ShoppingCartTest.java",
     "src/practice/Classwork.java"
   ],
   "video": ""
