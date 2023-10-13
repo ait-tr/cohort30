@@ -13,6 +13,7 @@ public class ThreadPoolTasks {
     public static void task1() {
         ExecutorService executor = Executors.newSingleThreadExecutor();
 
+
         // Запуск задачи в пуле потоков
 
         // Завершение пула потоков

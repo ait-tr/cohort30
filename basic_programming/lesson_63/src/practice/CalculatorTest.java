@@ -37,7 +37,8 @@ class CalculatorTest {
     @Test
     @DisplayName("Проверка деления на ноль")
     void testDivideByZero() {
-        assertThrows(ArithmeticException.class, () -> calculator.divide(1, 0), "Деление на ноль должно генерировать исключение");
+        assertThrows(ArithmeticException.class, () -> calculator.divide(1, 0));
+        assertDoesNotThrow(() ->calculator.divide(10, 3));
     }
 
     // Отключенный тестовый метод
@@ -47,6 +48,7 @@ class CalculatorTest {
     void disabledTest() {
         assertEquals(4, calculator.multiply(2, 2));
     }
+
 
     // Вложенный тестовый класс
     @Nested

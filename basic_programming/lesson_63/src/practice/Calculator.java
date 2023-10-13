@@ -19,5 +19,15 @@ public class Calculator {
         }
         return a / b;
     }
+
+
+    public static void main(String[] args) {
+        long assertation = 1l + Integer.MAX_VALUE;
+        System.out.println(new Calculator().add(Integer.MAX_VALUE, 1) == assertation);
+        System.out.println(assertation);
+
+        System.out.println(new Calculator().add(-5, 5) == 0);
+
+    }
 }
 
