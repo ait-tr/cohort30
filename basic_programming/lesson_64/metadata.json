@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "src/practice/HttpServer.java",
+    "src/practice/SimpleServer.java",
+    "src/practice/SimpleClient.java",
+    "src/practice/Calculator.java",
+    "src/practice/CalculatorTest.java",
+    "src/practice/ShoppingCart.java",
+    "src/practice/ShoppingCartTest.java",
+    "src/practice/Classwork.java"
+  ],
+  "video": ""
+}
