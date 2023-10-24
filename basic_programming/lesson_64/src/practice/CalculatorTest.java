@@ -1,5 +1,7 @@
 package practice;
 
+import org.junit.jupiter.api.*;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
@@ -83,4 +85,3 @@ class CalculatorTest {
                         () -> assertEquals(entry.getValue(), calculator.add(entry.getKey().get(0), entry.getKey().get(1)))));
     }
 }
-
