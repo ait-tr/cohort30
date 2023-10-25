@@ -110,7 +110,7 @@ public class ComplexityExamples {
         return result;
     }
 
-    // Метод 8: Рекурсивное вычисление чисел Фибоначчи с кэшированием и копирование массива
+    // Метод 9: Рекурсивное вычисление чисел Фибоначчи с кэшированием и копирование массива
     public static int fibonacci(int n, int[] cache) {
         if (n <= 1) {
             return n;
@@ -130,7 +130,7 @@ public class ComplexityExamples {
         return newArray;
     }
 
-    // Метод 5: Проход по массиву и сортировка
+    // Метод 10: Проход по массиву и сортировка
     public static void arrayTraversalAndSorting(int[] array) {
         for (int i : array) {
             System.out.println(i);
