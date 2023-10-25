@@ -2,51 +2,38 @@ package teacher_code;
 
 
 public class TeacherCode {
-    private int size;
+    // 20 t         30t     40     t = n
+    // n = 10       15      20
 
-    private static long length;
+    // приступаю к работе
+    // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    // [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    // закончил работу
 
-    public static void main(String[] args) {
-        TeacherCode one  = new TeacherCode();
-        TeacherCode two  = new TeacherCode();
-        TeacherCode three = new TeacherCode();
 
-        one.setSize(1);
-        two.setSize(2);
-        three.setSize(3);
+    // O(1) - 10ms   8ms  6ms
 
-        one.setLength(35l);
-        two.setLength(45l);
-        three.setLength(55l);
+    // log  11 = 3,5 -> 4
+    //    2
 
-        three.setSize(10);
+    // x = 608
+   //  [1, 3, 6, 12, 33, 54, 101, 215, 234, 345, 456]  // 54, 234, 215, 101
 
-        System.out.println("one.getSize() = " + one.getSize());
-        System.out.println("two.getSize() = " + two.getSize());
-        System.out.println("three.getSize() = " + three.getSize());
 
-        System.out.println("one.getLength() = " + one.getLength());
-        System.out.println("two.getLength() = " + two.getLength());
-        System.out.println("three.getLength() = " + three.getLength());
-    }
+    //   2^4 = 16  (n = 20)  2^5 = 32  (5)
 
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-
-    }
-
-    public static long getLength() {
-        return length;
-    }
-
-    public static void setLength(long _length) {
-        length = _length;
-    }
+    // length / 2 => 5
+    // [-11, -3, 0, 1, 3, 6, 12, 33, 54, 101, 215, 234, 345, 456, 564, 577, 601, 700, 701, 702] // 215, 577, 701, 700, 601
 }
+
+// n = 120
+// 2^6 = 64    n    2^7 = 128
+
+// 350
+//2^8 = 256    350    2^9 = 512
+
 
 
 
