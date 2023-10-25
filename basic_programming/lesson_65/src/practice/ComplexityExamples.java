@@ -137,7 +137,6 @@ public class ComplexityExamples {
         }
         Arrays.sort(array);
     }
-    // Временная сложность: O(n + n*log(n))
 
 
 }
