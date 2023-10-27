@@ -57,6 +57,7 @@ public class ComplexityExamples {
         }
     }
 
+
     // Метод 6: Проход по двум разным массивам
     public static void twoArrays(int[] arrayA, int[] arrayB) {
         for (int i : arrayA) {
