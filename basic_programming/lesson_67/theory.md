@@ -2036,6 +2036,7 @@ public class TaskManager {
 
 <details style="margin-left: 20px;">
 <summary>Задание 2:</summary>
+
 Создать класс `Vehicle` и на его основе классы `Car` и `Bicycle`. Добавить в них специфичные поля и методы.
 </details>
 
