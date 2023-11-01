@@ -1,54 +1,31 @@
 package teacher_code;
 
-import java.util.*;
 
-public class TeacherCode {
+class TeacherCode {
+    private static String catelbell;
+    private static String weights;
+
+
+    private String towel;
+
+
     public static void main(String[] args) {
-//        Map<String, String> map = new HashMap<>();
-//        boolean flag = false;
-//
-//        // validation process  (если хоть одно значение в процессе валидации, ) flag -> true
-//
-//        methodOne(map);
-//
-//        ArrayList<String> arrayList = new ArrayList<>();
-//        LinkedList<String> linkedList = new LinkedList<>();
-//        Vector<String> vector = new Vector<>();
-//
-//        newMethod(arrayList);
-//        newMethod(linkedList);
-//        newMethod(vector);
-        Vehicle vehicle1 = Vehicle.init();
-        Vehicle vehicle2 = Vehicle.init();
-        vehicle2.setWheels(100);
+        doSomething();
 
-        //vehicle.setWheels(100);
-        System.out.println(vehicle1.toString());
-    }
-
-
-    static void newMethod(List<String> list) {
-        list.add("hello");
-    }
-
-    static void methodOne(Map map) {
-        // some logic
 
     }
 
-    static void methodTwo (Map map) {
-        //  other logic
+    private static void doSomething() {
+        System.out.println("Я делаю упражнение на общем тренажере с весом " + weights);
     }
 
-    static void validation(Map map) {
-        // some validation processes
-
-        // methodOne
-        // MethodTwo
+    private void takeCare() {
+        System.out.println("я взял небольшу паузу, чтобы передохнуть и вытереть лицо " + towel);
+        System.out.println(weights);
     }
 
-
-
-
-
+    private static class SomeClass {
+        public static int x;
+    }
 }
+
