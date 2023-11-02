@@ -1,6 +1,8 @@
 package teacher_code;
 
 
+import practice.Car;
+
 class TeacherCode {
     public static void main(String[] args) {
         Gym ilyas = new Gym();
@@ -28,6 +30,9 @@ class TeacherCode {
 
         Gym.doExercise();
         new NewGym().doExercise();
+
+
+
     }
 
 

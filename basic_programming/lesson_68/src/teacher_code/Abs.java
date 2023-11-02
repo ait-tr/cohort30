@@ -1,7 +1,6 @@
 package teacher_code;
 
-public abstract interface Abs {
-
+public abstract interface Abs extends Comparable{
 
     // этот метод должен выводить в консольлогику работы вашего класса
     abstract void someMethod();

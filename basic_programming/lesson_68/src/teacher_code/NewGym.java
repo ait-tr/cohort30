@@ -1,6 +1,6 @@
 package teacher_code;
 
-public class NewGym extends Gym {
+public  class NewGym extends Gym {
     @Override
     public void takeCare() {
         System.out.println("переопределенный метод");
@@ -9,6 +9,7 @@ public class NewGym extends Gym {
 
 
     public static void doExercise() {
-        System.out.println("переопределили статический метод");
+        System.out.println("переопределили" +
+                " статический метод");
     }
 }
