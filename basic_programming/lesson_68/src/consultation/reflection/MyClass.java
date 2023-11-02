@@ -1,7 +1,7 @@
 package consultation.reflection;
 
 public class MyClass {
-    private int number;
+    private final int number;
 
     public MyClass(int number) {
         this.number = number;

@@ -20,7 +20,7 @@ public class ZipCreateWithFileExample {
         try {
             Files.createDirectories(Paths.get(dirPath)); // Создаем директорию, если она еще не существует
             FileWriter fileWriter = new FileWriter(sourceFilePath);
-            fileWriter.write("Это пример содержимого файла для архивации.");
+            fileWriter.write("практика архивации\nпросто чтобы проверить, что будет несколько строк");
             fileWriter.close();
             System.out.println("Файл успешно создан.");
         } catch (IOException e) {

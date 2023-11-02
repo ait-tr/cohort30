@@ -6,7 +6,7 @@ package consultation.singleton;
  * создается редко или он занимает много памяти.
  */
 public class LazySingleton {
-    private static LazySingleton instance;
+    private static LazySingleton instance; // null
 
     private LazySingleton() {
         // Здесь могут быть дорогостоящие операции инициализации

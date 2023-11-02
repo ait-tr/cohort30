@@ -12,6 +12,7 @@ public class Singleton {
 
     // Конструктор должен быть private, чтобы предотвратить инстанцирование
     private Singleton() {
+        //....
     }
 
     // Метод для получения экземпляра Singleton
@@ -27,5 +28,24 @@ public class Singleton {
     }
 
     // Прочие методы...
+    public static void main(String[] args) {
+        // должен быть разный хешкод
+        Singleton s1 = new Singleton();
+        Singleton s2 = new Singleton();
+
+        //должен быть одинаковый хэщкод, отличный от первых двух
+        Singleton s3 = Singleton.getInstance();
+        Singleton s4 = Singleton.getInstance();
+
+        System.out.println("s1.hashCode() = " + s1.hashCode() + "; s2.hashCode() = " +
+                s2.hashCode() + "; s1.hashCode() == s2.hashCode()) = " + (s1.hashCode() == s2.hashCode()));
+
+        System.out.println("s1.hashCode() = " + s1.hashCode() + "; s3.hashCode() = " +
+                s3.hashCode() + "; s1.hashCode() == s3.hashCode()) = " + (s1.hashCode() == s3.hashCode()));
+
+        System.out.println("s3.hashCode() = " + s3.hashCode() + "; s4.hashCode() = " +
+                s4.hashCode() + "; s3.hashCode() == s4.hashCode()) = " + (s3.hashCode() == s4.hashCode()));
+    }
+
 }
 
