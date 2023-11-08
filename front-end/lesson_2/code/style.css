@@ -1,0 +1,30 @@
+body{
+    background-color: aquamarine;
+}
+p{
+    color: blue;}
+    #test{
+        color:blueviolet
+    }
+    .test2{
+        color: brown
+    }
+    .test3{
+        font-size: 45px;
+    }
+    p:nth-child(3){
+        color: yellowgreen;
+    }
+    .first{
+        width: 400px;
+        height: 350px;
+        border: 2px solid red;
+    }
+    .first_{
+        width: 250px;
+        height: 250px;
+        border:4px dotted blue ;
+    }
+    .bold-text{
+        font-weight: bold;
+    }
