@@ -1,0 +1,35 @@
+.headline{
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.subheader{
+  font-style: italic;
+  text-align: center;
+  font-size: 25px;
+}
+#panda{
+  width: 350px;
+}
+.intro{
+  background-color: lightgray;
+  padding:30px; 
+}
+.main-text{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: lightcoral;
+  margin: 20px;
+}
+.bald-idea{
+  font-weight: bold;
+  margin: 20px;
+}
+.text-more{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: lightcoral;
+  margin: 20px;
+}
+/* как применить стиль сразу к нескольким класссам */
+.intro, .main-text, .bald-idea{
+  margin-left: 30px;
+}

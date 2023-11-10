@@ -1,0 +1,17 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/css-box-model/style.css",
+    "/code/css-box-model/index.html",
+    "/code/css-position/index.html",
+    "/code/css-position/style.css",
+    "/code/task_fe-css-animals-are-drunk/index.html",
+    "/code/task_fe-css-animals-are-drunk/README.md",
+    "/code/task_fe-css-animals-are-drunk/panda.png",
+    "/code/task_fe-css-animals-are-drunk/style.css"
+  ],
+  "video": "",
+  "etc": ""
+}

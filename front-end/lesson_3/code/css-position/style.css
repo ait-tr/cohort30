@@ -1,0 +1,34 @@
+body{
+    background-color: bisque;
+}
+.black-box{
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    color: white;
+    margin: 20px;
+}
+.green-box{
+    position: relative;
+    left: 20px;
+    bottom: 60px;
+    width: 300px;
+    height: 300px;
+    background-color: green;
+    color: white;
+    margin-left: -20px;
+}
+.parent{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color: aqua;
+}
+.child{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    top: 200px;
+    left: 120px;
+}
