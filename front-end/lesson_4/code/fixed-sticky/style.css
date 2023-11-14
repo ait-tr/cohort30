@@ -1,0 +1,46 @@
+body{
+    height: 400vh;
+    /* 100 vh - это 100% высоты окна браузера
+    100 vw - это 100% ширины окна браузера */
+}
+
+.parent{
+    background-color: red;
+    border-radius: 15px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    z-index: 10;
+}
+.child{
+    width: 50%;
+    height: 50%;
+    background-color:gold ;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.advert{
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    bottom: 20px;
+    right: 50px;
+    position: fixed;
+}
+.purple{
+    width: 900px;
+    height: 100px;
+    background-color: purple;
+    position: sticky;
+    top: 50px;
+    z-index: 2;
+}
+.small-red-box{
+    position: absolute;
+    top: 5px;   
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+}

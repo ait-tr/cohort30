@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/example_1/index.html",
+    "/code/example_2/home.html",
+    "/code/example_2/index.html",
+    "/code/fixed-sticky/index.html",
+    "/code/fixed-sticky/style.css",
+    "/code/task_fe-css-box-model/index.html",
+    "/code/task_fe-css-box-model/style.css"
+  ],
+  "video": "",
+  "etc": ""
+}

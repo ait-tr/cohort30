@@ -1,0 +1,14 @@
+p{
+  background-color: antiquewhite;
+  border: 2px solid red;
+  font-size: 30px;
+  width: 1200px;
+  margin: 30px;
+  padding: 10px;
+}
+span{
+  border: 2px solid blue;
+}
+img{
+  margin-top: 20px;
+}
