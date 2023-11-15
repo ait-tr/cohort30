@@ -1,0 +1,24 @@
+.main-container{
+    background-color: lavenderblush;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+    /* flex wrap - wrap - перенос строки если элементы не поместятся в контейнер */
+}
+.card{
+    height: 300px;
+    width: 250px;
+    border: 3px solid lightcoral;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* выравнивание по поперечной оси */
+}

@@ -1,0 +1,35 @@
+.purple{
+    background-color: purple;
+    font-size: 45px;
+}
+.small{
+    height: 150px;
+    width: 150px;
+}
+.middle{
+    height: 250px;
+    width: 150px;
+}
+.big{
+    height: 300px;
+    width: 150px;
+}
+.container{
+    background-color: lightgray;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+.container-2{
+    background-color: lightpink;
+    height: 800px;
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+#first_item{
+    color: azure;
+    font-size: 80px;
+}
