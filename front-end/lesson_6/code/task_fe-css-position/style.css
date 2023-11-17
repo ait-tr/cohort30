@@ -1,0 +1,39 @@
+main {
+  height: 200vh;
+}
+
+/* твой код */
+
+.navbar {
+  background-color: white(102,102,102);
+  color: black;
+  font-size: 25px;
+  height: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 25px;
+  &:hover{
+    background-color: black;
+    color: white;
+    transition: all .2s linear ;
+  }
+  position:sticky;
+  top: 10px;
+  
+}
+.nav-item{
+  text-decoration: underline;
+  font-family: "NarrowNews";
+  &:hover{
+    color: white;
+  }
+}
+
+
+@font-face {
+  font-family: "NarrowNews"; 
+  src: url("./fonts/clanot-narrownews.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+  } 

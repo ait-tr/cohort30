@@ -1,0 +1,9 @@
+.red-box{
+    border: 2px solid red;  
+
+}
+.image{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Демо Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Bootsrap layout</h1>
+    <!-- container -контейнер
+    row - одна строка
+    col-1 -один элемент на строке - который занимает один столбец ширины
+    col-2 - один элемент на строке - который занимает два столбца ширины
+    red-box -это не бутстрап а наш собственный стиль -->
+        <h2>Пример 1-a</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-1 red-box">1</div>
+                <div class="col-1 red-box">2</div>
+                <div class="col-1 red-box">3</div>
+                <div class="col-1 red-box">4</div>
+                <div class="col-1 red-box">5</div>
+                <div class="col-1 red-box">6</div>
+                <div class="col-1 red-box">7</div>
+                <div class="col-1 red-box">8</div>
+                <div class="col-1 red-box">9</div>
+                <div class="col-1 red-box">10</div>
+                <div class="col-1 red-box" >11</div>
+                <div class="col-1 red-box">12</div>
+            </div>
+
+        </div>
+        <h2>Пример 1-b</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-10 red-box">1</div>
+                <div class="col-2 red-box">2</div>
+            </div>
+        </div>
+        <h2>Пример 1-c</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">1</div>
+                <div class="col-3">
+                    <img class="image" src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+                </div>
+                <div class="col-5">
+                    <img class="image" src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+                </div>
+            </div>
+            </div>
+        </div>
+        <h2>Пример 1-d Адаптивность к размерам экрана</h2>
+        <!-- Если маленький экран - то будет занимать 6 ячеек -->
+  <!-- Если средний экран - то будет занимать 4 ячейки -->
+  <!--
+  Extra small None  <576px
+  Small sm  ≥576px
+  Medium  md  ≥768px
+  Large lg  ≥992px
+  Extra large xl  ≥1200px
+  Extra extra large xxl ≥1400px
+  Если написать col без цифр - то он займет - все оставшееся пространство
+  col col-sm-9 col-md-6 -
+  если экран > 768 - то занимает 6 ячеек
+  если экран > 576 и меньше 768 то занимает 9 ячеек
+  если меьше 576 - занимает все свободное место
+-->
+
+    
+        <div class="container">
+            <div class="row">
+                <div class="col col-sm-9 col-md-6">
+                    <img class="image" src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=800&q=60" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Medium md  ≥768px
+        class red-box col-9 - будет занимать 9 ячеек при любом раскладе
+        class red-box col-12 col-md-3  если больше 768 - будет занимать 3 ячейки
+        При уменьшении экрана - будет занимать все оставшееся пространство (12 ячеек) -->
+        <div class="container">
+            <div class="row">
+                <div class="red-box col-12 col-md-3">Первый</div>
+                <div class="red-box col-9">Второй</div></div>
+            </div>
+        </div>
+
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Имя</th>
+                <th scope="col">Фамилия</th>
+                <th scope="col">Обращение</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td class="table-success">Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/bootstrap/index.html",
+    "/code/bootstrap-demo/style.css",
+    "/code/bootstrap-demo/index.html",
+    "/code/example-1/index.html",
+    "/code/example-1/style.css",
+    "/code/task_fe-css-flexbox-header/index.html",
+    "/code/task_fe-css-flexbox-header/style.css",
+    "/code/task_fe-css-position/index.html",
+    "/code/task_fe-css-position/style.css"
+  ],
+  "video": "",
+  "etc": ""
+}
