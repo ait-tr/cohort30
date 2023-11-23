@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/js-intro/arrays.js",
+    "/code/js-intro/index.js",
+    "/code/task_fe-dom-magic-button/index.css",
+    "/code/task_fe-dom-magic-button/index.html",
+    "/code/task_fe-dom-magic-button/index.js"
+  ],
+  "video": "",
+  "etc": ""
+}
