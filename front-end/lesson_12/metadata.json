@@ -1,0 +1,16 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/counter/index.html",
+    "/code/counter/index.js",
+    "/code/counter/style.css",
+    "/code/homework/index.js",
+    "/code/ninja/index.html",
+    "/code/ninja/index.js",
+    "/code/ninja/style.css"
+  ],
+  "video": "",
+  "etc": ""
+}
