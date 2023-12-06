@@ -1,0 +1,22 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/async-await/index.js",
+    "/code/cat-app/index.html",
+    "/code/cat-app/index.js",
+    "/code/cat-app-async/index.html",
+    "/code/cat-app-async/index.js",
+    "/code/dog-app/index.html",
+    "/code/dog-app/index.js",
+    "/code/dracula-app/index.html",
+    "/code/dracula-app/index.js",
+    "/code/homework/index.js",
+    "/code/todolist/index.html",
+    "/code/todolist/index.js",
+    "/code/todolist/style.css"
+  ],
+  "video": "",
+  "etc": ""
+}
