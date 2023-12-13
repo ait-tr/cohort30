@@ -1,0 +1,17 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/my-app/src/Counter/Counter.tsx",
+    "/code/my-app/src/Counter/Counter.module.css",
+    "/code/my-app/src/CityPage/CityPage.tsx",
+    "/code/my-app/src/CityPage/CityPage.module.css",
+    "/code/my-app/src/index.tsx",
+    "/code/my-app/src/App.tsx",
+    "/code/my-app/src/App.css",
+    "/code/my-app/src/Sandwich/Sandwich.tsx",
+    "/code/my-app/src/Sandwich/Sandwich.module.css",
+    "/code/homework/index.ts"
+  ]
+}
