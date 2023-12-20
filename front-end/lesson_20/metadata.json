@@ -1,0 +1,17 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/my-app/src/components/Activity/Activity.module.css",
+    "/code/my-app/src/components/Layout/Layout.tsx",
+    "/code/my-app/src/components/NavBar/NavBar.tsx",
+    "/code/my-app/src/components/Cocktail/Cocktail.tsx",
+    "/code/my-app/src/components/Cocktail/Cocktail.module.css",
+    "/code/my-app/src/components/NavBar/NavBar.module.css",
+    "/code/my-app/src/components/Activity/Activity.tsx",
+    "/code/my-app/src/components/Home/Home.tsx",
+    "/code/my-app/src/App.tsx",
+    "/code/my-app/src/index.tsx"
+  ]
+}

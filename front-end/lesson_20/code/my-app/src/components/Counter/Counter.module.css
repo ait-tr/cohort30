@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    margin: 15px;
+    border: 2px solid yellowgreen;
+    background-color: brown;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 20%;
+}
+h1{
+    text-align: center;
+}
+span{
+    margin-top: 20px;
+}
