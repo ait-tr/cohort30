@@ -1,0 +1,11 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/my-app/src/components/ProductPage/ProductPage.tsx",
+    "/code/my-app/src/components/Products/Products.module.css",
+    "/code/my-app/src/components/Products/Products.tsx",
+    "/code/my-app/src/App.tsx"
+  ]
+}

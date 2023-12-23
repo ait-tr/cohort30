@@ -1,0 +1,19 @@
+.container {
+  background-color: lightgray;
+  height: 400px;
+  margin: 30px;
+  padding: 40px;
+}
+
+.btnContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.btn {
+  background-color: lightcyan;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+}
