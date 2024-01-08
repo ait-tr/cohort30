@@ -1,0 +1,15 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/NewR/redux-intro/src/features/counter/types/Action.ts",
+    "/code/NewR/redux-intro/src/features/counter/types/CounterState.ts",
+    "/code/NewR/redux-intro/src/features/counter/Counter.tsx",
+    "/code/NewR/redux-intro/src/features/counter/counterReducer.ts",
+    "/code/NewR/redux-intro/src/App.tsx",
+    "/code/NewR/redux-intro/src/index.tsx",
+    "/code/NewR/redux-intro/src/store.ts",
+    "/code/NewR/redux-intro/package-lock.json"
+  ]
+}
