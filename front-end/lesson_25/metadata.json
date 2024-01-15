@@ -1,0 +1,18 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/vite-project2/src/features/dishes/types/Action.ts",
+    "/code/vite-project2/src/features/dishes/types/Dish.ts",
+    "/code/vite-project2/src/features/dishes/types/DishDto.ts",
+    "/code/vite-project2/src/features/dishes/DishEditForm.tsx",
+    "/code/vite-project2/src/features/dishes/DishesList.module.css",
+    "/code/vite-project2/src/features/dishes/DishesList.tsx",
+    "/code/vite-project2/src/features/dishes/dishesReducer.ts",
+    "/code/vite-project2/src/features/dishes/DishForm.tsx",
+    "/code/vite-project2/src/features/dishes/selectors.ts",
+    "/code/vite-project2/src/App.tsx",
+    "/code/vite-project2/src/store.ts"
+  ]
+}
