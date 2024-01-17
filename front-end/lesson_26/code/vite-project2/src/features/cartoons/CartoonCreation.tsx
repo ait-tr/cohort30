@@ -1,0 +1,60 @@
+import { FormEvent, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+export default function CartoonCreation():JSX.Element {
+    const [title, setTitle] = useState<string>('');
+    const [genre, setGenre] = useState<string>('');
+    const [country, setCountry] = useState<string>('');
+    const  today = new Date().toISOString().substring(0, 10);
+    const [releaseDate, setReleaseDate] = useState<string>(today);
+    const [error, setError] = useState<string>('');
+    const dispatch = useDispatch();
+    function clearInputsAndError():void{
+        setTitle('');
+        setGenre('');
+        setCountry('');
+        setReleaseDate(today);
+        setError('');
+
+    }
+    function validateInputs():boolean{
+        if (title.trim()===''){
+            setError('Title is required');
+            return false;
+        }
+        if (genre.trim()===''){
+            setError('Genre is required');
+            return false;
+        }
+        if (country.trim()===''){
+            setError('Coutry is required');
+            return false;
+        }
+        return true;
+    }
+    function handleSubmit(e: FormEvent<HTMLFormElement>):void {
+        e.preventDefault();
+        if (validateInputs()){
+            dispatch({ type: 'cartoons/add', payload: { title, genre, country, releaseDate } });
+            clearInputsAndError();
+        }
+    }
+
+    return <div>
+        <h1>Форма создания</h1>
+        <form onSubmit={handleSubmit}>
+            {error&& (<div style={{color:"red"}}>{error}</div>)}
+            <input type="text" placeholder='title' value={title} onChange={(e) => setTitle(e.target.value)} />
+            <select name="genre" value={genre} onChange={(e) => setGenre(e.target.value)}>
+                <option value="" disabled selected>genre</option>
+                <option value="USA cartoons ">USA cartoons</option>
+                <option value="USSR cartoons">USSR cartoons</option>
+                <option value="Anime">Anime</option>
+                <option value="Wald Disney">Wald Disney</option>
+            </select>
+            <input type="text" placeholder='country' value={country} onChange={(e) => setCountry(e.target.value)} />
+            <input type="date"  value={releaseDate} onChange={(e) => setReleaseDate(e.target.value)}/>
+            <button type="submit">Создать</button>
+        </form>
+        </div>;
+}

@@ -1,0 +1,17 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "/code/vite-project2/src/features/cartoons/types/Action.ts",
+    "/code/vite-project2/src/features/cartoons/types/Cartoon.ts",
+    "/code/vite-project2/src/features/cartoons/types/CartoonCredentials.ts",
+    "/code/vite-project2/src/features/cartoons/CartoonCreation.tsx",
+    "/code/vite-project2/src/features/cartoons/CartoonEdit.tsx",
+    "/code/vite-project2/src/features/cartoons/Cartoons.tsx",
+    "/code/vite-project2/src/features/cartoons/cartoonsReducer.ts",
+    "/code/vite-project2/src/App.tsx",
+    "/code/vite-project2/src/main.tsx",
+    "/code/vite-project2/src/store.ts"
+  ]
+}

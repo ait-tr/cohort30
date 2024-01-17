@@ -1,0 +1,80 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "typecheck": "tsc",
+    "lint": "eslint ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "airbnb",
+      "airbnb-typescript"
+    ],
+    "rules": {
+      "react/jsx-indent": 0,
+      "implicit-arrow-linebreak": 0,
+      "@typescript-eslint/indent": 0,
+      "@typescript-eslint/comma-dangle": 0,
+      "function-paren-newline": 0,
+      "no-param-reassign": 0,
+      "no-nested-ternary": 0,
+      "no-confusing-arrow": 0,
+      "operator-linebreak": 0,
+      "jsx-a11y/anchor-is-valid": 0,
+      "jsx-a11y/label-has-associated-control": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "jsx-a11y/click-events-have-key-events": 0,
+      "default-case": 0,
+      "@typescript-eslint/default-param-last": 0,
+      "@typescript-eslint/switch-exhaustiveness-check": 2,
+      "@typescript-eslint/explicit-function-return-type": [
+        2,
+        {
+          "allowExpressions": true,
+          "allowTypedFunctionExpressions": true,
+          "allowHigherOrderFunctions": true,
+          "allowDirectConstAssertionInArrowFunctions": true
+        }
+      ]
+    },
+    "parserOptions": {
+      "project": [
+        "tsconfig.json"
+      ]
+    }
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.4",
+    "@mui/material": "^5.15.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.0.4",
+    "redux": "^5.0.1",
+    "uid": "^2.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  }
+}

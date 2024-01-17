@@ -1,0 +1,30 @@
+.list {
+  background-color: lightgrey;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.dishCard {
+  margin: 30px;
+  background-color: rgba(109, 76, 3, 0.9);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.image {
+  width: 80%;
+  border-radius: 20px;
+}
+p, h3{
+  color: black;
+}
+.icons{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom:20px ;
+}
