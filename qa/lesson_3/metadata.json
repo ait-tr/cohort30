@@ -1,0 +1,9 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/QA30_FirstSeleniumProject/src/test/java/com/ait/qa30/FindElementTests.java",
+    "code/QA30_FirstSeleniumProject/src/test/java/com/ait/qa30/FirstSeleniumTest.java"
+  ]
+}
