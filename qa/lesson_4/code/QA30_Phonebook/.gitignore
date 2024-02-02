@@ -1,0 +1,24 @@
+.gradle/
+gradle/
+setting.gradle
+build/classes
+build/generated
+build/resources
+build/reports
+build/tmp
+*.idea
+out/
+
+*.bat
+gradlew
+gradlew/
+*.jar
+*.properties
+
+*.log
+*.png
+
+
+
+### Mac OS ###
+.DS_Store
