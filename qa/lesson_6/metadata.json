@@ -3,7 +3,7 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/QA30_Phonebook/src/main/java/com/phonebook/models/User.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/User.java",
     "code/QA30_Phonebook/src/test/java/com/phonebook/tests/TestBase.java",
     "code/QA30_Phonebook/src/test/java/com/phonebook/tests/CreateAccountTests.java",
     "code/QA30_Phonebook/src/test/java/com/phonebook/tests/LoginTests.java",
