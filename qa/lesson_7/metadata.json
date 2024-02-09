@@ -1,0 +1,19 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/QA30_Phonebook/build.gradle",
+    "code/QA30_Phonebook/src/main/java/com/phonebook/fw/ApplicationManager.java",
+    "code/QA30_Phonebook/src/main/java/com/phonebook/fw/BaseHelper.java",
+    "code/QA30_Phonebook/src/main/java/com/phonebook/fw/UserHelper.java",
+    "code/QA30_Phonebook/src/main/java/com/phonebook/fw/ContactHelper.java",
+    "code/QA30_Phonebook/src/main/java/com/phonebook/fw/HomePageHelper.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/TestBase.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/HomePageTests.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/CreateAccountTests.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/LoginTests.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/AddNewContactTests.java",
+    "code/QA30_Phonebook/src/test/java/com/phonebook/tests/RemoveContactTests.java"
+  ]
+}
