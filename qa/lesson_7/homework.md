@@ -4,9 +4,9 @@
 
 Скачайте, пожалуйста, [geckodriver](https://github.com/mozilla/geckodriver/releases) и запустите тесты через консоль, используя команду
 
-_gradle -Pbrowser=firefox clean qa -Psuite1_
+_gradle -Pbrowser=firefox clean qa_
 
-_gradle -Pbrowser=firefox clean qa -Psuite2_
+_gradle -Pbrowser=firefox clean qa_
 
 дефолтная команда для запуска в Chrome всего набора тестов в проекте
 
