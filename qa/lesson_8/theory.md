@@ -29,6 +29,11 @@ Events(События) - external events that can occur and cause a change in st
 
 [Презентация](https://docs.google.com/presentation/d/1kptX1Ce1NBux34JP7e9kOr_38TzyKEAGN1rUPcqn77M/edit?usp=sharing)
 
+[Logger classic documentation](https://logback.qos.ch/manual/index.html)
+
+[TestNG](https://docs.google.com/presentation/d/1MaYUXf4wIXKPgdOq1cG9s8yl4pYZvg4B/edit?usp=sharing&ouid=116447005932578256378&rtpof=true&sd=true)
+
+[TestNG documentation](https://testng.org/doc/documentation-main.html)
 
 _gradle -Pbrowser=firefox clean qa -Psuite1_
 
