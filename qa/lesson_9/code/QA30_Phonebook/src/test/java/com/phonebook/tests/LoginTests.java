@@ -22,7 +22,7 @@ public class LoginTests extends TestBase{
         app.getUser().fillLoginRegisterForm(new User().setEmail(UserData.EMAIL)
                 .setPassword(UserData.PASSWORD));
         app.getUser().clickOnLoginButton();
-        Assert.assertTrue(app.getUser().isElementPresent(By.cssSelector("button")));
+        Assert.assertTrue(app.getUser().isSignOutButtonPresent());
     }
 
     @Test
