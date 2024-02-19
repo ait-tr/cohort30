@@ -3,11 +3,12 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/QA30_DemoQA_POM/src/test/java/com/demoqa/tests/TestBase.java",
-    "code/QA30_DemoQA_POM/src/main/java/com/demoqa/pages/BasePage.java",
-    "code/QA30_DemoQA_POM/src/main/java/com/demoqa/pages/HomePage.java",
-    "code/QA30_DemoQA_POM/src/main/java/com/demoqa/pages/SidePanel.java",
-    "code/QA30_DemoQA_POM/src/test/java/com/demoqa/tests/AlertsWindowsTests.java",
-    "code/QA30_DemoQA_POM/src/main/java/com/demoqa/pages/AlertsPage.java"
+    "code/QA30_Demoqa_POM/pom.xml",
+    "code/QA30_Demoqa_POM/src/test/java/com/demoqa/tests/TestBase.java",
+    "code/QA30_Demoqa_POM/src/main/java/com/demoqa/pages/BasePage.java",
+    "code/QA30_Demoqa_POM/src/main/java/com/demoqa/pages/HomePage.java",
+    "code/QA30_Demoqa_POM/src/main/java/com/demoqa/pages/SidePanel.java",
+    "code/QA30_Demoqa_POM/src/test/java/com/demoqa/tests/AlertsWindowsTests.java",
+    "code/QA30_Demoqa_POM/src/main/java/com/demoqa/pages/AlertsPage.java"
   ]
 }
