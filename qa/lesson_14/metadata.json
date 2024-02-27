@@ -1,6 +1,7 @@
 {
   "plan": "plan.md",
   "theory": "theory.md",
+  "homework": "homework.md",
   "code": [
     "code/QA30_ilcarro_Cucumber/build.gradle",
     "code/QA30_ilcarro_Cucumber/src/test/resources/features/navigate.feature",
