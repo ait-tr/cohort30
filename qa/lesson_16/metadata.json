@@ -13,7 +13,6 @@
     "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/GetAllContactsTests.java",
     "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/AddContactTests.java",
     "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/DeleteContactTests.java",
-    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/DeleteAllContactsTests.java",
     "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/ModifyContactTests.java"
   ],
   "homework": "homework.md",
