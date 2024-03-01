@@ -1,0 +1,21 @@
+{
+  "plan": "plan.md",
+  "code": [
+    "code/QA30_Phonebook_API/build.gradle",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/AuthRequestDto.java",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/AuthResponseDto.java",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/ContactDto.java",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/AllContactsDto.java",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/ErrorDto.java",
+    "code/QA30_Phonebook_API/src/main/java/com/phonebook/dto/MessageDto.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/TestBase.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/LoginTests.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/GetAllContactsTests.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/AddContactTests.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/DeleteContactTests.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/DeleteAllContactsTests.java",
+    "code/QA30_Phonebook_API/src/test/java/com/phonebook/restAssuredTests/ModifyContactTests.java"
+  ],
+  "homework": "homework.md",
+  "video": ""
+}
