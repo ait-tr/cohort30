@@ -3,6 +3,7 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/README.md"
+    "code/README.md",
+    "code/requests.md"
   ]
 }
