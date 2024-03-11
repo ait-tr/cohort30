@@ -35,7 +35,7 @@ Send me the number of the level you have reached in a personal message and scree
 
 
 ## Задние 3
-Выполнить инструкции по файлу README.md
+Выполнить инструкции по файлу README.md - см. раздел code.
 
 ## Задание 4(*)
 Пройдите игру SQL Island до 13-го уровня (Step #13).
