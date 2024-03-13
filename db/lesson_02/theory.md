@@ -1,80 +1,161 @@
+# Basics of relational databases, lesson 2
+
+## SQL: creating a DBMS user
+
+```sql
+CREATE USER test_user WITH PASSWORD 'qwerty';
+```
+The user is created in the DBMS!
+
+## SQL: creating a database
+
+```sql
+CREATE DATABASE test_db OWNER test_user
+```
+
+Any database must be created before you can connect to it.
+The user specified as owner will have maximum access rights to this database.
+
+## SQL: user rights in the database
+
+```sql
+GRANT ALL PRIVILEGES ON DATABASE test_db TO test_user;
+```
+
+By default, only the owner and super-administrator of the DBMS have access to the database. All other users need to add access explicitly.
+
+## SQL: delete database
+
+```sql
+DROP DATABASE test_db;
+```
+
+A database can be deleted by its owner, a DBMS super-administrator, or a user who has been explicitly granted the right to do so.
+
+## SQL: creating a table
+
+```sql
+CREATE TABLE students (
+id serial PRIMARY KEY, name varchar(80), age integer
+);
+```
+
+# Data Manipulation Language
+
+**DML** is a subset of the SQL language designed to create, modify, and delete data in tables within a database. This includes all commands starting with `SELECT`, `INSERT`, `UPDATE` and `DELETE`.
+(CRUD is an abbreviation for CREATE READ UPDATE DELETE)
+In general, SQL DMLs are very similar among different databases, but sometimes there are major differences, so it's always a good idea to check your specific database's documentation if you have problems.
+
+## SQL: adding rows to a table
+
+```sql
+INSERT INTO students (name, age) VALUES
+('Anna', 25),
+('Maria', 23),
+('Roman', 28);
+```
+
+Please note that the id field exists in the table, but its value is not required. The serial data type allows it to be filled in automatically.
+
+## SQL: data retrieval
+
+```sql
+SELECT * FROM students;
+SELECT name, age FROM students;
+SELECT * FROM students WHERE age < 18;
+SELECT * FROM students ORDER BY age ASC;
+SELECT AVG(age) AS 'Middle age' FROM students;
+```
+
+Using `SELECT` you can not just pull out data, but also filter, sort and carry out simple aggregations.
+
+## SQL: changing data
+
+```sql
+UPDATE students SET age = 26 WHERE name = 'Anna';
+```
+
+Using `UPDATE` you can change any data in the table.
+Using `WHERE` is optional, although highly recommended. Without `WHERE`, all existing rows in the table will be updated.
+
+## SQL: delete data
+
+```sql
+DELETE FROM students WHERE id = 1;
+```
+Most often, deletion occurs by `id`, but you can delete by any other field:
+
+```sql
+DELETE FROM students WHERE name = 'Anna';
+```
+It is possible to use DELETE without WHERE at all, in which case all data in the table will be deleted.
+
+
+# Linking tables, relationships between entities
+
+## Primary and Foreign keys
+**Primary key** (primary key) in databases is a unique identifier for each record in a table. It is used to uniquely identify each row of a table and ensures that the data in that table is unique.
+Primary key characteristics:
+- uniqueness
+- immutability
+- not null - cannot be empty
+
+A **Foreign key** in databases is a field or set of fields in a table that is related to a primary key or unique key in another table. It is used to create relationships between tables and ensures data integrity in the database.
+Foreign key characteristics:
+- relationship between tables
+- ensures that the foreign key's values must exist in a corresponding primary key or unique key column in the other table it points to
+  - ensures communication and integrity of data in the database.
+    Example:
+    CREATE TABLE ORDERS (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+    );
+
+## Ratio 1 : 1
+- Persons (people) and their passport data
+- Country and its capital
+- give your example...
+
+## Ratio 1 : N
+- Company and employees
+- Countries and cities
+- ... (your own example)
+
+## N : N ratio
+A many-to-many (M:N) relationship in databases means that each record in one table can be associated with multiple records in another table, and vice versa. Implementing such a relationship requires the use of an intermediate table that connects the records of both tables.
+- Students and courses
+- Authors and books
+- Products and orders
+- your example...
+
+## join operator
+Let's say we have two tables: "Orders" and "Customers". The "Orders" table contains information about orders, and the "Customers" table contains information about customers. Let's say we want to get a list of all orders along with the names of the customers who made those orders. We can use the JOIN operator to join these two tables on their common column "CustomerID".
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+FROM Orders
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+The result will be a list of all orders along with the names of the customers who made those orders. Each result line will contain the order ID, date of order and client's name.
+
+Does this create a new table?
+Answer: ...
+
+Presentations:
+- Lesson 1
+  https://docs.google.com/presentation/d/1N9EdfzetGheLoXJEh1VgvzKGvnyiKsP4/edit#slide=id.p29
+
+- Lesson 2
+  https://docs.google.com/presentation/d/1fzZHuYstuUQWpUSYEOySYOht7xgIiF3_/edit#slide=id.g2bb3f954aca_0_170
 
 -------------------------------------------------------------------------------------
 
-# Основы реляционных БД
-
-## Что такое РСУБД?
-
-**Реляционная система управления базами данных, РСУБД / Relational Database Management System (RDBMS)** — СУБД которая хранит данные в виде таблиц и строк в этих таблицах. Любые данные в РСУБД должны быть структурированы в соответствии с реляционной моделью хранения данных, то есть распределены по таблицам.
-
-Примеры популярных РСУБД:
-- MySQL
-- PostgreSQL
-- MSSQL
-- Oracle
-
-## PostgreSQL
-
-_SQL_ - язык структурированных запросов Structured Query Language
-
-**SQL** — декларативный язык программирования, предназначенный для описания, изменения и извлечения данных из СУБД. Чаще всего используется в реляционных СУБД.
-
-### Таблица, строка, столбец
-
-- _Таблица_ — совокупность строк и столбцов
-- _Строка_ — запись в БД о конкретной сущности
-- _Столбец_ — любой атрибут сущности хранящейся в строке
-
-
-
-### Типы данных: числовые
-
-- `serial` — целое с автоувеличением, от 1 до 2147483647
-- `smallint`, `int2` — целое, от -32768 до +32767;
-- `integer`, `int`, `int4` — целое, от -2147483648 до +2147483647
-- `bigint`, `int8` — целое, от -9 223 372 036 854 775 808 до 9 223 372 036 854 775 807
-- `double precision`, `float8` — с плавающей точкой, от 1E-307 до 1E+308
-
-### Типы данных: стоковые
-
-- `character(n)`, `char(n)` — представляет строку из фиксированного количества символов. С помощью параметра задается количество символов в строке;
-- `character varying(n)`, `varchar(n)` - представляет строку из фиксированного количества символов. С помощью параметра задается количество символов в строке;
-- `text` — представляет текст произвольной длины.
-
-char(n) и varchar(n) - это оба типы данных для хранения строковых значений, где n - это максимальная длина строки. Однако они имеют несколько различий:
-1. Фиксированная длина vs. переменная длина:
-char(n): Этот тип данных хранит строки фиксированной длины, где каждая строка будет занимать точно n символов, даже если фактическая длина строки меньше. Если строка короче n, то она дополняется пробелами до длины n.
-varchar(n): Этот тип данных хранит строки переменной длины, где фактическая длина строки может быть меньше n, но не может превышать n. Память используется только для хранения фактических символов строки, а не для дополнения пробелами.
-2. Использование памяти:
-char(n): Использует фиксированное количество памяти для каждой строки, даже если фактическая длина строки меньше n. Это может привести к избыточному использованию памяти, особенно если большинство строк короткие.
-varchar(n): Использует только столько памяти, сколько необходимо для хранения фактических символов строки, плюс дополнительные байты для хранения длины строки. Это более эффективно использование памяти, особенно для строк переменной длины. 
-3. Скорость доступа:
-char(n): Обычно обеспечивает более быстрый доступ к данным, поскольку каждая строка имеет фиксированную длину, что упрощает процесс доступа к строкам.
-varchar(n): В некоторых случаях может быть немного медленнее, так как требует дополнительного времени на обработку переменной длины.
-
-### Типы данных: время и даты
-
-- `timestamp` — хранит дату и время, с учётом часового пояса или без. Для дат самое нижнее значение 4713 год до н. э., самое верхнее значение 294276 год н. э.
-- `date` — представляет дату от 4713 год до н. э. до 5874897 года н.э
-- `time` — хранит время суток, без даты, с учётом часового пояса или без. Принимает значения от 00:00:00 до 24:00:00
-
-### Типы данных: прочие
-
-- `boolean` — булево значение, true или false
-- `jsonb` — данные произвольного формата в формате JSON
-
-## Data Definition Language, Data Control Language,
-
-**DDL** — подмножество языка SQL, предназначенное для создания, изменения и удаления баз данных и таблиц в них. К нему относятся все команды, начинающиеся с CREATE, ALTER и DROP.
-
-**DCL** — подмножество языка SQL, предназначенное для управления правами доступа к базам данным и таблицам в них. С помощью него можно разрешить и запрещать пользователям создавать, изменять и удалять базы данных или таблицы. К нему относятся все команды, начинающиеся на GRANT и REVOKE.
+# Основы реляционных БД, занятие 2
 
 ## SQL: создание пользователя СУБД
 
 ```sql
 CREATE USER test_user WITH PASSWORD 'qwerty';
 ```
-
 Пользователь создаётся именно в СУБД!
 
 ## SQL: создание базы данных
@@ -153,11 +234,66 @@ UPDATE students SET age = 26 WHERE name = 'Anna';
 ```sql
 DELETE FROM students WHERE id = 1;
 ```
-
 Чаще всего удаление происходит по `id`, но можно удалять и по любому другому полю:
 
 ```sql
 DELETE FROM students WHERE name = 'Anna';
 ```
-
 Возможно использование DELETE вообще без WHERE, в таком случае будут удалены вообще все данные в таблице.
+
+
+# Cвязывание таблиц, отношение между сущностями
+
+## Primary и Foreign keys
+**Primary key** (первичный ключ) в базах данных - это уникальный идентификатор каждой записи в таблице. Он используется для однозначного определения каждой строки таблицы и обеспечивает уникальность данных в этой таблице.
+Характеристики primary key:
+- уникальность
+- неизменяемость
+- not null - не может быть пустым
+
+**Foreign key** (внешний ключ) в базах данных - это поле или набор полей в таблице, которые связаны с первичным ключом или уникальным ключом в другой таблице. Он используется для создания связей между таблицами и обеспечивает целостность данных в базе данных.
+Характеристики foreign key:
+- связь между таблицами
+- гарантирует, что значения внешнего ключа должны существовать в соответствующем столбце первичного ключа или уникального ключа в другой таблице, на которую он указывает
+  - обеспечивает связь и целостность данных в базе данных.
+  Пример:
+  CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+  );
+
+## Отношение 1 : 1 
+- Персоны (люди) и их паспортные данные
+- Страна и ее столица
+- приведите свой пример...
+
+## Отношение 1 : N
+- Компания и сотрудники
+- Страны и города
+- ... (свой пример)
+
+## Отношение N : N
+Отношение "многие ко многим" (M:N) в базах данных означает, что каждая запись в одной таблице может быть связана с несколькими записями в другой таблице, и наоборот. Для реализации такого отношения требуется использование промежуточной таблицы, которая соединяет записи обеих таблиц.
+- Студенты и курсы
+- Авторы и книги
+- Товары и заказы
+- свой пример ...
+
+## Оператор join
+Предположим, у нас есть две таблицы: "Orders" и "Customers". Таблица "Orders" содержит информацию о заказах, а таблица "Customers" содержит информацию о клиентах. Допустим, мы хотим получить список всех заказов вместе с именами клиентов, сделавших эти заказы. Мы можем использовать оператор JOIN для объединения этих двух таблиц по их общему столбцу "CustomerID".
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+FROM Orders
+JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+Результатом будет список всех заказов вместе с именами клиентов, сделавших эти заказы. Каждая строка результата будет содержать ID заказа, дату заказа и имя клиента.
+
+Создается ли при этом новая таблица?
+Ответ: ...
+
+Презентации:
+- Занятие 1
+https://docs.google.com/presentation/d/1N9EdfzetGheLoXJEh1VgvzKGvnyiKsP4/edit#slide=id.p29
+
+- Занятие 2
+https://docs.google.com/presentation/d/1fzZHuYstuUQWpUSYEOySYOht7xgIiF3_/edit#slide=id.g2bb3f954aca_0_170
