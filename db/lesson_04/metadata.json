@@ -3,6 +3,6 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/queries.sql"
+    "code/lesson_04.js"
   ]
 }
