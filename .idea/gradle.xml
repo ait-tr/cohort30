@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_03/code/QA30_FirstSeleniumProject" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_03/code/QA30_FirstSeleniumProject" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_04/code/QA30_Phonebook" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_04/code/QA30_Phonebook" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_08/code/QA30_Phonebook" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_08/code/QA30_Phonebook" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_14/code/QA30_ilcarro_Cucumber" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_14/code/QA30_ilcarro_Cucumber" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_16/code/QA30_Phonebook_API" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_16/code/QA30_Phonebook_API" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/qa/lesson_18/code/QA30_FirstMobileProject" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/qa/lesson_18/code/QA30_FirstMobileProject" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
