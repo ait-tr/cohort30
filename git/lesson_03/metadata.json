@@ -3,6 +3,21 @@
   "theory": "theory.md",
   "homework": "homework.md",
   "code": [
-    "code/lesson_05.js"
+    "code/fitex/src/controller/FitExController.java",
+    "code/fitex/src/controller/UserController.java",
+    "code/fitex/src/model/FitEx.java",
+    "code/fitex/src/model/FitExType.java",
+    "code/fitex/src/model/User.java",
+    "code/fitex/src/model/UserProfile.java",
+    "code/fitex/src/repository/impl/FitExRepositoryImpl.java",
+    "code/fitex/src/repository/impl/UserRepositoryListImpl.java",
+    "code/fitex/src/repository/CrudRepository.java",
+    "code/fitex/src/repository/FitExRepository.java",
+    "code/fitex/src/repository/UserRepository.java",
+    "code/fitex/src/service/impl/FitExServiceImpl.java",
+    "code/fitex/src/service/impl/UserServiceImpl.java",
+    "code/fitex/src/service/FitExService.java",
+    "code/fitex/src/service/UserService.java",
+    "code/fitex/src/Main.java"
   ]
 }
