@@ -1,0 +1,18 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/pom.xml",
+    "code/src/main/java/store/InternetStore.java",
+    "code/src/main/java/store/Item.java",
+    "code/src/main/java/store/ItemImplementation.java",
+    "code/src/main/java/HelloJava.java",
+    "code/src/main/java/HelloJavaConfig.java",
+    "code/src/main/java/MainApp.java",
+    "code/src/main/resources/Beans.xml"
+
+
+  ],
+  "video": ""
+}
