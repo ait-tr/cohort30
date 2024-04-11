@@ -1,0 +1,20 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/pom.xml",
+    "code/src/main/java/configs/MyConfig.java",
+    "code/src/main/java/entities/Car.java",
+    "code/src/main/java/entities/Plane.java",
+    "code/src/main/java/entities/Train.java",
+    "code/src/main/java/entities1/Autumn.java",
+    "code/src/main/java/entities1/Season.java",
+    "code/src/main/java/entities1/Spring.java",
+    "code/src/main/java/entities1/Summer.java",
+    "code/src/main/java/entities1/Winter.java",
+    "code/src/main/java/Main.java"
+
+  ],
+  "video": ""
+}
