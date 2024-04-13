@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id ="app" class="appServices.Application">
+    <!--Constructor initilialization for one service
+    <constructor-arg ref ="message"/>-->
+
+    <!-- Constructor initialisation for array of services
+    <constructor-arg>
+        <list>
+            <ref bean = "email"/>
+            <ref bean = "message"/>
+            <ref bean = "sms"/>
+        </list>
+    </constructor-arg>-->
+
+    <!-- Setter Method init
+    <property name="oneService" ref="email"/>
+    <property name="services">
+        <list>
+            <ref bean = "email"/>
+            <ref bean = "message"/>
+            <ref bean = "sms"/>
+        </list>
+    </property>-->
+    <!-- Constructor init with values
+    <constructor-arg type="int" value="123"/>
+    <constructor-arg type="java.lang.String" value="appServices.Application-1"/>-->
+
+    <constructor-arg index="0" value="1"/>
+    <constructor-arg index="1" value="appServices.Application-1"/>
+
+
+
+</bean>
+
+    <!-- service classes -->
+    <bean id="email" class="appServices.EMailService"/>
+    <bean id ="message" class="appServices.MessageService"/>
+    <bean id="sms" class="appServices.SMSService"/>
+</beans>

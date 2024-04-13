@@ -1,0 +1,19 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/pom.xml",
+    "code/src/main/java/appServices/Application.java",
+    "code/src/main/java/appServices/EMailService.java",
+    "code/src/main/java/appServices/MessageService.java",
+    "code/src/main/java/appServices/Service.java",
+    "code/src/main/java/appServices/SMSService.java",
+    "code/src/main/java/configs/MyConfig.java",
+    "code/src/main/java/Main.java",
+    "code/src/main/resources/Beans.xml"
+
+
+  ],
+  "video": ""
+}
