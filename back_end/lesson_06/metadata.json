@@ -1,0 +1,14 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/pom.xml",
+    "code/src/main/webapp/index.jsp",
+    "code/src/main/webapp/WEB-INF/web.xml"
+
+
+
+  ],
+  "video": ""
+}
