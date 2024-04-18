@@ -1,0 +1,22 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/main/Main.java",
+    "code/our_first_spring_boot/pom.xml",
+    "code/our_first_spring_boot/src/main/java/de/ait/our_first_spring_boot/HelloController.java",
+    "code/our_first_spring_boot/src/main/java/de/ait/our_first_spring_boot/OurFirstSpringBootApplication.java",
+    "code/our_first_spring_boot/src/main/resources/application.properties",
+    "code/secondWebApp/pom.xml",
+    "code/secondWebApp/src/main/java/OurAnotherServlet.java",
+    "code/secondWebApp/src/main/java/OurServlet.java",
+    "code/thirdWebApp/pom.xml",
+    "code/thirdWebApp/src/main/java/OurAnotherServlet.java",
+    "code/thirdWebApp/src/main/java/OurCleverAddServlet.java",
+    "code/thirdWebApp/src/main/java/OurPlusServlet.java"
+
+
+  ],
+  "video": ""
+}
