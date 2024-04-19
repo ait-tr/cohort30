@@ -1,0 +1,26 @@
+{
+  "plan": "plan.md",
+  "theory": "theory.md",
+  "homework": "homework.md",
+  "code": [
+    "code/mvc-demo/pom.xml",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/MvcDemoApplication.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/controller/UserController.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/model/User.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/repository/CrudRepository.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/repository/UserRepository.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/repository/impl/UserRepositoryFileImpl.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/repository/impl/UserRepositoryListImpl.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/service/UserService.java",
+    "code/mvc-demo/src/main/java/de/ait/mvcdemo/service/impl/UserServiceImpl.java",
+    "code/mvc-demo/src/main/resources/application.properties",
+    "code/mvc-demo/src/main/resources/static/hello.html",
+    "code/mvc-demo/src/main/resources/static/success_signUp.html",
+    "code/mvc-demo/src/main/resources/static/users_page.html",
+    "code/mvc-demo/src/main/resources/templates/users_page.ftlh"
+
+
+
+  ],
+  "video": ""
+}
