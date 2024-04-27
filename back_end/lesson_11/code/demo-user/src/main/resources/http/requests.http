@@ -1,0 +1,11 @@
+GET http://localhost:8080/api/users
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "firstName": "Idea User1",
+  "lastName": "Idea User lastname1",
+  "email": "user@jetbrains.com",
+  "password": "1234"
+}
