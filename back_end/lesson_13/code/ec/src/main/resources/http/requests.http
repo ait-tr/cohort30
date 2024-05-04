@@ -1,0 +1,17 @@
+### add course
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+  "title": "New course3",
+  "beginDate": "2024-02-02",
+  "endDate": "2024-02-02",
+  "description": "Description3",
+  "price": 0.0
+}
+
+### get all courses
+GET http://localhost:8080/api/courses
+
+### get one course
+GET http://localhost:8080/api/courses/22
