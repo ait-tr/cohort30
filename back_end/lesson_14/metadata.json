@@ -4,7 +4,7 @@
   "homework": "homework.md",
   "code": [
     "code/education-centre/pom.xml",
-    "code/education-centre/src/main/java/de/ait/ec/EcucationCentreApplication.java",
+    "code/education-centre/src/main/java/de/ait/ec/EducationCentreApplication.java",
     "code/education-centre/src/main/java/de/ait/ec/controllers/CoursesController.java",
     "code/education-centre/src/main/java/de/ait/ec/dto/CourseDto.java",
     "code/education-centre/src/main/java/de/ait/ec/dto/NewCourseDto.java",
