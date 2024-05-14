@@ -1,0 +1,77 @@
+### add course
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+  "title": "New course 2",
+  "beginDate": "2024-02-02",
+  "endDate": "2024-02-02",
+  "description": "Description",
+  "price": 40.0
+}
+
+### add wrong course
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+
+{
+
+  "beginDate": "2024-02-02",
+  "endDate": "2024-02-02",
+  "description": "Description4",
+  "price": 400000.0
+}
+
+### get all courses
+GET http://localhost:8080/api/courses
+
+### get one course
+GET http://localhost:8080/api/courses/2
+
+### delete by id
+DELETE http://localhost:8080/api/courses/8
+
+### update by id
+PUT http://localhost:8080/api/courses/1
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "beginDate": "2024-02-02",
+  "endDate": "2024-02-02",
+  "description": "Uüdated Description",
+  "price": 170.0
+}
+
+### user registration
+POST http://localhost:8080/api/users/register
+Content-Type: application/json
+
+{
+  "email": "john@john.com",
+  "password": "Qwerty007!"
+}
+
+### Add lesson to course
+POST http://localhost:8080/api/courses/1/lessons
+Content-Type: application/json
+
+{
+  "name": "Java pro",
+  "startTime": "18:30",
+  "finishTime": "22:00",
+  "dayOfWeek": "WEDNESDAY"
+}
+
+### Add lesson to course
+POST http://localhost:8080/api/courses/1/lessons
+Content-Type: application/json
+
+{
+  "name": "Java basic",
+  "startTime": "18:30",
+  "finishTime": "22:00",
+  "dayOfWeek": "MONDAY"
+}
+
+
